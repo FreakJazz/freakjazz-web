@@ -19,7 +19,6 @@ import { NavMobile } from './nav/mobile';
 import { NavSidebar } from './nav/sidebar';
 import { getNavData } from '../nav-config-main';
 import { MenuButton } from '../components/menu-button';
-import { SignInButton } from '../components/sign-in-button';
 import { SettingsButton } from '../components/settings-button';
 import { LanguagePopover } from '../components/language-popover';
 import { MainSection, HeaderSection, LayoutSection } from '../core';
@@ -94,9 +93,6 @@ export function MainLayout({
 
           {/** @slot Settings button */}
           <SettingsButton />
-
-          {/** @slot Sign in button */}
-          <SignInButton />
         </Box>
       ),
     };

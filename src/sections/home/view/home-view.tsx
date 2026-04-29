@@ -1,26 +1,26 @@
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
 
-import { RouterLink } from 'src/routes/components';
 import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 
 import { useTranslate } from 'src/locales';
 
+import { Iconify } from 'src/components/iconify';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
-import { Iconify } from 'src/components/iconify';
 
 import { Education } from '../education';
-import { Frameworks } from '../frameworks';
 import { Languages } from '../languages';
+import { Frameworks } from '../frameworks';
 import { PersonalInterests } from '../personal-interests';
 import { ProgrammingLanguages } from '../programming-languages';
 
