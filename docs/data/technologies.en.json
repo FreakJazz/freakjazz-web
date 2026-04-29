@@ -1,0 +1,78 @@
+{
+    "programmingLanguages": [
+        "C#",
+        "Python",
+        "Java",
+        "TypeScript",
+        "JavaScript",
+        "SQL",
+        "PL/SQL",
+        "C",
+        "C++",
+        "Matlab",
+        "Assembler"
+    ],
+    "frontend": [
+        "React",
+        "Next.js",
+        "Angular",
+        "React Native",
+        "Material UI",
+        "Figma"
+    ],
+    "backendArchitecture": [
+        ".NET Core",
+        "Django",
+        "FastAPI",
+        "Flask",
+        "Spring Boot",
+        "Microservices Architecture",
+        "Domain-Driven Design (DDD)",
+        "Clean Architecture",
+        "Hexagonal Architecture",
+        "Event-Driven Architecture",
+        "REST APIs",
+        "WebSockets",
+        "Webhooks"
+    ],
+    "cloudDevOps": [
+        "AWS (EC2, S3, SQS, IAM, Cognito)",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CI/CD",
+        "GitHub Actions",
+        "Azure DevOps",
+        "Consul"
+    ],
+    "databases": [
+        "PostgreSQL",
+        "MongoDB",
+        "SQL Server",
+        "Oracle",
+        "MariaDB",
+        "Firebase Firestore",
+        "Supabase",
+        "Redis"
+    ],
+    "messaging": [
+        "Apache Kafka",
+        "AWS SQS",
+        "Event Streaming",
+        "Asynchronous Processing"
+    ],
+    "security": [
+        "JWT",
+        "OAuth2",
+        "Keycloak",
+        "AWS Cognito",
+        "Role-based access control"
+    ],
+    "aiData": [
+        "Pandas",
+        "NumPy",
+        "Power BI",
+        "AI-assisted development tools"
+    ]
+}

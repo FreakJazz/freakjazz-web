@@ -1,0 +1,43 @@
+[
+    {
+        "company": "National Electoral Council",
+        "role": "Systems Analyst",
+        "period": "2022 - 2025",
+        "description": "Development of high-concurrency electoral systems and platforms for real-time citizen interaction.",
+        "responsibilities": [
+            "Designed and implemented microservices architectures",
+            "Developed REST APIs using .NET Core",
+            "Implemented secure authentication using JWT, OAuth2 and Keycloak",
+            "Worked with event-driven systems using SQS and webhooks",
+            "Optimized database performance using PostgreSQL and MongoDB",
+            "Implemented caching strategies with Redis"
+        ],
+        "projects": [
+            "Electoral financial systems for political organizations",
+            "Real-time citizen consultation platforms",
+            "Data integration with national registry systems"
+        ]
+    },
+    {
+        "company": "Netby / Publipromueve",
+        "role": "Software Development Specialist",
+        "period": "2025 - Present",
+        "description": "Design and development of scalable digital platforms and integrations.",
+        "projects": [
+            "Banking loyalty platform",
+            "Subscription and recurring payment systems",
+            "Logistics tracking platform"
+        ]
+    },
+    {
+        "company": "Gradav Software",
+        "role": "Full Stack Developer",
+        "period": "2020 - 2021",
+        "responsibilities": [
+            "Developed web and mobile applications",
+            "Built backend APIs using Django and Flask",
+            "Managed cloud infrastructure on AWS",
+            "Designed relational and NoSQL databases"
+        ]
+    }
+]

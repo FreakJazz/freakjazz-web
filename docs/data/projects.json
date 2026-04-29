@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Banking Loyalty Platform",
+        "description": "System for managing cards, rewards and benefits.",
+        "problem": "Need for scalable financial integrations",
+        "solution": "Event-driven microservices with secure APIs",
+        "technologies": [
+            ".NET Core",
+            "AWS",
+            "PostgreSQL",
+            "Kafka"
+        ],
+        "impact": "High scalability and secure transactions"
+    },
+    {
+        "title": "Subscription & Payment System",
+        "description": "Membership and recurring payments platform",
+        "technologies": [
+            "Node.js",
+            "APIs",
+            "Cloud"
+        ],
+        "impact": "Automated billing and user lifecycle"
+    },
+    {
+        "title": "Logistics Platform",
+        "description": "Shipment tracking via APIs and events",
+        "technologies": [
+            "Microservices",
+            "SQS",
+            "REST APIs"
+        ]
+    },
+    {
+        "title": "Electoral Systems",
+        "description": "Real-time citizen consultation and monitoring platforms",
+        "technologies": [
+            "React",
+            ".NET",
+            "PostgreSQL"
+        ]
+    }
+]

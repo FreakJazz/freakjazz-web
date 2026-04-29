@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Software Architecture",
+        "description": "Design of scalable, resilient and maintainable systems using microservices and domain-driven design."
+    },
+    {
+        "title": "Full Stack Development",
+        "description": "End-to-end application development using modern frontend and backend technologies."
+    },
+    {
+        "title": "Cloud & DevOps",
+        "description": "Cloud infrastructure setup, CI/CD pipelines and container orchestration."
+    },
+    {
+        "title": "AI Integration",
+        "description": "Implementation of AI tools to optimize development workflows and decision-making."
+    }
+]
