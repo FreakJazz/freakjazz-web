@@ -11,6 +11,7 @@ export type ConfigValue = {
     hero: string;
     contact: string;
     quote: string;
+    projects: string;
   };
   auth: {
     method: 'jwt';
@@ -36,6 +37,9 @@ export const CONFIG: ConfigValue = {
     quote:
       import.meta.env.VITE_QUOTE_IMAGE ??
       'https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2F0ba33aae-a0f8-4758-9960-c375f332d590.jpg?alt=media&token=a3f54566-7eb5-4b4d-adb7-603a841283c1',
+    projects:
+      import.meta.env.VITE_PROJECTS_IMAGE ??
+      'https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2FWhatsApp%20Image%202026-05-04%20at%2015.43.02.jpeg?alt=media&token=a28f82e3-3c0d-4007-b87f-3d16ba7a77d8',
   },
   /**
    * Auth

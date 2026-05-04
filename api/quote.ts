@@ -43,14 +43,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Initialize Mailjet
     const mailjet = new Mailjet({
-      apiKey: process.env.MAILJET_API_KEY,
-      apiSecret: process.env.MAILJET_API_SECRET,
+      apiKey: process.env.MAILJET_API_KEY || process.env.VITE_MAILJET_API_KEY,
+      apiSecret: process.env.MAILJET_API_SECRET || process.env.VITE_MAILJET_API_SECRET,
     });
 
-    const senderEmail = process.env.MAILJET_SENDER_EMAIL || 'noreply@freakjazz.com';
-    const senderName = process.env.MAILJET_SENDER_NAME || 'FreakJazz Development';
-    const companyEmail = process.env.COMPANY_EMAIL || 'contact@freakjazz.com';
-    const appUrl = process.env.APP_URL || 'https://freakjazz.com';
+    const senderEmail =
+      process.env.MAILJET_SENDER_EMAIL ||
+      process.env.VITE_MAILJET_SENDER_EMAIL ||
+      'noreply@freakjazz.com';
+    const senderName =
+      process.env.MAILJET_SENDER_NAME ||
+      process.env.VITE_MAILJET_SENDER_NAME ||
+      'FreakJazz Development';
+    const companyEmail =
+      process.env.COMPANY_EMAIL || process.env.VITE_COMPANY_EMAIL || 'contact@freakjazz.com';
+    const appUrl = process.env.APP_URL || process.env.VITE_APP_URL || 'https://freakjazz.com';
 
     // Email template for company
     const companyEmailHtml = getQuoteCompanyEmailTemplate(data, { appUrl });

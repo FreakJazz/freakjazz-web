@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { CONFIG } from 'src/global-config';
 import { useTranslate } from 'src/locales';
 
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
@@ -76,7 +77,7 @@ export function ProjectsView() {
             ...thm.mixins.bgGradient({
               images: [
                 `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)})`,
-                'url(https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2FWhatsApp%20Image%202026-05-04%20at%2015.43.02.jpeg?alt=media&token=a28f82e3-3c0d-4007-b87f-3d16ba7a77d8)',
+                `url(${CONFIG.images.projects})`,
               ],
             }),
             py: { xs: 15, md: 20 },
