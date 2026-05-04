@@ -1,12 +1,12 @@
 import type { Theme, SxProps } from '@mui/material/styles';
-import type { LogoProps } from '../logo';
+import type { AnimatedLogoProps } from '../logo';
 
 import { m } from 'framer-motion';
 import { varAlpha } from 'minimal-shared/utils';
 
 import { styled } from '@mui/material/styles';
 
-import { Logo } from '../logo';
+import { AnimatedLogo } from '../logo';
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ export type AnimateLogoProps = React.ComponentProps<'div'> & {
   sx?: SxProps<Theme>;
   logo?: React.ReactNode;
   slotProps?: {
-    logo?: LogoProps;
+    logo?: AnimatedLogoProps;
   };
 };
 
@@ -31,11 +31,11 @@ export function AnimateLogoZoom({ logo, slotProps, sx, ...other }: AnimateLogoPr
         }}
       >
         {logo ?? (
-          <Logo
-            disabled
+          <AnimatedLogo
+            disableAnimation
             {...slotProps?.logo}
             sx={[
-              { width: 64, height: 64 },
+              { width: 'auto', height: 'auto', fontSize: '2rem' },
               ...(Array.isArray(slotProps?.logo?.sx) ? slotProps.logo.sx : [slotProps?.logo?.sx]),
             ]}
           />
@@ -94,10 +94,11 @@ export function AnimateLogoRotate({ logo, sx, slotProps, ...other }: AnimateLogo
   return (
     <LogoRotateRoot sx={sx} {...other}>
       {logo ?? (
-        <Logo
+        <AnimatedLogo
+          disableAnimation
           {...slotProps?.logo}
           sx={[
-            { zIndex: 9, width: 40, height: 40 },
+            { zIndex: 9, width: 'auto', height: 'auto', fontSize: '1.25rem' },
             ...(Array.isArray(slotProps?.logo?.sx) ? slotProps.logo.sx : [slotProps?.logo?.sx]),
           ]}
         />

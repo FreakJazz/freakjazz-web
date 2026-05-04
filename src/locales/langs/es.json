@@ -15,11 +15,13 @@
         "cancel": "Cancelar",
         "loading": "Cargando...",
         "error": "Error",
-        "success": "Éxito"
+        "success": "Éxito",
+        "downloadCV": "Descargar CV",
+        "profileRole": "Desarrolladora Full Stack"
     },
     "home": {
         "welcome": "Jazmin Rodriguez",
-        "subtitle": "Desarrolladora de Software | Senior Full-Stack",
+        "subtitle": "Senior Software Engineer | .NET Core, Python, React | Microservices | Cloud | Clean Architecture | APIs",
         "cta": "Contrátame",
         "ctaProjects": "Ver Proyectos",
         "description": "Máster en Ingeniería de Software especializada en el desarrollo y arquitectura de soluciones tecnológicas escalables. Sólida experiencia construyendo aplicaciones robustas end-to-end, liderando equipos bajo metodologías ágiles como Scrum y promoviendo una cultura de mejora continua",

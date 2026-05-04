@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Jazmin Rodriguez</h1>
-<h2 align="center">Master in Software Engineering | Full Stack Architect | DevOps Specialist</h2>
+<h2 align="center">Senior Software Engineer | .NET Core, Python, React | Microservices | Cloud | Clean Architecture | APIs</h2>
 
 <p align="center">
   <a href="https://github.com/FreakJazz"><img src="https://img.shields.io/badge/GitHub-FreakJazz-181717?style=flat-square&logo=github" alt="GitHub"/></a>

@@ -1,3 +1,5 @@
+import { varAlpha } from 'minimal-shared/utils';
+
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
@@ -12,6 +14,7 @@ import CardContent from '@mui/material/CardContent';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
+import { CONFIG } from 'src/global-config';
 import { useTranslate } from 'src/locales';
 
 import { Iconify } from 'src/components/iconify';
@@ -85,14 +88,24 @@ export function HomeView() {
 
       {/* Hero Section */}
       <Box
-        sx={{
-          py: { xs: 15, md: 20 },
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          background: `linear-gradient(135deg, ${theme.palette.primary.darker} 0%, ${theme.palette.primary.main} 100%)`,
-          color: 'white',
-        }}
+        sx={[
+          (thm) => ({
+            ...thm.mixins.bgGradient({
+              images: [
+                `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.9)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.8)})`,
+                `url(${CONFIG.images.hero})`,
+              ],
+            }),
+            py: { xs: 15, md: 20 },
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            color: 'white',
+            position: 'relative',
+          }),
+        ]}
       >
         <Container>
           <Stack spacing={4} alignItems="center" textAlign="center">

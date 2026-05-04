@@ -15,6 +15,7 @@ export type NavItemOptionsProps = {
   subItem?: boolean;
   hasChild?: boolean;
   externalLink?: boolean;
+  iconsOnly?: boolean;
 };
 
 export type NavItemDataProps = {
@@ -39,6 +40,7 @@ export type NavItemProps = ButtonBaseProps &
 export type NavListProps = React.ComponentProps<'li'> & {
   sx?: SxProps<Theme>;
   data: NavItemDataProps;
+  iconsOnly?: boolean;
 };
 
 export type NavSubListProps = React.ComponentProps<'li'> & {

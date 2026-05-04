@@ -17,6 +17,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormHelperText from '@mui/material/FormHelperText';
 
 import { useTranslate } from 'src/locales';
+import { emailService } from 'src/services/email.service';
 
 import { toast } from 'src/components/snackbar';
 
@@ -83,8 +84,7 @@ export function QuoteForm() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log('Quote data:', data);
+      await emailService.sendQuoteEmail(data);
       toast.success(t('quote.success'));
       reset();
     } catch (error) {

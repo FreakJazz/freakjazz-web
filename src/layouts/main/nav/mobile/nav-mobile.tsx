@@ -7,7 +7,7 @@ import Drawer from '@mui/material/Drawer';
 
 import { usePathname } from 'src/routes/hooks';
 
-import { Logo } from 'src/components/logo';
+import { AnimatedLogo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
 
 import { Nav, NavUl } from '../components';
@@ -60,7 +60,7 @@ export function NavMobile({ data, open, onClose, slots, sx }: NavMobileProps) {
             display: 'flex',
           }}
         >
-          <Logo />
+          <AnimatedLogo disableAnimation />
         </Box>
       )}
 

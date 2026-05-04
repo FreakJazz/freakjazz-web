@@ -11,7 +11,7 @@ Do NOT skip steps. Do NOT assume missing information.
 
 This project is a **professional portfolio platform** for a Senior Software Engineer specialized in:
 
-- Software Architecture
+- Software Development
 - Microservices & Distributed Systems
 - Cloud & DevOps
 - AI-assisted development

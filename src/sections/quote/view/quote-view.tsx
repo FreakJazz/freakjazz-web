@@ -6,24 +6,28 @@ import Container from '@mui/material/Container';
 import { varFade } from 'src/components/animate';
 
 import { QuoteForm } from '../quote-form';
+import { QuoteHero } from '../quote-hero';
 
 // ----------------------------------------------------------------------
 
 export function QuoteView() {
   return (
-    <Box
-      component={m.div}
-      variants={varFade('inUp', { distance: 24 })}
-      sx={{
-        py: { xs: 8, md: 12 },
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <Container>
-        <QuoteForm />
+    <>
+      <QuoteHero />
+      <Container component="section" sx={{ py: 10 }}>
+        <Box
+          component={m.div}
+          variants={varFade('inUp', { distance: 24 })}
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Box sx={{ width: '100%', maxWidth: 800 }}>
+            <QuoteForm />
+          </Box>
+        </Box>
       </Container>
-    </Box>
+    </>
   );
 }

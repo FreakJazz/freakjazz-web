@@ -52,7 +52,7 @@ export function PersonalInterests() {
       {interests.map((interest, index) => (
         <Grid
           key={index}
-          size={{ xs: 6, sm: 6, md: 4, lg: 2.4 }}
+          size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }}
           sx={{
             display: 'flex',
             justifyContent: 'center',

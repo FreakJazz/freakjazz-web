@@ -3,8 +3,6 @@ import type { FooterProps } from './footer';
 import type { NavMainProps } from './nav/types';
 import type { MainSectionProps, HeaderSectionProps, LayoutSectionProps } from '../core';
 
-import { useBoolean } from 'minimal-shared/hooks';
-
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/material/styles';
@@ -12,22 +10,21 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { useTranslate } from 'src/locales';
 
-import { Logo } from 'src/components/logo';
+import { AnimatedLogo } from 'src/components/logo';
 
 import { Footer } from './footer';
-import { NavMobile } from './nav/mobile';
 import { NavSidebar } from './nav/sidebar';
 import { getNavData } from '../nav-config-main';
-import { MenuButton } from '../components/menu-button';
-import { SettingsButton } from '../components/settings-button';
 import { LanguagePopover } from '../components/language-popover';
+import { BottomNavMobile } from './nav/mobile/bottom-nav-mobile';
 import { MainSection, HeaderSection, LayoutSection } from '../core';
+import { ThemeToggleButton } from '../components/theme-toggle-button';
 
 // ----------------------------------------------------------------------
 
 const languagesData = [
-  { value: 'en', label: 'English', countryCode: 'gb-nir' },
-  { value: 'es', label: 'Español', countryCode: 'es' },
+  { value: 'en', label: 'English', countryCode: 'gb' },
+  { value: 'es', label: 'Español', countryCode: 'ec' },
 ];
 
 // ----------------------------------------------------------------------
@@ -56,8 +53,6 @@ export function MainLayout({
   const { t } = useTranslate();
   const theme = useTheme();
 
-  const { value: open, onFalse: onClose, onTrue: onOpen } = useBoolean();
-
   const isDesktop = useMediaQuery(theme.breakpoints.up(layoutQuery));
 
   const navData = slotProps?.nav?.data ?? getNavData(t);
@@ -71,19 +66,25 @@ export function MainLayout({
       ),
       leftArea: (
         <>
-          {/** @slot Nav mobile */}
-          <MenuButton
-            onClick={onOpen}
-            sx={(thm) => ({
-              mr: 1,
-              ml: -1,
-              [thm.breakpoints.up(layoutQuery)]: { display: 'none' },
-            })}
-          />
-          <NavMobile data={navData} open={open} onClose={onClose} />
+          {!isDesktop && (
+            <Box
+              component="img"
+              src="/assets/home/foto.png"
+              alt="Jazmin Rodriguez"
+              sx={{
+                width: 40,
+                height: 40,
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: (thm) => `2px solid ${thm.palette.primary.main}`,
+                mr: 1,
+                ml: -1,
+              }}
+            />
+          )}
 
           {/** @slot Logo */}
-          <Logo />
+          <AnimatedLogo disableAnimation />
         </>
       ),
       rightArea: (
@@ -91,8 +92,8 @@ export function MainLayout({
           {/** @slot Language popover */}
           <LanguagePopover data={languagesData} />
 
-          {/** @slot Settings button */}
-          <SettingsButton />
+          {/** @slot Theme toggle button */}
+          <ThemeToggleButton />
         </Box>
       ),
     };
@@ -133,7 +134,25 @@ export function MainLayout({
 
   const renderFooter = () => <Footer sx={slotProps?.footer?.sx} layoutQuery={layoutQuery} />;
 
-  const renderMain = () => <MainSection {...slotProps?.main}>{children}</MainSection>;
+  const renderMain = () => (
+    <MainSection
+      {...slotProps?.main}
+      sx={[
+        (thm) => ({
+          [thm.breakpoints.down(layoutQuery)]: {
+            pb: '90px', // Add padding for bottom navigation on mobile
+          },
+        }),
+        ...(slotProps?.main?.sx
+          ? Array.isArray(slotProps.main.sx)
+            ? slotProps.main.sx
+            : [slotProps.main.sx]
+          : []),
+      ]}
+    >
+      {children}
+    </MainSection>
+  );
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
@@ -160,6 +179,9 @@ export function MainLayout({
           {renderMain()}
         </LayoutSection>
       </Box>
+
+      {/** Bottom Navigation for mobile */}
+      {!isDesktop && <BottomNavMobile data={navData} />}
     </Box>
   );
 }

@@ -12,7 +12,7 @@ import { NavItemDashboard } from './nav-desktop-item-dashboard';
 
 // ----------------------------------------------------------------------
 
-export function NavList({ data, sx, ...other }: NavListProps) {
+export function NavList({ data, sx, iconsOnly, ...other }: NavListProps) {
   const pathname = usePathname();
   const navItemRef = useRef<HTMLButtonElement>(null);
 
@@ -39,12 +39,14 @@ export function NavList({ data, sx, ...other }: NavListProps) {
       // slots
       path={data.path}
       title={data.title}
+      icon={data.icon}
       // state
       open={open}
       active={isActive}
       // options
       hasChild={!!data.children}
       externalLink={isExternalLink(data.path)}
+      iconsOnly={iconsOnly}
       // action
       onMouseEnter={handleOpenMenu}
       onMouseLeave={onClose}

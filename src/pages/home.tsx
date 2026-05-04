@@ -3,7 +3,7 @@ import { HomeView } from 'src/sections/home/view';
 // ----------------------------------------------------------------------
 
 const metadata = {
-  title: 'Jazmin Rodriguez | Software Engineer & Full Stack Architect',
+  title: 'Jazmin Rodriguez | Senior Software Engineer',
   description:
     "Portfolio of Jazmin Rodriguez - Software Engineer with 10+ years experience in full-stack development, cloud architecture, and technical leadership. Master's in Software Engineering.",
 };

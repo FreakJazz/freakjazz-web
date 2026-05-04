@@ -14,11 +14,12 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { styled, useTheme } from '@mui/material/styles';
 
+import { useTranslate } from 'src/locales';
 import { LanguagePopover } from 'src/layouts/components/language-popover';
 import { ThemeToggleButton } from 'src/layouts/components/theme-toggle-button';
 
-import { Logo } from 'src/components/logo';
 import { Iconify } from 'src/components/iconify';
+import { AnimatedLogo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
 
 import { NavList } from '../desktop/nav-desktop-list';
@@ -26,8 +27,8 @@ import { NavList } from '../desktop/nav-desktop-list';
 // ----------------------------------------------------------------------
 
 const languagesData = [
-  { value: 'en', label: 'English', countryCode: 'gb-nir' },
-  { value: 'es', label: 'Español', countryCode: 'es' },
+  { value: 'en', label: 'English', countryCode: 'gb' },
+  { value: 'es', label: 'Español', countryCode: 'ec' },
 ];
 
 const NAV_WIDTH_FULL = 280;
@@ -70,7 +71,12 @@ export type NavSidebarProps = NavMainProps & {
 
 export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
   const theme = useTheme();
+  const { t, currentLang } = useTranslate();
   const [navState, setNavState] = useState<NavState>(2); // Start with full sidebar
+
+  const cvUrl = currentLang.value === 'es' 
+    ? '/assets/cv/jazmin-rodriguez-cv-es.pdf'
+    : '/assets/cv/jazmin-rodriguez-cv-en.pdf';
 
   const cycleNavState = () => {
     setNavState((prev) => ((prev + 1) % 3) as NavState);
@@ -126,7 +132,8 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                   gap: 1,
                 }}
               >
-                <Logo
+                <AnimatedLogo
+                  disableAnimation={isIconsOnly}
                   sx={{
                     width: isFull ? 'auto' : 0,
                     opacity: isFull ? 1 : 0,
@@ -148,7 +155,7 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                         (isFull
                           ? 'eva:arrow-ios-back-fill'
                           : isIconsOnly
-                            ? 'eva:close-fill'
+                            ? 'eva:arrow-ios-forward-fill'
                             : 'eva:arrow-ios-forward-fill') as any
                       }
                       width={20}
@@ -167,7 +174,7 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                   <Stack spacing={1} alignItems="center">
                     <Avatar
                       alt="Jazmin Rodriguez"
-                      src="/assets/images/mock/avatar/avatar-25.webp"
+                      src="/assets/home/foto.png"
                       sx={{
                         width: 80,
                         height: 80,
@@ -178,7 +185,7 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                       Jazmin Rodriguez
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Full Stack Architect
+                      {t('common.profileRole')}
                     </Typography>
 
                     {/* Download CV Button */}
@@ -186,11 +193,11 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                       variant="outlined"
                       size="small"
                       startIcon={<Iconify icon={'solar:download-bold-duotone' as any} />}
-                      href="/assets/cv/jazmin-rodriguez-cv.pdf"
+                      href={cvUrl}
                       download
                       sx={{ mt: 1, width: '100%' }}
                     >
-                      Download CV
+                      {t('common.downloadCV')}
                     </Button>
                   </Stack>
                 </m.div>
@@ -200,7 +207,7 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                 <Tooltip title="Jazmin Rodriguez">
                   <Avatar
                     alt="Jazmin Rodriguez"
-                    src="/assets/images/mock/avatar/avatar-25.webp"
+                    src="/assets/home/foto.png"
                     sx={{
                       width: 48,
                       height: 48,
@@ -218,15 +225,7 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                   <NavList
                     key={list.title}
                     data={list}
-                    sx={{
-                      '& .nav-item': {
-                        justifyContent: isIconsOnly ? 'center' : 'flex-start',
-                        px: isIconsOnly ? 1 : 2,
-                        '& .nav-item-text': {
-                          display: isIconsOnly ? 'none' : 'block',
-                        },
-                      },
-                    }}
+                    iconsOnly={isIconsOnly}
                   />
                 ))}
               </Stack>

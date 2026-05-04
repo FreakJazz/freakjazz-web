@@ -14,7 +14,7 @@ import { varFade, MotionContainer } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 
-export function ContactHero({ sx, ...other }: BoxProps) {
+export function QuoteHero({ sx, ...other }: BoxProps) {
   const { t } = useTranslate();
 
   return (
@@ -25,7 +25,7 @@ export function ContactHero({ sx, ...other }: BoxProps) {
           ...theme.mixins.bgGradient({
             images: [
               `linear-gradient(0deg, ${varAlpha(theme.vars.palette.grey['900Channel'], 0.8)}, ${varAlpha(theme.vars.palette.grey['900Channel'], 0.8)})`,
-              `url(${CONFIG.images.contact})`,
+              `url(${CONFIG.images.quote})`,
             ],
           }),
           overflow: 'hidden',
@@ -54,54 +54,23 @@ export function ContactHero({ sx, ...other }: BoxProps) {
               color: 'common.white',
             }}
           >
-            {t('contact.title')}
+            {t('quote.title')}
           </Typography>
 
-          <Box
-            component="ul"
-            sx={{
-              mt: 5,
-              display: 'flex',
-              color: 'common.white',
-              flexDirection: 'column',
-              gap: 2,
-            }}
-          >
-            {CONTACTS.map((contact) => (
-              <Box key={contact.label} component="li">
-                <m.div variants={varFade('inUp', { distance: 24 })}>
-                  <Typography variant="h6" sx={{ mb: 0.5 }}>
-                    {contact.label}
-                  </Typography>
-                </m.div>
-
-                <m.div variants={varFade('inUp', { distance: 24 })}>
-                  <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                    {contact.value}
-                  </Typography>
-                </m.div>
-              </Box>
-            ))}
-          </Box>
+          <m.div variants={varFade('inUp', { distance: 24 })}>
+            <Typography
+              variant="h5"
+              sx={{
+                mt: 3,
+                color: 'common.white',
+                opacity: 0.9,
+              }}
+            >
+              {t('quote.subtitle')}
+            </Typography>
+          </m.div>
         </Box>
       </Container>
     </Box>
   );
 }
-
-// ----------------------------------------------------------------------
-
-const CONTACTS = [
-  {
-    label: 'Location',
-    value: 'Quito, Ecuador',
-  },
-  {
-    label: 'Email',
-    value: 'jazzrb2307@gmail.com',
-  },
-  {
-    label: 'Phone',
-    value: '+593 98 355 1848',
-  },
-];

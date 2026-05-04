@@ -14,6 +14,7 @@ import { createNavItem, navItemStyles, navSectionClasses } from 'src/components/
 export function NavItem({
   title,
   path,
+  icon,
   /********/
   open,
   active,
@@ -22,11 +23,17 @@ export function NavItem({
   hasChild,
   className,
   externalLink,
+  iconsOnly,
   ...other
 }: NavItemProps) {
   const navItem = createNavItem({ path, hasChild, externalLink });
 
-  const ownerState: StyledState = { open, active, variant: !subItem ? 'rootItem' : 'subItem' };
+  const ownerState: StyledState = {
+    open,
+    active,
+    variant: !subItem ? 'rootItem' : 'subItem',
+    iconsOnly,
+  };
 
   return (
     <ItemRoot
@@ -40,7 +47,15 @@ export function NavItem({
       })}
       {...other}
     >
-      <ItemTitle {...ownerState}> {title}</ItemTitle>
+      {icon && (
+        <ItemIcon {...ownerState} className="nav-item-icon">
+          {icon}
+        </ItemIcon>
+      )}
+      <ItemTitle {...ownerState} className="nav-item-text">
+        {' '}
+        {title}
+      </ItemTitle>
 
       {hasChild && <ItemArrow {...ownerState} icon="eva:arrow-ios-downward-fill" />}
     </ItemRoot>
@@ -49,11 +64,12 @@ export function NavItem({
 
 // ----------------------------------------------------------------------
 
-type StyledState = Pick<NavItemProps, 'open' | 'active'> & {
+type StyledState = Pick<NavItemProps, 'open' | 'active' | 'iconsOnly'> & {
   variant: 'rootItem' | 'subItem';
 };
 
-const shouldForwardProp = (prop: string) => !['open', 'active', 'variant', 'sx'].includes(prop);
+const shouldForwardProp = (prop: string) =>
+  !['open', 'active', 'variant', 'sx', 'iconsOnly'].includes(prop);
 
 /**
  * @slot root
@@ -62,6 +78,7 @@ const ItemRoot = styled(ButtonBase, { shouldForwardProp })<StyledState>(({
   active,
   open,
   theme,
+  iconsOnly,
 }) => {
   const dotTransitions: Record<'in' | 'out', CSSObject> = {
     in: { opacity: 0, scale: 0 },
@@ -95,6 +112,11 @@ const ItemRoot = styled(ButtonBase, { shouldForwardProp })<StyledState>(({
   };
 
   return {
+    flexDirection: iconsOnly ? 'column' : 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: iconsOnly ? theme.spacing(1.5, 1) : theme.spacing(1, 2),
+    gap: iconsOnly ? theme.spacing(0.5) : theme.spacing(1),
     transition: theme.transitions.create(['color'], {
       duration: theme.transitions.duration.shorter,
     }),
@@ -108,12 +130,33 @@ const ItemRoot = styled(ButtonBase, { shouldForwardProp })<StyledState>(({
 });
 
 /**
+ * @slot icon
+ */
+const ItemIcon = styled('span', { shouldForwardProp })<StyledState>(({ theme, iconsOnly }) => ({
+  width: iconsOnly ? 32 : 24,
+  height: iconsOnly ? 32 : 24,
+  flexShrink: 0,
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginRight: iconsOnly ? 0 : theme.spacing(1.5),
+  '& svg': {
+    width: iconsOnly ? 28 : 22,
+    height: iconsOnly ? 28 : 22,
+  },
+}));
+
+/**
  * @slot title
  */
-const ItemTitle = styled('span', { shouldForwardProp })<StyledState>(({ theme }) => ({
+const ItemTitle = styled('span', { shouldForwardProp })<StyledState>(({ theme, iconsOnly }) => ({
   ...navItemStyles.title(theme),
   ...theme.typography.body2,
   fontWeight: theme.typography.fontWeightMedium,
+  fontSize: iconsOnly ? theme.typography.pxToRem(10.5) : 'inherit',
+  textAlign: iconsOnly ? 'center' : 'left',
+  lineHeight: iconsOnly ? 1.2 : 'inherit',
+  whiteSpace: iconsOnly ? 'nowrap' : 'inherit',
   variants: [
     { props: { variant: 'subItem' }, style: { fontSize: theme.typography.pxToRem(13) } },
     { props: { active: true }, style: { fontWeight: theme.typography.fontWeightSemiBold } },
