@@ -11,17 +11,54 @@ interface ContactFormData {
   message: string;
 }
 
-interface QuoteFormData {
-  projectType: string;
-  technologies: string[];
-  timeline: string;
-  budget: string;
-  description: string;
-  name: string;
+interface QuoteFormDetailedData {
+  // BLOQUE 1: Datos del cliente
+  companyName: string;
+  ruc?: string;
+  contactName: string;
   email: string;
   phone: string;
-  company?: string;
-  requirements?: string;
+  location: string;
+
+  // BLOQUE 2: Objetivo del proyecto
+  projectGoals: string[];
+  otherGoal?: string;
+
+  // BLOQUE 3: Tipo de solución
+  solutionType: string;
+
+  // BLOQUE 4: Detalle de la solución
+  webAppType?: string;
+  mobileplatforms?: string[];
+  systemType?: string;
+
+  // BLOQUE 5: Funcionalidades
+  features: string[];
+
+  // BLOQUE 6: Roles del sistema
+  hasRoles: string;
+  roles?: string;
+
+  // BLOQUE 7: Diseño y experiencia
+  hasDesign: string;
+  needsPrototype: string;
+  visualStyle: string;
+
+  // BLOQUE 8: Requerimientos técnicos
+  needsCloud: string;
+  securityLevel: string;
+  needsIntegrations: string;
+  integrations?: string;
+
+  // BLOQUE 9: Tiempo y presupuesto
+  timeline: string;
+  budget: string;
+
+  // BLOQUE 10: Soporte y continuidad
+  needsSupport: string;
+
+  // BLOQUE 11: Comentarios finales
+  additionalComments?: string;
 }
 
 interface EmailResponse {
@@ -52,7 +89,7 @@ export const emailService = {
    * Send quote request email
    * Sends emails to both company and client
    */
-  sendQuoteEmail: async (data: QuoteFormData): Promise<EmailResponse> => {
+  sendQuoteEmail: async (data: QuoteFormDetailedData): Promise<EmailResponse> => {
     try {
       const response = await axios.post<EmailResponse>('/api/quote', data);
       return response.data;

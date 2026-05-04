@@ -5,8 +5,8 @@ import Container from '@mui/material/Container';
 
 import { varFade } from 'src/components/animate';
 
-import { QuoteForm } from '../quote-form';
 import { QuoteHero } from '../quote-hero';
+import { QuoteFormDetailed } from '../quote-form-detailed';
 
 // ----------------------------------------------------------------------
 
@@ -23,8 +23,8 @@ export function QuoteView() {
             justifyContent: 'center',
           }}
         >
-          <Box sx={{ width: '100%', maxWidth: 800 }}>
-            <QuoteForm />
+          <Box sx={{ width: '100%', maxWidth: 900 }}>
+            <QuoteFormDetailed />
           </Box>
         </Box>
       </Container>
