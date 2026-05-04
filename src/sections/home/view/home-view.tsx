@@ -60,6 +60,11 @@ export function HomeView() {
       title: t('home.strength5Title'),
       description: t('home.strength5Text'),
     },
+    {
+      icon: 'solar:shield-check-bold-duotone',
+      title: t('home.strength6Title'),
+      description: t('home.strength6Text'),
+    },
   ];
 
   const technologies = {
@@ -92,7 +97,7 @@ export function HomeView() {
           (thm) => ({
             ...thm.mixins.bgGradient({
               images: [
-                `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.9)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.8)})`,
+                `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)})`,
                 `url(${CONFIG.images.hero})`,
               ],
             }),
@@ -156,29 +161,25 @@ export function HomeView() {
         </Container>
       </Box>
 
-      {/* Personal Interests Section */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          bgcolor: 'background.default',
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={4} alignItems="center" sx={{ mb: 6 }}>
-            <Typography
-              variant="h2"
-              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center' }}
-            >
-              {t('personalInterests.title')}
+      {/* Professional Summary Section */}
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
+        <Container>
+          <Stack spacing={4} alignItems="center" textAlign="center">
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
+              {t('home.summaryTitle')}
             </Typography>
             <Typography
               variant="body1"
-              sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 600 }}
+              sx={{
+                maxWidth: 900,
+                fontSize: { xs: '1rem', md: '1.25rem' },
+                color: 'text.secondary',
+                lineHeight: 1.8,
+              }}
             >
-              {t('personalInterests.subtitle')}
+              {t('home.summaryText')}
             </Typography>
           </Stack>
-          <PersonalInterests />
         </Container>
       </Box>
 
@@ -234,25 +235,29 @@ export function HomeView() {
         </Container>
       </Box>
 
-      {/* Professional Summary Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
-        <Container>
-          <Stack spacing={4} alignItems="center" textAlign="center">
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-              {t('home.summaryTitle')}
+      {/* Personal Interests Section */}
+      <Box
+        sx={{
+          py: { xs: 8, md: 12 },
+          bgcolor: 'background.default',
+        }}
+      >
+        <Container maxWidth="lg">
+          <Stack spacing={4} alignItems="center" sx={{ mb: 6 }}>
+            <Typography
+              variant="h2"
+              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center' }}
+            >
+              {t('personalInterests.title')}
             </Typography>
             <Typography
               variant="body1"
-              sx={{
-                maxWidth: 900,
-                fontSize: { xs: '1rem', md: '1.25rem' },
-                color: 'text.secondary',
-                lineHeight: 1.8,
-              }}
+              sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 600 }}
             >
-              {t('home.summaryText')}
+              {t('personalInterests.subtitle')}
             </Typography>
           </Stack>
+          <PersonalInterests />
         </Container>
       </Box>
 
@@ -267,7 +272,7 @@ export function HomeView() {
           </Typography>
           <Grid container spacing={3}>
             {strengths.map((strength, index) => (
-              <Grid key={index} size={{ xs: 12, sm: 6, md: 3 }}>
+              <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
                 <Card
                   sx={{
                     height: '100%',

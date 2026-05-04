@@ -20,7 +20,7 @@
 
 ## 👋 About Me
 
-Master in Software Engineering specialized in developing and architecting scalable technological solutions. With **10+ years of experience** building robust end-to-end applications, leading teams under agile methodologies like Scrum, and promoting a culture of continuous improvement.
+Master in Software Engineering specialized in developing and architecting scalable technological solutions. With **5+ years of experience** building robust end-to-end applications, leading teams under agile methodologies like Scrum, and promoting a culture of continuous improvement.
 
 I integrate Artificial Intelligence tools to optimize the development cycle, automate processes, and enhance technical decision-making. I work under engineering best practices, applying **SOLID principles, Clean Architecture**, and a constant focus on quality, security, and performance.
 

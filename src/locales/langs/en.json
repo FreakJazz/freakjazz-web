@@ -24,9 +24,9 @@
         "subtitle": "Senior Software Engineer | .NET Core, Python, React | Microservices | Cloud | Clean Architecture | APIs",
         "cta": "Hire Me",
         "ctaProjects": "View Projects",
-        "description": "Master in Software Engineering specialized in developing and architecting scalable technological solutions. Solid experience building robust end-to-end applications, leading teams under agile methodologies like Scrum, and promoting a culture of continuous improvement",
+        "description": "I am a Master in Software Engineering, specialized in the development and architecture of scalable technological solutions. I have solid experience building robust end-to-end applications, leading teams under agile methodologies such as Scrum, and promoting a culture of continuous improvement",
         "summaryTitle": "Professional Summary",
-        "summaryText": "I integrate Artificial Intelligence tools to optimize the development cycle, automate processes, and enhance technical decision-making. I work under engineering best practices, applying SOLID principles, Clean Architecture, and a constant focus on quality, security, and performance. I am characterized by a strong results orientation and the ability to convert business needs into efficient and sustainable digital products.",
+        "summaryText": "I am a Master in Software Engineering, specialized in the development and architecture of scalable technological solutions. I have solid experience building robust end-to-end applications, leading teams under agile methodologies such as Scrum, and promoting a culture of continuous improvement. I integrate Artificial Intelligence tools to optimize the development cycle, automate processes, and enhance technical decision-making. I work under engineering best practices, applying SOLID principles, Clean Architecture, and a constant focus on quality, security, and performance. I am characterized by a strong results orientation and the ability to convert business needs into efficient and sustainable digital products.\n\nSpecialties and Strengths:\n• Architecture & Full-Stack Development: Angular, ReactJS, NextJS, React Native, .NET Core, Python (Django, FastAPI), Java (Spring Boot).\n• Cloud & DevOps: AWS, Azure, Firebase, Docker, Kubernetes.\n• Security & Authentication: Keycloak, JWT, OAuth 2.0, REST APIs.\n• Databases: PostgreSQL, SQL Server, Oracle (PL/SQL), Redis.\n• Analytics & Data: Pandas, NumPy, Power BI.",
         "strengthsTitle": "Key Strengths",
         "strength1Title": "Clean & Hexagonal Architecture",
         "strength1Text": "Applying SOLID principles and architectural patterns for maintainable code",
@@ -38,6 +38,8 @@
         "strength4Text": "Integrating AI tools to optimize development cycles and decisions",
         "strength5Title": "Agile Leadership",
         "strength5Text": "Leading teams with Scrum methodology and continuous improvement",
+        "strength6Title": "Security & REST APIs",
+        "strength6Text": "Implementing JWT authentication, OAuth 2.0, and secure RESTful APIs",
         "technologiesTitle": "Featured Technologies",
         "techFrontend": "Frontend",
         "techBackend": "Backend",
@@ -193,7 +195,7 @@
         "coffeeDesc": "I relish one or two cups of hot coffee every day, whether morning or afternoon"
     },
     "footer": {
-        "description": "Master in Software Engineering with 10+ years of experience building scalable solutions. Specialized in full-stack development, cloud architecture, and DevOps.",
+        "description": "Master in Software Engineering with 5+ years of experience building scalable solutions. Specialized in full-stack development, cloud architecture, and DevOps.",
         "freakjazz": "FreakJazz",
         "legal": "Legal",
         "contact": "Contact",
@@ -202,6 +204,6 @@
         "terms": "Terms and condition",
         "privacy": "Privacy policy",
         "email": "jazzrb2307@gmail.com",
-        "allRights": "All rights reserved"
+        "allRights": "All rights reserved | 2026 | Developed by FreakJazz"
     }
 }

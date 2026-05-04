@@ -24,9 +24,9 @@
         "subtitle": "Senior Software Engineer | .NET Core, Python, React | Microservices | Cloud | Clean Architecture | APIs",
         "cta": "Contrátame",
         "ctaProjects": "Ver Proyectos",
-        "description": "Máster en Ingeniería de Software especializada en el desarrollo y arquitectura de soluciones tecnológicas escalables. Sólida experiencia construyendo aplicaciones robustas end-to-end, liderando equipos bajo metodologías ágiles como Scrum y promoviendo una cultura de mejora continua",
+        "description": "Soy Máster en Ingeniería de Software, especializada en el desarrollo y arquitectura de soluciones tecnológicas escalables. Cuento con sólida experiencia construyendo aplicaciones robustas end-to-end, liderando equipos bajo metodologías ágiles como Scrum y promoviendo una cultura de mejora continua",
         "summaryTitle": "Resumen Profesional",
-        "summaryText": "Integro herramientas de Inteligencia Artificial para optimizar el ciclo de desarrollo, automatizar procesos y potenciar la toma de decisiones técnicas. Trabajo bajo buenas prácticas de ingeniería, aplicando principios SOLID, Clean Architecture y un enfoque constante en calidad, seguridad y rendimiento. Me caracterizo por una fuerte orientación a resultados y la capacidad de convertir necesidades de negocio en productos digitales eficientes y sostenibles.",
+        "summaryText": "Soy Máster en Ingeniería de Software, especializada en el desarrollo y arquitectura de soluciones tecnológicas escalables. Cuento con sólida experiencia construyendo aplicaciones robustas end-to-end, liderando equipos bajo metodologías ágiles como Scrum y promoviendo una cultura de mejora continua. Integro herramientas de Inteligencia Artificial para optimizar el ciclo de desarrollo, automatizar procesos y potenciar la toma de decisiones técnicas. Trabajo bajo buenas prácticas de ingeniería, aplicando principios SOLID, Clean Architecture y un enfoque constante en calidad, seguridad y rendimiento. Me caracterizo por una fuerte orientación a resultados y la capacidad de convertir necesidades de negocio en productos digitales eficientes y sostenibles.\n\nEspecialidades y Fortalezas:\n• Arquitectura & Desarrollo Full-Stack: Angular, ReactJS, NextJS, React Native, .NET Core, Python (Django, FastAPI), Java (Spring Boot).\n• Cloud & DevOps: AWS, Azure, Firebase, Docker, Kubernetes.\n• Seguridad & Autenticación: Keycloak, JWT, OAuth 2.0, APIs REST.\n• Bases de datos: PostgreSQL, SQL Server, Oracle (PL/SQL), Redis.\n• Analítica & Datos: Pandas, NumPy, Power BI.",
         "strengthsTitle": "Fortalezas Clave",
         "strength1Title": "Arquitectura Limpia y Hexagonal",
         "strength1Text": "Aplicando principios SOLID y patrones arquitectónicos para código mantenible",
@@ -38,6 +38,8 @@
         "strength4Text": "Integrando herramientas de IA para optimizar ciclos de desarrollo y decisiones",
         "strength5Title": "Liderazgo Ágil",
         "strength5Text": "Liderando equipos con metodología Scrum y mejora continua",
+        "strength6Title": "Seguridad & APIs REST",
+        "strength6Text": "Implementación de autenticación JWT, OAuth 2.0 y APIs RESTful seguras",
         "technologiesTitle": "Tecnologías Destacadas",
         "techFrontend": "Frontend",
         "techBackend": "Backend",
@@ -193,7 +195,7 @@
         "coffeeDesc": "Disfruto una o dos tazas de café caliente cada día, ya sea por la mañana o la tarde"
     },
     "footer": {
-        "description": "Máster en Ingeniería de Software con más de 10 años de experiencia construyendo soluciones escalables. Especializada en desarrollo full-stack, arquitectura en la nube y DevOps.",
+        "description": "Máster en Ingeniería de Software con más de 5 años de experiencia construyendo soluciones escalables. Especializada en desarrollo full-stack, arquitectura en la nube y DevOps.",
         "freakjazz": "FreakJazz",
         "legal": "Legal",
         "contact": "Contacto",
@@ -202,6 +204,6 @@
         "terms": "Términos y condiciones",
         "privacy": "Política de privacidad",
         "email": "jazzrb2307@gmail.com",
-        "allRights": "Todos los derechos reservados"
+        "allRights": "Todos los derechos reservados | 2026 | Desarrollado por FreakJazz"
     }
 }

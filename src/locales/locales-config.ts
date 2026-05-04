@@ -43,9 +43,9 @@ export const allLangs: Record<string, LangValue> = {
     label: 'Español',
     value: 'es',
     systemValue: esESCore,
-    icon: 'flagpack:es',
-    countryCode: 'ES',
-    numberFormat: { code: 'es-ES', currency: 'EUR' },
+    icon: 'flagpack:ec',
+    countryCode: 'EC',
+    numberFormat: { code: 'es-EC', currency: 'USD' },
   },
 };
 

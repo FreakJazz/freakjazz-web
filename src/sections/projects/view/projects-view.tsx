@@ -1,8 +1,9 @@
+import { varAlpha } from 'minimal-shared/utils';
+
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
-import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
 import { useTranslate } from 'src/locales';
@@ -17,56 +18,44 @@ import { ProjectCard } from '../project-card';
 // TODO: Replace with your actual GitHub projects
 const projects = [
   {
-    title: 'Project Name 1',
-    company: 'Company Name',
-    period: '2024 - Present',
+    title: 'E-Commerce Platform',
     description:
-      'Brief description of your project. What problem does it solve? What technologies did you use?',
-    technologies: ['React', 'TypeScript', 'Node.js'],
-    icon: 'solar:code-bold-duotone',
-    color: '#078DEE',
-    achievements: [
-      'Key achievement or feature 1',
-      'Key achievement or feature 2',
-      'Key achievement or feature 3',
-    ],
+      'Full-stack e-commerce solution with real-time inventory management, payment gateway integration, and advanced analytics. Built with microservices architecture for scalability.',
+    technologies: ['React', 'TypeScript', '.NET Core', 'PostgreSQL', 'Redis', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
+    githubUrl: 'https://github.com/FreakJazz',
+    demoUrl: 'https://example.com',
   },
   {
-    title: 'Project Name 2',
-    company: 'Company Name',
-    period: '2023 - 2024',
+    title: 'Task Management System',
     description:
-      'Brief description of your project. What problem does it solve? What technologies did you use?',
-    technologies: ['Python', 'Django', 'PostgreSQL'],
-    icon: 'solar:programming-bold-duotone',
-    color: '#00AB55',
-    achievements: [
-      'Key achievement or feature 1',
-      'Key achievement or feature 2',
-      'Key achievement or feature 3',
-    ],
+      'Collaborative project management tool with Kanban boards, real-time updates, team chat, and advanced reporting. Supports agile methodologies and sprint planning.',
+    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Socket.io', 'AWS'],
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
+    githubUrl: 'https://github.com/FreakJazz',
   },
   {
-    title: 'Project Name 3',
-    company: 'Company Name',
-    period: '2022 - 2023',
+    title: 'Healthcare Management',
     description:
-      'Brief description of your project. What problem does it solve? What technologies did you use?',
-    technologies: ['Angular', 'Java', 'Spring Boot'],
-    icon: 'solar:widget-bold-duotone',
-    color: '#FF9800',
-    achievements: [
-      'Key achievement or feature 1',
-      'Key achievement or feature 2',
-      'Key achievement or feature 3',
-    ],
+      'Hospital management system with patient records, appointment scheduling, telemedicine integration, and electronic prescriptions. HIPAA compliant with end-to-end encryption.',
+    technologies: ['Angular', 'Python', 'Django', 'PostgreSQL', 'Azure'],
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    githubUrl: 'https://github.com/FreakJazz',
+  },
+  {
+    title: 'Financial Analytics Dashboard',
+    description:
+      'Real-time financial analytics platform with interactive charts, predictive analytics using machine learning, and automated reporting for investment decisions.',
+    technologies: ['React', 'Python', 'FastAPI', 'TensorFlow', 'Kubernetes'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    githubUrl: 'https://github.com/FreakJazz',
+    demoUrl: 'https://example.com',
   },
 ];
 
 // ----------------------------------------------------------------------
 
 export function ProjectsView() {
-  const theme = useTheme();
   const pageProgress = useScrollProgress();
   const { t } = useTranslate();
 
@@ -82,14 +71,24 @@ export function ProjectsView() {
 
       {/* Hero Section */}
       <Box
-        sx={{
-          py: { xs: 15, md: 20 },
-          minHeight: '60vh',
-          display: 'flex',
-          alignItems: 'center',
-          background: `linear-gradient(135deg, ${theme.palette.primary.darker} 0%, ${theme.palette.primary.main} 100%)`,
-          color: 'white',
-        }}
+        sx={[
+          (thm) => ({
+            ...thm.mixins.bgGradient({
+              images: [
+                `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)})`,
+                'url(https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2FWhatsApp%20Image%202026-05-04%20at%2015.43.02.jpeg?alt=media&token=a28f82e3-3c0d-4007-b87f-3d16ba7a77d8)',
+              ],
+            }),
+            py: { xs: 15, md: 20 },
+            minHeight: '60vh',
+            display: 'flex',
+            alignItems: 'center',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            color: 'white',
+            position: 'relative',
+          }),
+        ]}
       >
         <Container>
           <Stack spacing={3} alignItems="center" textAlign="center">

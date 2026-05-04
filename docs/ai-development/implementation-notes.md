@@ -288,8 +288,8 @@ Successfully completed **8 major enhancements** transforming the portfolio into 
 
   **Hero Section:**
   - Name: "Jazmin Rodriguez"
-  - Title: "Senior Full Stack Architect"
-  - Description: 10+ years experience in enterprise architecture
+  - Title: "Senior Full Stack Developer"
+  - Description: 5+ years experience in enterprise architecture
   - Two CTAs: "Hire Me" (Contact) / "View Projects" (anchor link)
   - Gradient background (cyan theme)
   - Responsive typography (3rem mobile / 5rem desktop)

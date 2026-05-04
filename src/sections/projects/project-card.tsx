@@ -2,7 +2,10 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import { Iconify } from 'src/components/iconify';
@@ -13,105 +16,62 @@ type ProjectCardProps = {
   title: string;
   description: string;
   technologies: string[];
-  icon: string;
-  color: string;
-  period: string;
-  company: string;
-  achievements: string[];
+  image: string;
+  githubUrl: string;
+  demoUrl?: string;
 };
 
 export function ProjectCard({
   title,
   description,
   technologies,
-  icon,
-  color,
-  period,
-  company,
-  achievements,
+  image,
+  githubUrl,
+  demoUrl,
 }: ProjectCardProps) {
   const theme = useTheme();
 
   return (
     <Card
       sx={{
-        p: 3,
         height: '100%',
-        bgcolor: alpha(theme.palette.grey[900], 0.02),
-        border: `1px solid ${alpha(theme.palette.grey[500], 0.12)}`,
+        display: 'flex',
+        flexDirection: 'column',
         transition: 'all 0.3s',
         '&:hover': {
-          bgcolor: alpha(color, 0.04),
-          border: `1px solid ${alpha(color, 0.24)}`,
           transform: 'translateY(-8px)',
-          boxShadow: theme.shadows[12],
+          boxShadow: theme.shadows[20],
         },
       }}
     >
-      <Stack spacing={2.5}>
-        {/* Header */}
-        <Stack direction="row" alignItems="flex-start" spacing={2}>
-          <Box
-            sx={{
-              width: 56,
-              height: 56,
-              borderRadius: 2,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              bgcolor: alpha(color, 0.12),
-              flexShrink: 0,
-            }}
-          >
-            <Iconify icon={icon as any} width={32} sx={{ color }} />
-          </Box>
+      {/* Project Image */}
+      <CardMedia
+        component="img"
+        height="240"
+        image={image}
+        alt={title}
+        sx={{
+          objectFit: 'cover',
+          bgcolor: 'grey.200',
+        }}
+      />
 
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="h5" sx={{ fontWeight: 600, mb: 0.5 }}>
-              {title}
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 500 }}>
-              {company}
-            </Typography>
-            <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-              {period}
-            </Typography>
-          </Box>
-        </Stack>
+      <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: 3 }}>
+        {/* Title */}
+        <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
+          {title}
+        </Typography>
 
         {/* Description */}
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography
+          variant="body2"
+          sx={{ color: 'text.secondary', mb: 2, flexGrow: 1, lineHeight: 1.7 }}
+        >
           {description}
         </Typography>
 
-        {/* Achievements */}
-        {achievements.length > 0 && (
-          <Box>
-            <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 600 }}>
-              Key Achievements:
-            </Typography>
-            <Stack spacing={1}>
-              {achievements.map((achievement, index) => (
-                <Box key={index} sx={{ display: 'flex', gap: 1 }}>
-                  <Iconify
-                    icon={'solar:check-circle-bold-duotone' as any}
-                    width={20}
-                    sx={{ color: 'success.main', flexShrink: 0, mt: 0.2 }}
-                  />
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {achievement}
-                  </Typography>
-                </Box>
-              ))}
-            </Stack>
-          </Box>
-        )}
-
         {/* Technologies */}
-        <Box>
-          <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 600 }}>
-            Technologies:
-          </Typography>
+        <Box sx={{ mb: 2 }}>
           <Stack direction="row" flexWrap="wrap" gap={1}>
             {technologies.map((tech) => (
               <Chip
@@ -119,18 +79,45 @@ export function ProjectCard({
                 label={tech}
                 size="small"
                 sx={{
-                  bgcolor: alpha(color, 0.08),
-                  color,
+                  bgcolor: alpha(theme.palette.primary.main, 0.08),
+                  color: 'primary.main',
                   fontWeight: 500,
+                  fontSize: '0.75rem',
                   '&:hover': {
-                    bgcolor: alpha(color, 0.16),
+                    bgcolor: alpha(theme.palette.primary.main, 0.16),
                   },
                 }}
               />
             ))}
           </Stack>
         </Box>
-      </Stack>
+
+        {/* Action Buttons */}
+        <Stack direction="row" spacing={1.5}>
+          <Button
+            variant="contained"
+            startIcon={<Iconify icon={'mdi:github' as any} />}
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ flex: 1 }}
+          >
+            GitHub
+          </Button>
+          {demoUrl && (
+            <Button
+              variant="outlined"
+              startIcon={<Iconify icon={'solar:link-bold-duotone' as any} />}
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ flex: 1 }}
+            >
+              Demo
+            </Button>
+          )}
+        </Stack>
+      </CardContent>
     </Card>
   );
 }
