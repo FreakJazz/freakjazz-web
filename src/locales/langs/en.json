@@ -36,7 +36,8 @@
         "error": "Error",
         "success": "Success",
         "downloadCV": "Download CV",
-        "profileRole": "Full Stack Developer"
+        "profileRole": "Full Stack Developer",
+        "hourlyRate": "$15-25/hour"
     },
     "home": {
         "welcome": "Jazmin Rodriguez",

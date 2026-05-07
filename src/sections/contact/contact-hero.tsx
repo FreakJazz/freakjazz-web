@@ -100,8 +100,4 @@ const CONTACTS = [
     label: 'Email',
     value: 'jazzrb2307@gmail.com',
   },
-  {
-    label: 'Phone',
-    value: '+593 98 355 1848',
-  },
 ];

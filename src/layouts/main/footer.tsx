@@ -43,13 +43,6 @@ export function Footer({
       ],
     },
     {
-      headline: t('footer.legal'),
-      children: [
-        { name: t('footer.terms'), href: '#' },
-        { name: t('footer.privacy'), href: '#' },
-      ],
-    },
-    {
       headline: t('footer.contact'),
       children: [{ name: t('footer.email'), href: `mailto:${t('footer.email')}` }],
     },

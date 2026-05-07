@@ -74,9 +74,8 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
   const { t, currentLang } = useTranslate();
   const [navState, setNavState] = useState<NavState>(2); // Start with full sidebar
 
-  const cvUrl = currentLang.value === 'es' 
-    ? '/assets/cv/jazmin-rodriguez-cv-es.pdf'
-    : '/assets/cv/jazmin-rodriguez-cv-en.pdf';
+  const cvUrl =
+    currentLang.value === 'es' ? import.meta.env.VITE_CV_URL_ES : import.meta.env.VITE_CV_URL_EN;
 
   const cycleNavState = () => {
     setNavState((prev) => ((prev + 1) % 3) as NavState);
@@ -187,6 +186,9 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                     <Typography variant="body2" color="text.secondary">
                       {t('common.profileRole')}
                     </Typography>
+                    <Typography variant="caption" color="primary.main" fontWeight={600}>
+                      {t('common.hourlyRate')}
+                    </Typography>
 
                     {/* Download CV Button */}
                     <Button
@@ -222,11 +224,7 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
             <Box sx={{ flex: 1, px: isIconsOnly ? 1 : 2, py: 3 }}>
               <Stack spacing={1}>
                 {data.map((list) => (
-                  <NavList
-                    key={list.title}
-                    data={list}
-                    iconsOnly={isIconsOnly}
-                  />
+                  <NavList key={list.title} data={list} iconsOnly={isIconsOnly} />
                 ))}
               </Stack>
             </Box>
@@ -238,7 +236,12 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                 borderTop: `1px dashed ${varAlpha(theme.vars.palette.grey['500Channel'], 0.2)}`,
               }}
             >
-              <Stack direction={isFull ? 'row' : 'column'} spacing={1} justifyContent="center">
+              <Stack
+                direction={isFull ? 'row' : 'column'}
+                spacing={1}
+                justifyContent="center"
+                alignItems="center"
+              >
                 <Tooltip title="Change theme">
                   <span>
                     <ThemeToggleButton sx={{ width: 40, height: 40 }} />

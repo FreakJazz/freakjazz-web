@@ -36,7 +36,8 @@
         "error": "Error",
         "success": "Éxito",
         "downloadCV": "Descargar CV",
-        "profileRole": "Desarrolladora Full Stack"
+        "profileRole": "Desarrolladora Full Stack",
+        "hourlyRate": "$15-25/hora"
     },
     "home": {
         "welcome": "Jazmin Rodriguez",
