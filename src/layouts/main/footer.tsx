@@ -1,21 +1,21 @@
 import type { Breakpoint } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import Divider from '@mui/material/Divider';
-import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
-import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
+import { paths } from 'src/routes/paths';
 
 import { useTranslate } from 'src/locales';
 
-import { Logo } from 'src/components/logo';
 import { Iconify } from 'src/components/iconify';
+import { AnimatedLogo } from 'src/components/logo';
 
 // ----------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ export function Footer({
           [theme.breakpoints.up(layoutQuery)]: { textAlign: 'unset' },
         })}
       >
-        <Logo />
+        <AnimatedLogo />
 
         <Grid
           container
@@ -179,7 +179,7 @@ export function HomeFooter({ sx, ...other }: FooterProps) {
       {...other}
     >
       <Container>
-        <Logo />
+        <AnimatedLogo />
         <Box sx={{ mt: 1, typography: 'caption', color: 'text.secondary' }}>
           © 2026 {t('footer.allRights')}
         </Box>
