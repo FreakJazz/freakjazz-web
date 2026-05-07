@@ -154,7 +154,7 @@ const ItemTitle = styled('span', { shouldForwardProp })<StyledState>(({ theme, i
   ...theme.typography.body2,
   fontWeight: theme.typography.fontWeightMedium,
   fontSize: iconsOnly ? theme.typography.pxToRem(10.5) : 'inherit',
-  textAlign: iconsOnly ? 'center' : 'left',
+  textAlign: 'center',
   lineHeight: iconsOnly ? 1.2 : 'inherit',
   whiteSpace: iconsOnly ? 'nowrap' : 'inherit',
   variants: [

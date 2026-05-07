@@ -196,6 +196,8 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                       size="small"
                       startIcon={<Iconify icon={'solar:download-bold-duotone' as any} />}
                       href={cvUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       download
                       sx={{ mt: 1, width: '100%' }}
                     >
