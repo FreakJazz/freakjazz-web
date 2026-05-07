@@ -8,8 +8,8 @@ import { useTranslate } from 'src/locales';
 import { varFade } from 'src/components/animate';
 import { SeoHead, ServiceSchema } from 'src/components/seo';
 
-import { QuoteFormDetailed } from '../quote-form-detailed';
 import { QuoteHero } from '../quote-hero';
+import { QuoteFormDetailed } from '../quote-form-detailed';
 
 // ----------------------------------------------------------------------
 

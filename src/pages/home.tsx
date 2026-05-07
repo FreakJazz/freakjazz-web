@@ -1,6 +1,6 @@
 import { useTranslate } from 'src/locales';
 
-import { AllSchemas, SeoHead } from 'src/components/seo';
+import { SeoHead, AllSchemas } from 'src/components/seo';
 
 import { HomeView } from 'src/sections/home/view';
 
