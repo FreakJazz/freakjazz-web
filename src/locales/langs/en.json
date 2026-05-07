@@ -1,4 +1,23 @@
 {
+    "seo": {
+        "keywords": "senior software engineer freelance, full stack developer Ecuador, .NET Python React developer, freelance developer available, software developer hourly rate, desarrolladora full stack Ecuador, AWS Azure cloud engineer, microservices architect",
+        "home": {
+            "title": "Jazmin Rodriguez | Senior Full Stack Developer Ecuador | $15-25/hr",
+            "description": "Senior Software Engineer with 5+ years experience. Specialized in .NET Core, Python, React, AWS. Available for freelance projects. Hourly rate: $15-25 USD. Ecuador."
+        },
+        "quote": {
+            "title": "Get a Quote | Hire Software Developer | Jazmin Rodriguez",
+            "description": "Request a project quote. Senior Full Stack Developer specialized in .NET, Python, React. Transparent hourly rate: $15-25 USD. Get a detailed estimate for your software project."
+        },
+        "contact": {
+            "title": "Contact Jazmin Rodriguez | Freelance Software Engineer",
+            "description": "Contact me to discuss your software development project. Expert in Full Stack development, microservices, cloud architecture. Available for consulting and development."
+        },
+        "about": {
+            "title": "About Jazmin Rodriguez | Senior Software Engineer Profile",
+            "description": "Master's in Software Engineering with 5+ years experience. Specialized in scalable solutions, clean architecture, and technical leadership. View my full professional profile."
+        }
+    },
     "common": {
         "home": "Home",
         "contact": "Contact Us",

@@ -1,4 +1,23 @@
 {
+    "seo": {
+        "keywords": "desarrolladora full stack Ecuador, senior software engineer freelance, desarrolladora .NET Python React, desarrolladora freelance disponible, tarifa por hora desarrollo software, full stack developer Ecuador, ingeniera cloud AWS Azure, arquitecta microservicios",
+        "home": {
+            "title": "Jazmin Rodriguez | Desarrolladora Full Stack Ecuador | $15-25/hr",
+            "description": "Ingeniera de Software Senior con 5+ años de experiencia. Especializada en .NET Core, Python, React, AWS. Disponible para proyectos freelance. Tarifa por hora: $15-25 USD. Ecuador."
+        },
+        "quote": {
+            "title": "Solicitar Cotización | Contratar Desarrolladora de Software | Jazmin Rodriguez",
+            "description": "Solicita una cotización de proyecto. Desarrolladora Full Stack Senior especializada en .NET, Python, React. Tarifa transparente: $15-25 USD/hora. Obtén un presupuesto detallado para tu proyecto de software."
+        },
+        "contact": {
+            "title": "Contactar Jazmin Rodriguez | Ingeniera de Software Freelance",
+            "description": "Contáctame para discutir tu proyecto de desarrollo de software. Experta en desarrollo Full Stack, microservicios, arquitectura cloud. Disponible para consultoría y desarrollo."
+        },
+        "about": {
+            "title": "Sobre Jazmin Rodriguez | Perfil Ingeniera de Software Senior",
+            "description": "Máster en Ingeniería de Software con 5+ años de experiencia. Especializada en soluciones escalables, arquitectura limpia y liderazgo técnico. Ver mi perfil profesional completo."
+        }
+    },
     "common": {
         "home": "Inicio",
         "contact": "Contacto",

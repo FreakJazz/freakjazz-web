@@ -1,10 +1,10 @@
-export { SeoHead, SEO_CONFIGS } from './seo-head';
 export {
-  FaqSchema,
   AllSchemas,
+  BreadcrumbSchema,
+  FaqSchema,
+  OrganizationSchema,
   PersonSchema,
   ServiceSchema,
   WebsiteSchema,
-  BreadcrumbSchema,
-  OrganizationSchema,
 } from './schema-markup';
+export { SeoHead } from './seo-head';

@@ -1,18 +1,24 @@
+import { useTranslate } from 'src/locales';
+
+import { AllSchemas, SeoHead } from 'src/components/seo';
+
 import { HomeView } from 'src/sections/home/view';
 
 // ----------------------------------------------------------------------
 
-const metadata = {
-  title: 'Jazmin Rodriguez | Senior Software Engineer',
-  description:
-    "Portfolio of Jazmin Rodriguez - Software Engineer with 5+ years experience in full-stack development, cloud architecture, and technical leadership. Master's in Software Engineering.",
-};
-
 export default function Page() {
+  const { t, currentLang } = useTranslate();
+
   return (
     <>
-      <title>{metadata.title}</title>
-      <meta name="description" content={metadata.description} />
+      <SeoHead
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
+        keywords={t('seo.keywords')}
+        type="profile"
+        lang={currentLang.value as 'en' | 'es'}
+      />
+      <AllSchemas />
 
       <HomeView />
     </>

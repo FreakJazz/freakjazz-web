@@ -16,6 +16,7 @@ interface SeoHeadProps {
   modifiedTime?: string;
   noindex?: boolean;
   nofollow?: boolean;
+  lang?: 'en' | 'es'; // Current language
 }
 
 // ============================================================================
@@ -47,6 +48,7 @@ export function SeoHead({
   modifiedTime,
   noindex = false,
   nofollow = false,
+  lang = 'en', // Default to English
 }: SeoHeadProps) {
   // Full title with site name
   const fullTitle = title ? `${title} | FreakJazz` : DEFAULT_TITLE;
@@ -59,15 +61,38 @@ export function SeoHead({
     ', '
   );
 
+  // Language and locale mapping
+  const localeMap = {
+    en: 'en_US',
+    es: 'es_EC',
+  };
+  const currentLocale = localeMap[lang];
+  const alternateLocale = lang === 'en' ? localeMap.es : localeMap.en;
+
+  // Generate hreflang URLs
+  const baseUrl = 'https://freakjazz.com';
+  const pathWithoutLang = canonicalUrl.replace(/\/(en|es)/, '');
+  const hreflangs = {
+    en: `${baseUrl}/en${pathWithoutLang === baseUrl ? '' : pathWithoutLang}`,
+    es: `${baseUrl}/es${pathWithoutLang === baseUrl ? '' : pathWithoutLang}`,
+    'x-default': baseUrl,
+  };
+
   return (
     <Helmet>
       {/* Basic Meta Tags */}
+      <html lang={lang} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
       <meta name="robots" content={robotsContent} />
       <link rel="canonical" href={canonicalUrl} />
+
+      {/* Hreflang Tags for Multilingual SEO */}
+      <link rel="alternate" hrefLang="en" href={hreflangs.en} />
+      <link rel="alternate" hrefLang="es" href={hreflangs.es} />
+      <link rel="alternate" hrefLang="x-default" href={hreflangs['x-default']} />
 
       {/* Google Search Console Verification */}
       {import.meta.env.VITE_GOOGLE_SITE_VERIFICATION && (
@@ -84,8 +109,8 @@ export function SeoHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content="FreakJazz" />
-      <meta property="og:locale" content="es_EC" />
-      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale" content={currentLocale} />
+      <meta property="og:locale:alternate" content={alternateLocale} />
 
       {/* Profile specific (if type is profile) */}
       {type === 'profile' && (
@@ -114,7 +139,7 @@ export function SeoHead({
       <meta name="twitter:creator" content="@freakjazz" />
 
       {/* Additional SEO Tags */}
-      <meta name="language" content="Spanish" />
+      <meta name="language" content={lang === 'es' ? 'Spanish' : 'English'} />
       <meta name="revisit-after" content="7 days" />
       <meta name="distribution" content="global" />
       <meta name="rating" content="general" />
@@ -136,44 +161,3 @@ export function SeoHead({
     </Helmet>
   );
 }
-
-// ============================================================================
-// Predefined SEO Configurations
-// ============================================================================
-
-export const SEO_CONFIGS = {
-  home: {
-    title: 'Jazmin Rodriguez | Senior Full Stack Developer Ecuador',
-    description: DEFAULT_DESCRIPTION,
-    keywords: DEFAULT_KEYWORDS,
-    type: 'profile' as const,
-  },
-
-  quote: {
-    title: 'Hire Jazmin Rodriguez | Freelance Developer | Get Quote',
-    description:
-      "Looking for a senior full stack developer? I'm available for your project. .NET, Python, React, AWS. Hourly rate: $15-25. Request a quote now.",
-    keywords:
-      'hire developer Ecuador, freelance developer quote, software development cost, developer hourly rate, .NET developer hire, React developer hire',
-    url: 'https://freakjazz.com/cotizacion',
-  },
-
-  about: {
-    title: 'About Jazmin Rodriguez | Senior Software Engineer',
-    description:
-      "Senior Software Engineer with Master's degree and 5+ years of experience. Expert in .NET Core, Python, React, microservices, and cloud architecture (AWS, Azure).",
-    keywords:
-      'software engineer Ecuador, full stack developer profile, .NET expert, Python developer, React specialist, cloud architect',
-    url: 'https://freakjazz.com/about-us',
-    type: 'profile' as const,
-  },
-
-  contact: {
-    title: 'Contact Jazmin Rodriguez | Available for Freelance Work',
-    description:
-      'Get in touch to discuss your project. Available for freelance development work. Quick response guaranteed. Ecuador-based, working with clients worldwide.',
-    keywords:
-      'contact developer, hire freelance developer, software developer contact, developer availability',
-    url: 'https://freakjazz.com/contact-us',
-  },
-} as const;
