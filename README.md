@@ -20,16 +20,15 @@ Modern web application built with React, TypeScript and Vite, based on the Minim
 - ⚛️ **React 19** - Latest UI framework features
 - 📘 **TypeScript** - Complete static typing
 - 🎨 **Material-UI v7** - Professional design system
-- 🔐 **Multi-Auth** - Support for JWT, Firebase, Supabase, Auth0, AWS Amplify
-- 🌐 **i18n** - Complete internationalization
-- 📊 **Data Grid** - Advanced tables with MUI X
-- 📅 **FullCalendar** - Integrated calendar system
-- 📝 **TipTap Editor** - Rich text editor
-- 🗺️ **Mapbox** - Map integration
+- � **SEO Optimized** - Google Tag Manager, Schema.org markup, sitemap, robots.txt
+- 🌐 **i18n** - Complete internationalization (English/Spanish)
+- 🔐 **JWT Auth** - Custom JWT authentication
 - 📱 **Responsive** - Complete adaptive design
 - 🎭 **Framer Motion** - Smooth animations
-- 🎯 **React Router** - Modern navigation
-- 📦 **Drag & Drop** - Draggable components with dnd-kit
+- 🎯 **React Router** - Modern navigation v7
+- 📧 **Email Service** - Integrated with Mailjet
+- 📦 **Drag & Drop** - Draggable components
+- 📊 **Form Validation** - React Hook Form + Zod
 
 ## 🛠️ Tech Stack
 
@@ -50,25 +49,26 @@ Modern web application built with React, TypeScript and Vite, based on the Minim
 ### Forms & Validation
 
 - **React Hook Form** 7.58.1
-- **Zod** 3.24.2 (schema validation)
+- **Zod** 3.25.67 (schema validation)
 
 ### Authentication
 
 - **JWT** (custom implementation)
-- **Firebase** 11.9.1
-- **Supabase** 2.49.8
-- **Auth0** 2.3.0
-- **AWS Amplify** 6.15.1
+- Token-based authentication
+- Route protection guards
 
-### Charts & Visualization
+### SEO & Analytics
 
-- **ApexCharts** 4.7.0
-- **React ApexCharts** 1.7.0
+- **Google Tag Manager** - GTM integration
+- **React Helmet Async** 3.0.0 - Dynamic meta tags
+- **Schema.org** - Structured data (Person, Service, Organization)
+- **Sitemap.xml** - Search engine indexing
+- **Robots.txt** - Crawler directives
 
-### Editing & Content
+### Email & Communication
 
-- **TipTap** 2.22.0 (WYSIWYG editor)
-- **React Markdown** 10.1.0
+- **Mailjet** - Email service integration
+- **Vercel Functions** - Serverless API endpoints
 
 ### Utilities
 
@@ -105,7 +105,10 @@ freakjazz-web/
 │   │   ├── illustrations/            # Illustrations
 │   │   └── images/                   # General images
 │   ├── fonts/                        # Custom fonts
-│   └── logo/                         # Application logos
+│   ├── logo/                         # Application logos
+│   ├── sitemap.xml                   # SEO sitemap
+│   ├── robots.txt                    # Crawler directives
+│   └── favicon.ico                   # Site favicon
 │
 └── 📁 src/                           # Source code
     ├── 📄 main.tsx                   # React entry point
@@ -153,16 +156,11 @@ freakjazz-web/
     │
     ├── 📁 components/                # Reusable components
     │   ├── animate/                  # Animated components
-    │   ├── carousel/                 # Carousels (Embla)
-    │   ├── chart/                    # Charts (ApexCharts)
     │   ├── color-utils/              # Color utilities
     │   ├── country-select/           # Country selector
     │   ├── custom-breadcrumbs/       # Custom breadcrumbs
-    │   ├── custom-data-grid/         # Custom Data Grid
-    │   ├── custom-date-range-picker/ # Date range picker
     │   ├── custom-dialog/            # Custom dialogs
     │   ├── custom-popover/           # Custom popovers
-    │   ├── editor/                   # TipTap editor
     │   ├── empty-content/            # Empty state
     │   ├── file-thumbnail/           # File thumbnails
     │   ├── filters-result/           # Filter results
@@ -171,20 +169,15 @@ freakjazz-web/
     │   ├── iconify/                  # Iconify wrapper
     │   ├── image/                    # Optimized image component
     │   ├── label/                    # Custom labels
-    │   ├── lightbox/                 # Image lightbox
     │   ├── loading-screen/           # Loading screen
     │   ├── logo/                     # Logo component
-    │   ├── map/                      # Mapbox integration
-    │   ├── markdown/                 # Markdown renderer
-    │   ├── mega-menu/                # Mega menu
     │   ├── nav-basic/                # Basic navigation
     │   ├── nav-section/              # Navigation sections
     │   ├── number-input/             # Number input
-    │   ├── organizational-chart/     # Organizational chart
-    │   ├── phone-input/              # Phone input
     │   ├── progress-bar/             # Progress bar
     │   ├── scrollbar/                # Custom scrollbar
     │   ├── search-not-found/         # Search not found
+    │   ├── seo/                      # SEO components (SeoHead, Schema markup)
     │   ├── settings/                 # Settings panel
     │   ├── snackbar/                 # Notifications
     │   ├── svg-color/                # SVG with color
@@ -207,8 +200,8 @@ freakjazz-web/
     │
     ├── 📁 lib/                       # Library configurations
     │   ├── axios.ts                  # Axios configuration
-    │   ├── firebase.ts               # Firebase configuration
-    │   └── supabase.ts               # Supabase configuration
+    │   ├── google-tag-manager.ts     # GTM integration
+    │   └── google-analytics.ts       # GA4 configuration
     │
     ├── 📁 locales/                   # Internationalization
     │   ├── i18n-provider.tsx         # i18n provider
@@ -390,31 +383,21 @@ VITE_SERVER_URL=https://api.yourserver.com
 # Assets
 VITE_ASSETS_DIR=https://cdn.yourserver.com
 
-# Mapbox
-VITE_MAPBOX_API_KEY=your_mapbox_key
+# Google Services
+VITE_GTM_ID=GTM-XXXXXXX                    # Google Tag Manager ID
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX        # Google Analytics 4 Measurement ID
+VITE_GOOGLE_SITE_VERIFICATION=xxxxx        # Google Search Console verification
 
-# Firebase
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your-app.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your-project-id
-VITE_FIREBASE_STORAGE_BUCKET=your-app.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
-VITE_FIREBASE_APPID=1:123456789:web:abcdef
-VITE_FIREBASE_MEASUREMENT_ID=G-ABCDEF123
+# CV Downloads (Firebase Storage or CDN)
+VITE_CV_URL_ES=https://your-cdn.com/cv-es.pdf
+VITE_CV_URL_EN=https://your-cdn.com/cv-en.pdf
 
-# AWS Amplify
-VITE_AWS_AMPLIFY_USER_POOL_ID=us-east-1_XXXXXXXX
-VITE_AWS_AMPLIFY_USER_POOL_WEB_CLIENT_ID=xxxxxxxxx
-VITE_AWS_AMPLIFY_REGION=us-east-1
-
-# Auth0
-VITE_AUTH0_CLIENT_ID=your_client_id
-VITE_AUTH0_DOMAIN=your-domain.auth0.com
-VITE_AUTH0_CALLBACK_URL=http://localhost:8080/auth/callback
-
-# Supabase
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your_anon_key
+# Email Service (Mailjet)
+MAILJET_API_KEY=your_mailjet_api_key
+MAILJET_API_SECRET=your_mailjet_secret
+MAILJET_FROM_EMAIL=noreply@yoursite.com
+MAILJET_FROM_NAME=Your Name
+MAILJET_TO_EMAIL=your-email@example.com
 ```
 
 ### Global Configuration
@@ -438,43 +421,23 @@ export const CONFIG: ConfigValue = {
 
 ## 🔐 Authentication
 
-The project supports multiple authentication methods:
+The project uses JWT-based authentication:
 
-### Available Methods
+### Implementation
 
-1. **JWT** (default)
+- **JWT Tokens** - Secure token-based authentication
+- **Auth Guards** - Route protection with AuthGuard component
+- **Context Provider** - Authentication state management
+- **Login/Register** - Complete authentication flows
 
-   - Custom implementation with tokens
-   - Own backend required
-
-2. **Firebase Authentication**
-
-   - Email/Password
-   - Google, Facebook, Twitter
-   - Configure in `src/lib/firebase.ts`
-
-3. **Supabase Auth**
-
-   - Complete auth with database
-   - Configure in `src/lib/supabase.ts`
-
-4. **Auth0**
-
-   - OAuth 2.0
-   - Single Sign-On (SSO)
-
-5. **AWS Amplify**
-   - Cognito User Pools
-   - Identity federation
-
-### Change Authentication Method
+### Configuration
 
 In `src/global-config.ts`:
 
 ```typescript
 auth: {
-  method: 'firebase', // Change here
-  skip: false,        // true for development without auth
+  method: 'jwt',
+  skip: false,        // true to skip auth in development
   redirectPath: paths.dashboard.root,
 }
 ```
@@ -494,6 +457,55 @@ auth: {
   children: [...],
 }
 ```
+
+## 🔍 SEO & Analytics
+
+### Google Tag Manager
+
+Integrated GTM for centralized analytics and tracking:
+
+```typescript
+// Initialized in src/app.tsx
+import { loadGoogleTagManager } from 'src/lib/google-tag-manager';
+
+useEffect(() => {
+  loadGoogleTagManager();
+}, []);
+```
+
+### SEO Components
+
+**SeoHead Component** - Dynamic meta tags with multilingual support:
+
+```typescript
+import { SeoHead } from 'src/components/seo';
+
+<SeoHead
+  title="Page Title"
+  description="Page description"
+  keywords="keyword1, keyword2"
+  lang="en" // or "es" for Spanish
+/>
+```
+
+**Schema Markup** - Structured data for rich search results:
+
+```typescript
+import { PersonSchema, ServiceSchema, AllSchemas } from 'src/components/seo';
+
+<AllSchemas /> // Complete schema markup
+```
+
+### Sitemap & Robots
+
+- **sitemap.xml** - Located in `/public/sitemap.xml`
+- **robots.txt** - Located in `/public/robots.txt`
+
+### Multilingual SEO
+
+- **Hreflang tags** - Automatic for en/es languages
+- **Dynamic og:locale** - en_US / es_EC
+- **Translated content** - SEO translations in locales files
 
 ## 🎨 Components
 
@@ -606,13 +618,102 @@ yarn build
 - **Naming**: camelCase for variables, PascalCase for components
 - **Imports**: use `src/` alias for absolute imports
 
+## � Recent Changes & Improvements
+
+### SEO Implementation (May 2026)
+
+- ✅ **Google Tag Manager** integration (GTM-5PF9FPTK)
+- ✅ **SEO Components**: SeoHead with multilingual support, Schema.org markup
+- ✅ **Sitemap & Robots**: Complete SEO files for search engines
+- ✅ **Hreflang Tags**: Automatic multilingual SEO (en/es)
+- ✅ **Google Search Console**: Verification code implemented
+- ✅ **Dynamic Meta Tags**: Per-page SEO with translations
+
+### UI/UX Enhancements
+
+- ✅ **Navigation Alignment**: Centered menu items in desktop/mobile
+- ✅ **CV Downloads**: Open in new tab with proper security attributes
+- ✅ **Footer Cleanup**: Removed terms/conditions (legal pages not applicable)
+- ✅ **Contact Privacy**: Removed phone number display
+- ✅ **Hourly Rate Display**: Transparent pricing ($15-25/hour)
+
+### Email Service
+
+- ✅ **Mailjet Integration**: Quote request system via Vercel Functions
+- ✅ **API Endpoint**: `/api/quote` for form submissions
+
+## 🗑️ Removed Modules
+
+The following modules were removed from the original Minimal template to optimize the project:
+
+### Authentication Libraries (REMOVED)
+
+- ❌ **Firebase** (11.9.1) - Not needed, using only JWT
+- ❌ **Supabase** (2.49.8) - Not needed, using only JWT
+- ❌ **Auth0** (2.3.0) - Not needed, using only JWT
+- ❌ **AWS Amplify** (6.15.1) - Not needed, using only JWT
+
+### Visualization & Charts (REMOVED)
+
+- ❌ **ApexCharts** (4.7.0) - Removed from dependencies
+- ❌ **React ApexCharts** (1.7.0) - Removed from dependencies
+- ❌ Component: `components/chart/` - Removed directory
+
+### Mapping (REMOVED)
+
+- ❌ **Mapbox GL** - Removed map integration
+- ❌ Component: `components/map/` - Removed directory
+- ❌ Mock: `_mock/_map/` - Removed directory
+
+### Editors & Content (REMOVED)
+
+- ❌ **TipTap** (2.22.0) - WYSIWYG editor removed
+- ❌ **React Markdown** (10.1.0) - Markdown renderer removed
+- ❌ Component: `components/editor/` - Removed directory
+- ❌ Component: `components/markdown/` - Removed directory
+
+### Calendar & Scheduling (REMOVED)
+
+- ❌ **FullCalendar** - Calendar system removed
+- ❌ Component: `components/calendar/` - Removed directory
+
+### Data Grid (REMOVED)
+
+- ❌ **MUI X Data Grid** - Advanced tables removed
+- ❌ Component: `components/custom-data-grid/` - Removed directory
+
+### UI Components (REMOVED)
+
+- ❌ Component: `components/carousel/` - Carousels removed
+- ❌ Component: `components/lightbox/` - Image lightbox removed
+- ❌ Component: `components/organizational-chart/` - Org chart removed
+- ❌ Component: `components/phone-input/` - Phone input removed
+- ❌ Component: `components/custom-date-range-picker/` - Date picker removed
+- ❌ Component: `components/mega-menu/` - Mega menu removed
+
+### Why Were They Removed?
+
+1. **Simplified Stack**: Focus on core functionality without bloat
+2. **Performance**: Reduced bundle size significantly
+3. **Maintenance**: Fewer dependencies to maintain and update
+4. **Use Case**: These features weren't needed for the current project scope
+5. **SEO Priority**: Shifted focus to search optimization and performance
+
+### Current Focus
+
+- ✅ **SEO & Analytics**: Google services integration
+- ✅ **Performance**: Optimized build with essential packages only
+- ✅ **Internationalization**: Bilingual support (en/es)
+- ✅ **Professional UI**: Clean, fast, and accessible design
+- ✅ **Email Communication**: Serverless quote request system
+
 ## 📄 License
 
 [Specify license]
 
 ## 👥 Authors
 
-FreakJazz Team
+FreakJazz Team - Jazmin Rodriguez
 
 ## 🤝 Contributing
 
@@ -621,6 +722,7 @@ FreakJazz Team
 ---
 
 **Version**: 7.3.0  
-**Node**: >= 22  
-**Build**: Vite 6.3.3  
-**Framework**: React 19.1.0
+**Node**: >= 22.0.0  
+**Build**: Vite 6.3.5  
+**Framework**: React 19.1.0  
+**Last Updated**: May 7, 2026

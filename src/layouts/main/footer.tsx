@@ -40,6 +40,7 @@ export function Footer({
         { name: t('footer.home'), href: paths.home },
         { name: t('common.projects'), href: paths.projects },
         { name: t('footer.contactUs'), href: paths.contact },
+        { name: t('footer.github'), href: 'https://github.com/FreakJazz', external: true },
       ],
     },
     {
@@ -140,10 +141,11 @@ export function Footer({
                   {list.children.map((link) => (
                     <Link
                       key={link.name}
-                      component={RouterLink}
+                      component={link.external ? 'a' : RouterLink}
                       href={link.href}
                       color="inherit"
                       variant="body2"
+                      {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
                     >
                       {link.name}
                     </Link>
@@ -154,8 +156,8 @@ export function Footer({
           </Grid>
         </Grid>
 
-        <Typography variant="body2" sx={{ mt: 10 }}>
-          © {t('footer.allRights')}
+        <Typography variant="body2" sx={{ mt: 10, mb: { xs: 8, md: 0 } }}>
+          {t('footer.allRights')}
         </Typography>
       </Container>
     </FooterRoot>
@@ -180,8 +182,8 @@ export function HomeFooter({ sx, ...other }: FooterProps) {
     >
       <Container>
         <AnimatedLogo />
-        <Box sx={{ mt: 1, typography: 'caption', color: 'text.secondary' }}>
-          © 2026 {t('footer.allRights')}
+        <Box sx={{ mt: 1, mb: { xs: 8, md: 0 }, typography: 'caption', color: 'text.secondary' }}>
+          {t('footer.allRights')}
         </Box>
       </Container>
     </FooterRoot>
