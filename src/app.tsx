@@ -7,6 +7,7 @@ import { usePathname } from 'src/routes/hooks';
 
 import { I18nProvider } from 'src/locales';
 import { themeConfig, ThemeProvider } from 'src/theme';
+import { loadGoogleTagManager } from 'src/lib/google-tag-manager';
 
 import { Snackbar } from 'src/components/snackbar';
 import { ProgressBar } from 'src/components/progress-bar';
@@ -27,6 +28,11 @@ type AppProps = {
 
 export default function App({ children }: AppProps) {
   useScrollToTop();
+
+  // Initialize Google Tag Manager on mount
+  useEffect(() => {
+    loadGoogleTagManager();
+  }, []);
 
   return (
     <HelmetProvider>
