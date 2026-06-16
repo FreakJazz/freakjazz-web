@@ -1,6 +1,11 @@
 import type { IconifyJSON } from '@iconify/react';
 
 import { addCollection } from '@iconify/react';
+import mdiIcons from '@iconify/json/json/mdi.json';
+import solarIcons from '@iconify/json/json/solar.json';
+import deviconIcons from '@iconify/json/json/devicon.json';
+import gameIconsIcons from '@iconify/json/json/game-icons.json';
+import circleFlagsIcons from '@iconify/json/json/circle-flags.json';
 
 import allIcons from './icon-sets';
 
@@ -37,6 +42,24 @@ export function registerIcons() {
     return;
   }
 
+  // Register complete offline collections
+  if (solarIcons) {
+    addCollection(solarIcons as IconifyJSON);
+  }
+  if (mdiIcons) {
+    addCollection(mdiIcons as IconifyJSON);
+  }
+  if (deviconIcons) {
+    addCollection(deviconIcons as IconifyJSON);
+  }
+  if (circleFlagsIcons) {
+    addCollection(circleFlagsIcons as IconifyJSON);
+  }
+  if (gameIconsIcons) {
+    addCollection(gameIconsIcons as IconifyJSON);
+  }
+
+  // Register custom icon sets with proper sizing
   iconSets.forEach((iconSet) => {
     const iconSetConfig = {
       ...iconSet,

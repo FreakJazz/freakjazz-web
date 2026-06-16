@@ -43,7 +43,9 @@ const getDrawerWidth = (state: NavState) => {
   return NAV_WIDTH_FULL;
 };
 
-const StyledDrawer = styled(Drawer)<{ navState: NavState }>(({ theme, navState }) => ({
+const StyledDrawer = styled(Drawer, {
+  shouldForwardProp: (prop) => prop !== 'navState',
+})<{ navState: NavState }>(({ theme, navState }) => ({
   width: getDrawerWidth(navState),
   flexShrink: 0,
   '& .MuiDrawer-paper': {

@@ -69,7 +69,7 @@ export function HomeView() {
 
   const technologies = {
     frontend: ['React', 'TypeScript', 'Next.js', 'Vue.js', 'Material-UI'],
-    backend: ['.NET Core', 'Node.js', 'Python', 'Java', 'Microservices'],
+    backend: ['Go', 'Node.js', 'Python', 'Java', 'Microservices'],
     cloud: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD'],
     database: ['PostgreSQL', 'MongoDB', 'SQL Server', 'Redis', 'DynamoDB'],
   };
@@ -95,18 +95,23 @@ export function HomeView() {
       <Box
         sx={[
           (thm) => ({
-            ...thm.mixins.bgGradient({
-              images: [
-                `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)})`,
-                `url(${CONFIG.images.hero})`,
-              ],
-            }),
+            backgroundImage: {
+              xs: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.2)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.1)}), url(${CONFIG.images.heroMobile})`,
+              md: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)}), url(${CONFIG.images.hero})`,
+            },
+            backgroundSize: {
+              xs: '100% 100%',
+              md: 'cover',
+            },
+            backgroundPosition: {
+              xs: 'center center',
+              md: 'center',
+            },
+            backgroundRepeat: 'no-repeat',
             py: { xs: 15, md: 20 },
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
             color: 'white',
             position: 'relative',
           }),

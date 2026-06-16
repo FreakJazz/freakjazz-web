@@ -20,11 +20,11 @@ const languages = [
     color: '#239120',
   },
   {
-    name: '.NET Core',
-    level: 'Senior' as SkillLevel,
-    percentage: 95,
-    icon: 'devicon:dotnetcore',
-    color: '#512BD4',
+    name: 'Go',
+    level: 'Middle' as SkillLevel,
+    percentage: 75,
+    icon: 'devicon:go',
+    color: '#00ADD8',
   },
   {
     name: 'Python',

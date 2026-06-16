@@ -16,41 +16,92 @@ import { ProjectCard } from '../project-card';
 
 // ----------------------------------------------------------------------
 
-// TODO: Replace with your actual GitHub projects
+// Real GitHub projects
 const projects = [
   {
-    title: 'E-Commerce Platform',
+    title: 'Backbone - Clean Architecture & CQRS',
     description:
-      'Full-stack e-commerce solution with real-time inventory management, payment gateway integration, and advanced analytics. Built with microservices architecture for scalability.',
-    technologies: ['React', 'TypeScript', '.NET Core', 'PostgreSQL', 'Redis', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
-    githubUrl: 'https://github.com/FreakJazz',
-    demoUrl: 'https://example.com',
+      'Shared core library for Python and Go microservices. Provides infrastructure, specifications, repositories, event handling, logging with structured JSON, and standardized error codes. Includes dynamic filters, pagination, and response contracts for consistent API design.',
+    technologies: ['Python', 'Go', 'FastAPI', 'Flask', 'SQLAlchemy', 'Kafka', 'RabbitMQ'],
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
+    githubUrl: 'https://github.com/FreakJazz/backbone',
   },
   {
-    title: 'Task Management System',
+    title: 'Chatbot Web - Flask + Gemini AI',
     description:
-      'Collaborative project management tool with Kanban boards, real-time updates, team chat, and advanced reporting. Supports agile methodologies and sprint planning.',
-    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Socket.io', 'AWS'],
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
-    githubUrl: 'https://github.com/FreakJazz',
+      'Interactive web chatbot powered by Google Gemini AI. Built with Flask and Bootstrap 5, featuring real-time chat simulation, SQLite message persistence, conversation history management, and environment-based API configuration.',
+    technologies: ['Python', 'Flask', 'Google Gemini AI', 'SQLite', 'Bootstrap 5', 'HTML/CSS'],
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F4mk79h8zzvig307amaav.png',
+    githubUrl: 'https://github.com/FreakJazz/chatbot-flask',
   },
   {
-    title: 'Healthcare Management',
+    title: 'React Template - Next.js & MUI',
     description:
-      'Hospital management system with patient records, appointment scheduling, telemedicine integration, and electronic prescriptions. HIPAA compliant with end-to-end encryption.',
-    technologies: ['Angular', 'Python', 'Django', 'PostgreSQL', 'Azure'],
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
-    githubUrl: 'https://github.com/FreakJazz',
+      'Professional React template built with Next.js framework and Material-UI library. Includes Vite configuration for optimized development, TypeScript support, and reusable components for rapid application development.',
+    technologies: ['React', 'Next.js', 'TypeScript', 'MUI', 'Vite'],
+    image:
+      'https://cdn.prod.website-files.com/6365d860c7b7a7191055eb8a/68da31df35a45866e0463fde_best-react-component-libraries-cover.webp',
+    githubUrl: 'https://github.com/FreakJazz/React_template',
   },
   {
-    title: 'Financial Analytics Dashboard',
+    title: 'Valve Opening Control - Arduino IoT',
     description:
-      'Real-time financial analytics platform with interactive charts, predictive analytics using machine learning, and automated reporting for investment decisions.',
-    technologies: ['React', 'Python', 'FastAPI', 'TensorFlow', 'Kubernetes'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    githubUrl: 'https://github.com/FreakJazz',
-    demoUrl: 'https://example.com',
+      'Embedded IoT system for automatic valve control using Arduino and stepper motor. Features LCD display for real-time valve opening percentage, potentiometer calibration, gear-based mechanical design, and flow monitoring via oscilloscope.',
+    technologies: ['Arduino', 'C++', 'Embedded Systems', 'IoT', 'Electronics'],
+    image: 'https://github.com/FreakJazz/Valve-Opening-Control/raw/master/images/Result6.jpg',
+    githubUrl: 'https://github.com/FreakJazz/Valve-Opening-Control',
+  },
+  {
+    title: 'Pandas Data Processing Interface',
+    description:
+      'Web-based interface for advanced data manipulation and analysis using Pandas. Enables users to perform complex data transformations, filtering, and aggregations through an intuitive web UI.',
+    technologies: ['Python', 'Pandas', 'Flask', 'HTML/CSS', 'Data Analysis'],
+    image: 'https://liora.io/app/uploads/sites/9/2026/02/pandas-library-python-data-science.jpg',
+    githubUrl: 'https://github.com/FreakJazz/Pandas-web-interface',
+  },
+  {
+    title: 'PyQt Pandas Interface',
+    description:
+      'Desktop application for Pandas data manipulation using PyQt framework. Provides rich GUI for data processing, visualization, and export with professional desktop interface capabilities.',
+    technologies: ['Python', 'PyQt', 'Pandas', 'GUI', 'Data Analysis'],
+    image:
+      'https://github.com/FreakJazz/PyQt-Interface-with-PANDAS-.csv-files/raw/master/Images/interface.PNG',
+    githubUrl: 'https://github.com/FreakJazz/PANDAS-PyQt-Interface',
+  },
+  {
+    title: 'Neuron Diseases Analysis - ACAT',
+    description:
+      'Medical research application for analyzing neuron diseases using AI and machine learning. Processes clinical data to identify patterns and support diagnostic decision-making.',
+    technologies: ['Python', 'TensorFlow', 'Machine Learning', 'Data Science', 'NumPy'],
+    image:
+      'https://github.com/FreakJazz/COMMUNICATION-PROTOTYPE-FOR-PEOPLE-WITH-ENGINE-NEURON-DISEASES-ACAT-/raw/master/images/result2.PNG',
+    githubUrl: 'https://github.com/FreakJazz/NEURON-DISEASES-ACAT-',
+  },
+  {
+    title: 'Automatic Pet Food Dispenser',
+    description:
+      'IoT-based automated pet food dispenser with scheduled feeding, portion control, and remote monitoring. Built with embedded systems and mobile connectivity for pet care automation.',
+    technologies: ['Arduino', 'IoT', 'Python', 'Electronics', 'Embedded Systems'],
+    image: 'https://github.com/FreakJazz/Automatic-Pet-Food-Dispenser/raw/master/images/pet1.jpg',
+    githubUrl: 'https://github.com/FreakJazz/Automatic-Pet-Food-Dispenser',
+  },
+  {
+    title: 'ESP32 MQTT IoT Interface',
+    description:
+      'IoT connectivity solution using ESP32 microcontroller with MQTT protocol. Includes Python interface with Tkinter GUI for monitoring and controlling IoT devices in real-time.',
+    technologies: ['ESP32', 'MQTT', 'Python', 'Tkinter', 'IoT', 'C++'],
+    image:
+      'https://github.com/FreakJazz/ESP32-connection-with-MQTT-python-interface-tkinter/raw/master/images/Interface.JPG',
+    githubUrl: 'https://github.com/FreakJazz/ESP32-connection-with-MQTT-python-interface-tkinter',
+  },
+  {
+    title: 'Electrodes Data Application',
+    description:
+      'Specialized application for processing and analyzing electrode data. Includes signal processing, data visualization, and medical/scientific data management capabilities.',
+    technologies: ['Python', 'Signal Processing', 'Data Visualization', 'NumPy', 'SciPy'],
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    githubUrl: 'https://github.com/FreakJazz/electrodes_app',
   },
 ];
 

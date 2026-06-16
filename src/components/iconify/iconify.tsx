@@ -20,7 +20,16 @@ export type IconifyProps = React.ComponentProps<typeof IconRoot> &
 export function Iconify({ className, icon, width = 20, height, sx, ...other }: IconifyProps) {
   const uniqueId = useId();
 
-  if (!allIconNames.includes(icon)) {
+  // Check if icon is registered offline (collections loaded from @iconify/json)
+  const isOfflineIcon =
+    icon.startsWith('solar:') ||
+    icon.startsWith('mdi:') ||
+    icon.startsWith('devicon:') ||
+    icon.startsWith('circle-flags:') ||
+    icon.startsWith('game-icons:');
+  const isKnownIcon = allIconNames.includes(icon) || isOfflineIcon;
+
+  if (!isKnownIcon) {
     console.warn(
       [
         `Icon "${icon}" is currently loaded online, which may cause flickering effects.`,
