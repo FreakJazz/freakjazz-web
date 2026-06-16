@@ -96,18 +96,22 @@ export function HomeView() {
         sx={[
           (thm) => ({
             backgroundImage: {
-              xs: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.2)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.1)}), url(${CONFIG.images.heroMobile})`,
-              md: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)}), url(${CONFIG.images.hero})`,
+              xs: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)}), url("${CONFIG.images.heroMobile}")`,
+              md: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)}), url("${CONFIG.images.hero}")`,
             },
             backgroundSize: {
-              xs: '100% 100%',
+              xs: 'cover',
               md: 'cover',
             },
             backgroundPosition: {
               xs: 'center center',
-              md: 'center',
+              md: 'center center',
             },
             backgroundRepeat: 'no-repeat',
+            backgroundAttachment: {
+              xs: 'scroll',
+              md: 'scroll',
+            },
             py: { xs: 15, md: 20 },
             minHeight: '100vh',
             display: 'flex',
