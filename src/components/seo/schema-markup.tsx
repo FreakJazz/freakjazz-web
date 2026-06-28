@@ -9,9 +9,9 @@ export function PersonSchema() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Jazmin Rodriguez',
-    jobTitle: 'Senior Software Engineer',
+    jobTitle: 'Senior Full Stack Developer & Software Trainer',
     description:
-      'Senior Full Stack Developer with 5+ years of experience specializing in .NET Core, Python, React, and cloud infrastructure (AWS, Azure).',
+      'Senior Full Stack Developer with 5+ years of experience specializing in .NET Core, Python, React, and cloud infrastructure (AWS, Azure). Software development training and mentoring for teams and professionals.',
     url: 'https://freakjazz.com',
     image: 'https://freakjazz.com/profile-jazmin-rodriguez.jpg',
     email: 'contact@freakjazz.com',
@@ -42,6 +42,10 @@ export function PersonSchema() {
       'FastAPI',
       'Material-UI',
       'Tailwind CSS',
+      'Software Training',
+      'Developer Mentoring',
+      'Capacitación Desarrollo Software',
+      'Formación Programadores .NET',
     ],
     alumniOf: {
       '@type': 'EducationalOrganization',
@@ -160,6 +164,21 @@ export function ServiceSchema() {
             '@type': 'Service',
             name: 'Cloud Architecture',
             description: 'AWS and Azure cloud infrastructure design and implementation',
+          },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: '15-25',
+            priceCurrency: 'USD',
+            unitText: 'HOUR',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Capacitación en Desarrollo de Software',
+            description:
+              'Formación y capacitación en .NET Core, React, Python para equipos de desarrollo y profesionales. Cursos personalizados de programación full stack, arquitectura limpia y buenas prácticas.',
           },
           priceSpecification: {
             '@type': 'PriceSpecification',

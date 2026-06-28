@@ -1,11 +1,169 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#078DEE" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minimal UI Kit</title>
+
+    <!-- ===== SEO PRIMARIO ===== -->
+    <title>Jazmin Rodriguez | Desarrolladora Full Stack .NET Ecuador | Capacitación Desarrollo Software</title>
+    <meta name="title" content="Jazmin Rodriguez | Desarrolladora Full Stack .NET Ecuador | Capacitación Desarrollo Software" />
+    <meta name="description" content="Desarrolladora Full Stack Senior especializada en .NET Core, Python, React y AWS. Capacitación en desarrollo de software para equipos y profesionales. 5+ años de experiencia. Ecuador." />
+    <meta name="keywords" content="desarrolladora full stack .NET Ecuador, capacitación desarrollo software, cursos .NET Core, formación programación full stack, entrenamiento desarrolladores .NET, desarrolladora fullstack senior freelance, ingeniera de software Ecuador, mentor programación .NET React, desarrollo web Ecuador, microservicios .NET Core Python" />
+    <meta name="author" content="Jazmin Rodriguez" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="geo.region" content="EC" />
+    <meta name="geo.placename" content="Ecuador" />
+
+    <!-- ===== CANONICAL Y HREFLANG ===== -->
+    <link rel="canonical" href="https://freakjazz.com/" />
+    <link rel="alternate" hreflang="es" href="https://freakjazz.com/" />
+    <link rel="alternate" hreflang="en" href="https://freakjazz.com/en" />
+    <link rel="alternate" hreflang="x-default" href="https://freakjazz.com/" />
+
+    <!-- ===== OPEN GRAPH (Facebook, LinkedIn) ===== -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://freakjazz.com/" />
+    <meta property="og:title" content="Jazmin Rodriguez | Desarrolladora Full Stack .NET | Capacitación Software" />
+    <meta property="og:description" content="Desarrolladora Full Stack Senior en .NET Core, Python, React. Capacitación en desarrollo de software para equipos. 5+ años de experiencia. Ecuador." />
+    <meta property="og:image" content="https://freakjazz.com/og-image-developer.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="FreakJazz" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="profile:first_name" content="Jazmin" />
+    <meta property="profile:last_name" content="Rodriguez" />
+    <meta property="profile:username" content="freakjazz" />
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://freakjazz.com/" />
+    <meta name="twitter:title" content="Jazmin Rodriguez | Full Stack .NET Developer Ecuador" />
+    <meta name="twitter:description" content="Desarrolladora Full Stack .NET, Python, React. Capacitación en desarrollo de software. Ecuador." />
+    <meta name="twitter:image" content="https://freakjazz.com/og-image-developer.jpg" />
+    <meta name="twitter:creator" content="@freakjazz" />
+
+    <!-- ===== SCHEMA JSON-LD ESTÁTICO (Google lo lee SIN JavaScript) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jazmin Rodriguez",
+      "jobTitle": "Senior Full Stack Developer & Software Trainer",
+      "description": "Desarrolladora Full Stack Senior con 5+ años de experiencia en .NET Core, Python, React y AWS. Especialista en capacitación y formación de desarrolladores de software.",
+      "url": "https://freakjazz.com",
+      "image": "https://freakjazz.com/og-image-developer.jpg",
+      "email": "contact@freakjazz.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EC",
+        "addressLocality": "Ecuador"
+      },
+      "knowsAbout": [
+        ".NET Core", ".NET Developer", "Python", "React", "Next.js", "TypeScript",
+        "AWS", "Azure", "Microservices", "Docker", "Kubernetes", "PostgreSQL",
+        "Clean Architecture", "Full Stack Development", "Software Training",
+        "Capacitación Desarrollo Software", "Formación Programadores", "Developer Mentoring"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Master en Ingeniería de Software"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full Stack Software Engineer & Trainer",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Ecuador"
+        },
+        "estimatedSalary": {
+          "@type": "MonetaryAmountDistribution",
+          "name": "Hourly Rate",
+          "currency": "USD",
+          "duration": "PT1H",
+          "minValue": 15,
+          "maxValue": 25
+        }
+      },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/jazmin-rodriguez",
+        "https://github.com/freakjazz"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Servicios de Desarrollo y Capacitación - Jazmin Rodriguez",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Desarrollo Full Stack .NET",
+            "description": "Desarrollo de aplicaciones web completas con .NET Core, Python, React y Next.js. Arquitectura limpia y microservicios.",
+            "provider": { "@type": "Person", "name": "Jazmin Rodriguez" },
+            "areaServed": "Worldwide",
+            "offers": {
+              "@type": "Offer",
+              "price": "15-25",
+              "priceCurrency": "USD",
+              "priceSpecification": { "@type": "PriceSpecification", "unitText": "HOUR" }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Capacitación en Desarrollo de Software",
+            "description": "Formación y capacitación en .NET Core, React, Python para equipos y profesionales. Cursos personalizados de programación full stack.",
+            "provider": { "@type": "Person", "name": "Jazmin Rodriguez" },
+            "areaServed": "Worldwide",
+            "offers": {
+              "@type": "Offer",
+              "price": "15-25",
+              "priceCurrency": "USD",
+              "priceSpecification": { "@type": "PriceSpecification", "unitText": "HOUR" }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Arquitectura Cloud y DevOps",
+            "description": "Diseño e implementación de infraestructura en AWS y Azure. Docker, Kubernetes y CI/CD.",
+            "provider": { "@type": "Person", "name": "Jazmin Rodriguez" },
+            "areaServed": "Worldwide"
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FreakJazz - Jazmin Rodriguez",
+      "url": "https://freakjazz.com",
+      "description": "Desarrolladora Full Stack .NET Senior y capacitadora en desarrollo de software. Ecuador.",
+      "inLanguage": ["es", "en"]
+    }
+    </script>
   </head>
 
   <body>
