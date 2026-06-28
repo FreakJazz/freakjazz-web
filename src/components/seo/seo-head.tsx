@@ -69,12 +69,11 @@ export function SeoHead({
   const currentLocale = localeMap[lang];
   const alternateLocale = lang === 'en' ? localeMap.es : localeMap.en;
 
-  // Generate hreflang URLs
+  // Hreflang: the site serves both languages from the same URL (language toggle)
   const baseUrl = 'https://freakjazz.com';
-  const pathWithoutLang = canonicalUrl.replace(/\/(en|es)/, '');
   const hreflangs = {
-    en: `${baseUrl}/en${pathWithoutLang === baseUrl ? '' : pathWithoutLang}`,
-    es: `${baseUrl}/es${pathWithoutLang === baseUrl ? '' : pathWithoutLang}`,
+    en: canonicalUrl || baseUrl,
+    es: canonicalUrl || baseUrl,
     'x-default': baseUrl,
   };
 

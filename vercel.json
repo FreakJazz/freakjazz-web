@@ -1,4 +1,10 @@
 {
+  "redirects": [
+    { "source": "/cotizacion", "destination": "/quote", "permanent": true },
+    { "source": "/about-us", "destination": "/", "permanent": true },
+    { "source": "/faqs", "destination": "/", "permanent": true },
+    { "source": "/pricing", "destination": "/quote", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

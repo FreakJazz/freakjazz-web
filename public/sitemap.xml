@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
+
   <!-- Home Page -->
   <url>
     <loc>https://freakjazz.com/</loc>
@@ -11,23 +11,23 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Quote/Contact Form (High Priority for SEO) -->
+
+  <!-- Quote / Cotización -->
   <url>
-    <loc>https://freakjazz.com/cotizacion</loc>
+    <loc>https://freakjazz.com/quote</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- About Us -->
+
+  <!-- Projects -->
   <url>
-    <loc>https://freakjazz.com/about-us</loc>
+    <loc>https://freakjazz.com/projects</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Contact -->
   <url>
     <loc>https://freakjazz.com/contact-us</loc>
@@ -35,24 +35,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- FAQs -->
-  <url>
-    <loc>https://freakjazz.com/faqs</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Pricing (if exists) -->
-  <url>
-    <loc>https://freakjazz.com/pricing</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Blog (if exists) -->
-  <!-- Add blog posts URLs here as they are created -->
-  
+
 </urlset>
