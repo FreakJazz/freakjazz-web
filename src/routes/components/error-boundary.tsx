@@ -6,8 +6,21 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 
 // ----------------------------------------------------------------------
 
+const CHUNK_RELOAD_KEY = 'chunk_reload_attempted';
+
 export function ErrorBoundary() {
   const error = useRouteError();
+
+  // Auto-reload once when a dynamic import chunk fails (happens after new deploys)
+  if (error instanceof TypeError && error.message.includes('Failed to fetch dynamically imported module')) {
+    const alreadyRetried = sessionStorage.getItem(CHUNK_RELOAD_KEY);
+    if (!alreadyRetried) {
+      sessionStorage.setItem(CHUNK_RELOAD_KEY, '1');
+      window.location.reload();
+      return null;
+    }
+    sessionStorage.removeItem(CHUNK_RELOAD_KEY);
+  }
 
   return (
     <>
