@@ -6,7 +6,7 @@ All code, variables, components, and comments MUST be in English.
 
 ---
 
-# 🧠 OBJECTIVE
+# OBJECTIVE
 
 Create a scalable portfolio website that combines:
 
@@ -18,7 +18,7 @@ Create a scalable portfolio website that combines:
 
 ---
 
-# 🏗️ ARCHITECTURE
+# ARCHITECTURE
 
 Follow strict separation:
 
@@ -31,7 +31,7 @@ Follow strict separation:
 
 ---
 
-# 📄 PAGES TO IMPLEMENT
+# PAGES TO IMPLEMENT
 
 ## 1. Home (/)
 
@@ -136,7 +136,7 @@ List all certifications from CV
 
 ---
 
-# 🤝 TRUST SECTION (IMPORTANT)
+# TRUST SECTION (IMPORTANT)
 
 Create a section:
 
@@ -150,7 +150,7 @@ Even if not explicit logos, represent:
 
 ---
 
-# 🧩 COMPONENTS
+# COMPONENTS
 
 - Navbar
 - Footer
@@ -164,7 +164,7 @@ Even if not explicit logos, represent:
 
 ---
 
-# 🎨 UX/UI
+# UX/UI
 
 - Modern, minimal, technical
 - Smooth animations (Framer Motion)
@@ -173,7 +173,7 @@ Even if not explicit logos, represent:
 
 ---
 
-# 🌍 I18N
+# I18N
 
 - English (default)
 - Spanish
@@ -182,7 +182,7 @@ All content from /data
 
 ---
 
-# 🧠 DATA-DRIVEN DESIGN
+# DATA-DRIVEN DESIGN
 
 All CV content must be structured in JSON:
 
@@ -193,7 +193,7 @@ All CV content must be structured in JSON:
 
 ---
 
-# ⚡ PERFORMANCE
+# PERFORMANCE
 
 - Lazy loading
 - Dynamic imports
@@ -201,7 +201,7 @@ All CV content must be structured in JSON:
 
 ---
 
-# 📌 OUTPUT
+# OUTPUT
 
 - Full project structure
 - Pages implemented
