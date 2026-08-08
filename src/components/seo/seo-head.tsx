@@ -29,7 +29,7 @@ const DEFAULT_DESCRIPTION =
 const DEFAULT_KEYWORDS =
   'desarrolladora full stack Ecuador, senior software engineer freelance, .NET Python React developer, freelance developer available, software developer hourly rate';
 const DEFAULT_IMAGE = 'https://freakjazz.com/og-image-developer.jpg';
-const DEFAULT_URL = 'https://freakjazz.com';
+const BASE_URL = 'https://freakjazz.com';
 const DEFAULT_AUTHOR = 'Jazmin Rodriguez';
 
 // ============================================================================
@@ -41,20 +41,21 @@ export function SeoHead({
   description = DEFAULT_DESCRIPTION,
   keywords = DEFAULT_KEYWORDS,
   image = DEFAULT_IMAGE,
-  url = DEFAULT_URL,
+  url,
   type = 'website',
   author = DEFAULT_AUTHOR,
   publishedTime,
   modifiedTime,
   noindex = false,
   nofollow = false,
-  lang = 'en', // Default to English
+  lang = 'en',
 }: SeoHeadProps) {
   // Full title with site name
   const fullTitle = title ? `${title} | FreakJazz` : DEFAULT_TITLE;
 
-  // Canonical URL
-  const canonicalUrl = url || DEFAULT_URL;
+  // Canonical URL: use provided url, or detect from current path, never hardcode homepage for all pages
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const canonicalUrl = url || `${BASE_URL}${currentPath === '/' ? '' : currentPath}`;
 
   // Robots meta
   const robotsContent = [noindex ? 'noindex' : 'index', nofollow ? 'nofollow' : 'follow'].join(
@@ -70,11 +71,10 @@ export function SeoHead({
   const alternateLocale = lang === 'en' ? localeMap.es : localeMap.en;
 
   // Hreflang: the site serves both languages from the same URL (language toggle)
-  const baseUrl = 'https://freakjazz.com';
   const hreflangs = {
-    en: canonicalUrl || baseUrl,
-    es: canonicalUrl || baseUrl,
-    'x-default': baseUrl,
+    en: canonicalUrl,
+    es: canonicalUrl,
+    'x-default': BASE_URL,
   };
 
   return (
