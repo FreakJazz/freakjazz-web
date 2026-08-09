@@ -3,7 +3,9 @@
     { "source": "/cotizacion", "destination": "/quote", "permanent": true },
     { "source": "/about-us", "destination": "/", "permanent": true },
     { "source": "/faqs", "destination": "/", "permanent": true },
-    { "source": "/pricing", "destination": "/quote", "permanent": true }
+    { "source": "/pricing", "destination": "/quote", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/es", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     {
