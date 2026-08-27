@@ -79,7 +79,7 @@ export function PersonSchema() {
         alternateName: 'en',
       },
     ],
-    sameAs: ['https://www.linkedin.com/in/jazmin-rodriguez', 'https://github.com/freakjazz'],
+    sameAs: ['https://www.linkedin.com/in/jazmin-rodriguez-bermeo/', 'https://github.com/freakjazz'],
   };
 
   return (
@@ -213,7 +213,7 @@ export function OrganizationSchema() {
       '@type': 'Person',
       name: 'Jazmin Rodriguez',
     },
-    sameAs: ['https://www.linkedin.com/in/jazmin-rodriguez', 'https://github.com/freakjazz'],
+    sameAs: ['https://www.linkedin.com/in/jazmin-rodriguez-bermeo/', 'https://github.com/freakjazz'],
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'contact@freakjazz.com',

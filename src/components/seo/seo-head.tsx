@@ -23,11 +23,11 @@ interface SeoHeadProps {
 // Default Values
 // ============================================================================
 
-const DEFAULT_TITLE = 'Jazmin Rodriguez | Senior Full Stack Developer Ecuador | $15-25/hr';
+const DEFAULT_TITLE = 'Jazmin Rodriguez | Desarrolladora Full Stack .NET Ecuador | Senior Software Engineer';
 const DEFAULT_DESCRIPTION =
-  'Senior Software Engineer with 5+ years experience. Specialized in .NET Core, Python, React, AWS. Available for freelance projects. Hourly rate: $15-25 USD. Ecuador.';
+  'Desarrolladora Full Stack Senior con 5+ años de experiencia. Especializada en .NET Core, Python, React y AWS. Disponible para proyectos freelance. Ecuador.';
 const DEFAULT_KEYWORDS =
-  'desarrolladora full stack Ecuador, senior software engineer freelance, .NET Python React developer, freelance developer available, software developer hourly rate';
+  'desarrolladora full stack .NET Ecuador, senior software engineer freelance Ecuador, contratar desarrolladora software, full stack developer Ecuador, .NET Core developer freelance, React developer Ecuador, Python developer Ecuador, ingeniera cloud AWS Azure';
 const DEFAULT_IMAGE = 'https://freakjazz.com/og-image-developer.jpg';
 const BASE_URL = 'https://freakjazz.com';
 const DEFAULT_AUTHOR = 'Jazmin Rodriguez';
