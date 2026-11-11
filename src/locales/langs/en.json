@@ -1,9 +1,9 @@
 {
     "seo": {
-        "keywords": "full stack .NET developer Ecuador, senior software engineer freelance, hire software developer Ecuador, .NET Core developer freelance, React developer Ecuador, Python developer Ecuador, AWS Azure cloud engineer, microservices architect .NET, freelance full stack developer, software engineer Ecuador",
+        "keywords": "senior software engineer, full stack developer .NET Python React, custom software development, software architecture microservices, AI software engineer, LLM RAG AI agents developer, LangChain LangGraph, fintech payment systems developer, hire software developer Ecuador, freelance software developer",
         "home": {
-            "title": "Jazmin Rodriguez | Full Stack .NET Developer Ecuador | Senior Software Engineer",
-            "description": "Senior Full Stack Developer with 5+ years experience. Specialized in .NET Core, Python, React and AWS. Available for freelance projects. Ecuador."
+            "title": "Jazmin Rodriguez | Senior Software Engineer | .NET, Python, AI",
+            "description": "Senior Software Engineer with 6+ years of experience. Full stack development, software architecture, microservices, generative AI, LLMs and AI agents. Based in Quito, Ecuador."
         },
         "quote": {
             "title": "Get a Quote | Hire Software Developer | Jazmin Rodriguez",
@@ -15,7 +15,7 @@
         },
         "about": {
             "title": "About Jazmin Rodriguez | Senior Software Engineer Profile",
-            "description": "Master's in Software Engineering with 5+ years experience. Specialized in scalable solutions, clean architecture, and technical leadership. View my full professional profile."
+            "description": "Master's in Software Engineering with 6+ years of experience. Software architecture, generative AI, financial platforms and technical leadership. View my full professional profile."
         }
     },
     "common": {
@@ -41,12 +41,12 @@
     },
     "home": {
         "welcome": "Jazmin Rodriguez",
-        "subtitle": "Senior Software Engineer | .NET Core, Python, React | Microservices | Cloud | Clean Architecture | APIs",
+        "subtitle": "Senior Software Engineer | .NET Core, Python, React | Generative AI & LLM Agents | Microservices | Cloud | Clean Architecture",
         "cta": "Hire Me",
         "ctaProjects": "View Projects",
         "description": "I am a Master in Software Engineering, specialized in the development and architecture of scalable technological solutions. I have solid experience building robust end-to-end applications, leading teams under agile methodologies such as Scrum, and promoting a culture of continuous improvement",
         "summaryTitle": "Professional Summary",
-        "summaryText": "I am a Master in Software Engineering, specialized in the development and architecture of scalable technological solutions. I have solid experience building robust end-to-end applications, leading teams under agile methodologies such as Scrum, and promoting a culture of continuous improvement. I integrate Artificial Intelligence tools to optimize the development cycle, automate processes, and enhance technical decision-making. I work under engineering best practices, applying SOLID principles, Clean Architecture, and a constant focus on quality, security, and performance. I am characterized by a strong results orientation and the ability to convert business needs into efficient and sustainable digital products.\n\nSpecialties and Strengths:\n• Architecture & Full-Stack Development: Angular, ReactJS, NextJS, React Native, Go, Python (Django, FastAPI), Java (Spring Boot).\n• Cloud & DevOps: AWS, Azure, Firebase, Docker, Kubernetes.\n• Security & Authentication: Keycloak, JWT, OAuth 2.0, REST APIs.\n• Databases: PostgreSQL, SQL Server, Oracle (PL/SQL), Redis.\n• Analytics & Data: Pandas, NumPy, Power BI.",
+        "summaryText": "I am a Master in Software Engineering, specialized in the development and architecture of scalable technological solutions. I have solid experience building robust end-to-end applications, leading teams under agile methodologies such as Scrum, and promoting a culture of continuous improvement. I design and integrate generative AI, LLM, RAG and AI agent solutions, plus AI algorithms for geolocation and geographic data analysis, using tools such as OpenAI API, LangChain, LangGraph and GitHub Copilot. I work under engineering best practices, applying SOLID principles, Clean Architecture, and a constant focus on quality, security, and performance. I am characterized by a strong results orientation and the ability to convert business needs into efficient and sustainable digital products.\n\nSpecialties and Strengths:\n• Architecture & Full-Stack Development: Angular, ReactJS, NextJS, React Native, Go, Python (Django, FastAPI), Java (Spring Boot).\n• Artificial Intelligence: OpenAI API, LangChain, LangGraph, LlamaIndex, RAG, AI Agents, PyTorch, Scikit-learn.\n• Architecture: Clean/Hexagonal, DDD, CQRS, Microservices, Kafka, Distributed Systems.\n• Cloud & DevOps: AWS, Azure, Firebase, Docker, Kubernetes.\n• Security & Authentication: Keycloak, JWT, OAuth 2.0, REST APIs.\n• Databases: PostgreSQL, SQL Server, Oracle (PL/SQL), Redis.\n• Analytics & Data: Pandas, NumPy, Power BI.",
         "strengthsTitle": "Key Strengths",
         "strength1Title": "Clean & Hexagonal Architecture",
         "strength1Text": "Applying SOLID principles and architectural patterns for maintainable code",
@@ -54,8 +54,8 @@
         "strength2Text": "Expert in Angular, React, NextJS, React Native, Go, Python, Java",
         "strength3Title": "Cloud & DevOps",
         "strength3Text": "AWS, Azure, Docker, Kubernetes with CI/CD automation",
-        "strength4Title": "AI-Driven Development",
-        "strength4Text": "Integrating AI tools to optimize development cycles and decisions",
+        "strength4Title": "Generative AI & LLM Engineering",
+        "strength4Text": "AI agents, RAG, LangChain, LangGraph and OpenAI API to automate processes and optimize development with GitHub Copilot",
         "strength5Title": "Agile Leadership",
         "strength5Text": "Leading teams with Scrum methodology and continuous improvement",
         "strength6Title": "Security & REST APIs",
@@ -76,7 +76,24 @@
     },
     "projects": {
         "title": "Projects",
-        "subtitle": "Showcasing impactful solutions across enterprise systems, logistics, cloud infrastructure, and mobile applications"
+        "subtitle": "Showcasing impactful solutions across enterprise systems, logistics, cloud infrastructure, and mobile applications",
+        "casesTitle": "Professional case studies",
+        "casesSubtitle": "Work delivered for clients and organizations. For confidentiality reasons names are not disclosed and the code is not public.",
+        "casesNote": "Projects under non-disclosure agreement (NDA)",
+        "publicTitle": "Public and open-source projects",
+        "publicSubtitle": "Personal repositories available on GitHub.",
+        "case1Title": "Financial and payments platform",
+        "case1Description": "Backend design and development for financial, payments, loyalty and logistics platforms. Microservices with Clean Architecture and event-driven architecture, integrations through REST APIs, queues, webhooks and asynchronous communication. Batch processes and automated financial reconciliations with Python.",
+        "case2Title": "Nationwide public-sector systems",
+        "case2Description": "Web and mobile platforms for accounting and financial oversight, election observation, citizen consultation and real-time results publishing. Microservices deployed with Docker and Kubernetes, secure inter-institution integration and database optimization.",
+        "case3Title": "Generative AI and intelligent agents",
+        "case3Description": "Design and integration of LLM, RAG and AI agent solutions to automate processes and support the software development lifecycle, along with large-scale data processing and transformation in Python.",
+        "case4Title": "Geolocation and AI algorithms",
+        "case4Description": "Geolocation and mapping solutions with artificial intelligence algorithms for geographic data analysis."
+    },
+    "seo_projects": {
+        "title": "Projects and case studies | Jazmin Rodriguez",
+        "description": "Case studies in financial software, public-sector systems, generative AI and geolocation, plus open-source projects on GitHub. Senior Software Engineer, Ecuador."
     },
     "contact": {
         "title": "Contact Us",

@@ -14,16 +14,16 @@ import { QuoteFormDetailed } from '../quote-form-detailed';
 // ----------------------------------------------------------------------
 
 export function QuoteView() {
-  const { t, currentLang } = useTranslate();
+  const { currentLang } = useTranslate();
 
   return (
     <>
       <SeoHead
-        title={t('seo.quote.title')}
-        description={t('seo.quote.description')}
-        keywords={t('seo.keywords')}
+        url="https://freakjazz.com/quote"
         type="website"
         lang={currentLang.value as 'en' | 'es'}
+        noindex={true}
+        nofollow={true}
       />
       <ServiceSchema />
       <QuoteHero />

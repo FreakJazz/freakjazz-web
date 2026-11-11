@@ -9,9 +9,9 @@ export function PersonSchema() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Jazmin Rodriguez',
-    jobTitle: 'Senior Full Stack Developer & Software Trainer',
+    jobTitle: 'Senior Software Engineer',
     description:
-      'Senior Full Stack Developer with 5+ years of experience specializing in .NET Core, Python, React, and cloud infrastructure (AWS, Azure). Software development training and mentoring for teams and professionals.',
+      'Senior Software Engineer with 6+ years of experience in full stack development, software architecture, microservices, financial platforms and generative AI (LLMs, RAG, AI agents). Specialized in .NET Core, Python, React and AWS.',
     url: 'https://freakjazz.com',
     image: 'https://freakjazz.com/profile-jazmin-rodriguez.jpg',
     email: 'contact@freakjazz.com',
@@ -42,10 +42,15 @@ export function PersonSchema() {
       'FastAPI',
       'Material-UI',
       'Tailwind CSS',
-      'Software Training',
-      'Developer Mentoring',
-      'Capacitación Desarrollo Software',
-      'Formación Programadores .NET',
+      'Generative AI',
+      'Large Language Models',
+      'RAG',
+      'AI Agents',
+      'LangChain',
+      'LangGraph',
+      'Apache Kafka',
+      'Event-Driven Architecture',
+      'Domain-Driven Design',
     ],
     alumniOf: {
       '@type': 'EducationalOrganization',
@@ -176,15 +181,18 @@ export function ServiceSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Capacitación en Desarrollo de Software',
+            name: 'AI & LLM Engineering',
             description:
-              'Formación y capacitación en .NET Core, React, Python para equipos de desarrollo y profesionales. Cursos personalizados de programación full stack, arquitectura limpia y buenas prácticas.',
+              'Generative AI integration: AI agents, RAG, LangChain, LangGraph, OpenAI API, process automation and AI algorithms.',
           },
-          priceSpecification: {
-            '@type': 'PriceSpecification',
-            price: '15-25',
-            priceCurrency: 'USD',
-            unitText: 'HOUR',
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Software Architecture & Microservices',
+            description:
+              'Clean Architecture, DDD, event-driven systems with Kafka, secure REST APIs and financial/payment platforms.',
           },
         },
       ],

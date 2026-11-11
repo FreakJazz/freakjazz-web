@@ -19,6 +19,7 @@ export function ContactView() {
         title={t('seo.contact.title')}
         description={t('seo.contact.description')}
         keywords={t('seo.keywords')}
+        url="https://freakjazz.com/contact-us"
         type="website"
         lang={currentLang.value as 'en' | 'es'}
       />

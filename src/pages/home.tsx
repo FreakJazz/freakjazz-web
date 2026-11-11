@@ -15,6 +15,7 @@ export default function Page() {
         title={t('seo.home.title')}
         description={t('seo.home.description')}
         keywords={t('seo.keywords')}
+        url="https://freakjazz.com"
         type="profile"
         lang={currentLang.value as 'en' | 'es'}
       />

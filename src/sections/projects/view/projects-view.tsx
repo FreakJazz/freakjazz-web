@@ -1,14 +1,18 @@
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
 
 import { CONFIG } from 'src/global-config';
 import { useTranslate } from 'src/locales';
 
+import { SeoHead } from 'src/components/seo';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
@@ -105,14 +109,42 @@ const projects = [
   },
 ];
 
+const caseStudies = [
+  {
+    key: 'case1',
+    technologies: ['.NET Core', 'Microservices', 'Clean Architecture', 'Kafka', 'AWS SQS', 'Python', 'Keycloak', 'CI/CD'],
+  },
+  {
+    key: 'case2',
+    technologies: ['.NET Core', 'Python', 'Angular', 'React', 'React Native', 'Docker', 'Kubernetes', 'PostgreSQL', 'Oracle'],
+  },
+  {
+    key: 'case3',
+    technologies: ['LLM', 'RAG', 'AI Agents', 'OpenAI API', 'LangChain', 'LangGraph', 'Python'],
+  },
+  {
+    key: 'case4',
+    technologies: ['Geolocation', 'Maps', 'AI Algorithms', 'Python'],
+  },
+];
+
 // ----------------------------------------------------------------------
 
 export function ProjectsView() {
   const pageProgress = useScrollProgress();
-  const { t } = useTranslate();
+  const { t, currentLang } = useTranslate();
 
   return (
     <>
+      <SeoHead
+        title={t('seo_projects.title')}
+        description={t('seo_projects.description')}
+        keywords={t('seo.keywords')}
+        url="https://freakjazz.com/projects"
+        type="website"
+        lang={currentLang.value as 'en' | 'es'}
+      />
+
       <ScrollProgress
         variant="linear"
         progress={pageProgress.scrollYProgress}
@@ -154,9 +186,60 @@ export function ProjectsView() {
         </Container>
       </Box>
 
-      {/* Projects Grid */}
+      {/* Professional case studies (anonymized) */}
+      <Box sx={{ pt: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+        <Container>
+          <Stack spacing={1} sx={{ mb: 5 }}>
+            <Typography variant="h3" component="h2">
+              {t('projects.casesTitle')}
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 800 }}>
+              {t('projects.casesSubtitle')}
+            </Typography>
+          </Stack>
+
+          <Grid container spacing={4}>
+            {caseStudies.map((study) => (
+              <Grid key={study.key} size={{ xs: 12, md: 6 }}>
+                <Card sx={{ height: '100%' }}>
+                  <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <Typography variant="overline" sx={{ color: 'primary.main', mb: 1 }}>
+                      {t('projects.casesNote')}
+                    </Typography>
+                    <Typography variant="h5" component="h3" sx={{ fontWeight: 600, mb: 2 }}>
+                      {t(`projects.${study.key}Title`)}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: 'text.secondary', mb: 2, flexGrow: 1, lineHeight: 1.7 }}
+                    >
+                      {t(`projects.${study.key}Description`)}
+                    </Typography>
+                    <Stack direction="row" flexWrap="wrap" gap={1}>
+                      {study.technologies.map((tech) => (
+                        <Chip key={tech} label={tech} size="small" color="primary" variant="soft" />
+                      ))}
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* Public projects grid */}
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
         <Container>
+          <Stack spacing={1} sx={{ mb: 5 }}>
+            <Typography variant="h3" component="h2">
+              {t('projects.publicTitle')}
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+              {t('projects.publicSubtitle')}
+            </Typography>
+          </Stack>
+
           <Grid container spacing={4}>
             {projects.map((project, index) => (
               <Grid key={index} size={{ xs: 12, md: 6 }}>
