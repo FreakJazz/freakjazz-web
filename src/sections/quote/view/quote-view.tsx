@@ -22,8 +22,8 @@ export function QuoteView() {
         url="https://freakjazz.com/quote"
         type="website"
         lang={currentLang.value as 'en' | 'es'}
-        noindex={true}
-        nofollow={true}
+        noindex
+        nofollow
       />
       <ServiceSchema />
       <QuoteHero />
