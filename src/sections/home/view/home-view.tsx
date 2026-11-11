@@ -548,7 +548,7 @@ export function HomeView() {
               {t('home.ctaFinal')}
             </Typography>
             <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: 600 }}>
-              Let&apos;s discuss how I can help transform your ideas into robust, scalable solutions
+              {t('home.ctaFinalSubtitle')}
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
               <Button

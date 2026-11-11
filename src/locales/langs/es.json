@@ -44,7 +44,7 @@
         "subtitle": "Senior Software Engineer | .NET Core, Python, React | IA Generativa y Agentes LLM | Microservicios | Cloud | Clean Architecture",
         "cta": "Contrátame",
         "ctaProjects": "Ver Proyectos",
-        "description": "Soy Máster en Ingeniería de Software, especializada en el desarrollo y arquitectura de soluciones tecnológicas escalables. Cuento con sólida experiencia construyendo aplicaciones robustas end-to-end, liderando equipos bajo metodologías ágiles como Scrum y promoviendo una cultura de mejora continua",
+        "description": "Ingeniera de Software Senior con más de 6 años de experiencia diseñando y desarrollando sistemas full-stack escalables para plataformas financieras, de pagos y sistemas públicos de alcance nacional. Especializada en arquitectura de software, liderazgo técnico e IA generativa: LLM, agentes inteligentes, microservicios y arquitecturas orientadas a eventos.",
         "summaryTitle": "Resumen Profesional",
         "summaryText": "Soy Máster en Ingeniería de Software, especializada en el desarrollo y arquitectura de soluciones tecnológicas escalables. Cuento con sólida experiencia construyendo aplicaciones robustas end-to-end, liderando equipos bajo metodologías ágiles como Scrum y promoviendo una cultura de mejora continua. Diseño e integro soluciones de IA generativa, LLM, RAG y agentes inteligentes, además de algoritmos de IA para geolocalización y análisis de información geográfica, con herramientas como OpenAI API, LangChain, LangGraph y GitHub Copilot. Trabajo bajo buenas prácticas de ingeniería, aplicando principios SOLID, Clean Architecture y un enfoque constante en calidad, seguridad y rendimiento. Me caracterizo por una fuerte orientación a resultados y la capacidad de convertir necesidades de negocio en productos digitales eficientes y sostenibles.\n\nEspecialidades y Fortalezas:\n• Arquitectura & Desarrollo Full-Stack: Angular, ReactJS, NextJS, React Native, Go, Python (Django, FastAPI), Java (Spring Boot).\n• Inteligencia Artificial: OpenAI API, LangChain, LangGraph, LlamaIndex, RAG, Agentes IA, PyTorch, Scikit-learn.\n• Arquitectura: Clean/Hexagonal, DDD, CQRS, Microservicios, Kafka, Sistemas Distribuidos.\n• Cloud & DevOps: AWS, Azure, Firebase, Docker, Kubernetes.\n• Seguridad & Autenticación: Keycloak, JWT, OAuth 2.0, APIs REST.\n• Bases de datos: PostgreSQL, SQL Server, Oracle (PL/SQL), Redis.\n• Analítica & Datos: Pandas, NumPy, Power BI.",
         "strengthsTitle": "Fortalezas Clave",
@@ -68,6 +68,7 @@
         "trustTitle": "Confianza de Organizaciones Líderes",
         "trustSubtitle": "Contribuyendo a sistemas críticos en múltiples sectores",
         "ctaFinal": "¿Listo para Construir Algo Increíble?",
+        "ctaFinalSubtitle": "Hablemos de cómo convertir tus ideas en soluciones robustas, escalables y potenciadas con IA",
         "ctaFinalButton": "Hablemos"
     },
     "education": {
@@ -338,7 +339,7 @@
         "coffeeDesc": "Disfruto una o dos tazas de café caliente cada día, ya sea por la mañana o la tarde"
     },
     "footer": {
-        "description": "Máster en Ingeniería de Software con más de 5 años de experiencia construyendo soluciones escalables. Especializada en desarrollo full-stack, arquitectura en la nube y DevOps.",
+        "description": "Máster en Ingeniería de Software con más de 6 años de experiencia. Especializada en desarrollo full-stack, arquitectura de software, IA generativa y agentes LLM, microservicios y cloud.",
         "freakjazz": "FreakJazz",
         "legal": "Legal",
         "contact": "Contacto",
