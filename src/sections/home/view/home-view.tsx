@@ -67,12 +67,44 @@ export function HomeView() {
     },
   ];
 
-  const technologies = {
-    frontend: ['React', 'TypeScript', 'Next.js', 'Vue.js', 'Material-UI'],
-    backend: ['Go', 'Node.js', 'Python', 'Java', 'Microservices'],
-    cloud: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD'],
-    database: ['PostgreSQL', 'MongoDB', 'SQL Server', 'Redis', 'DynamoDB'],
-  };
+  const technologyGroups = [
+    {
+      label: t('home.techFrontend'),
+      icon: 'solar:monitor-bold-duotone',
+      color: 'primary' as const,
+      items: ['React', 'Next.js', 'Angular', 'React Native', 'TypeScript', 'Material-UI'],
+    },
+    {
+      label: t('home.techBackend'),
+      icon: 'solar:server-bold-duotone',
+      color: 'success' as const,
+      items: ['C#', '.NET Core', 'Python', 'FastAPI', 'Django', 'Java', 'Spring Boot', 'Go'],
+    },
+    {
+      label: t('home.techAI'),
+      icon: 'solar:cpu-bold-duotone',
+      color: 'secondary' as const,
+      items: ['LLM', 'RAG', 'AI Agents', 'OpenAI API', 'LangChain', 'LangGraph', 'LlamaIndex', 'PyTorch', 'Scikit-learn'],
+    },
+    {
+      label: t('home.techArchitecture'),
+      icon: 'solar:widget-5-bold-duotone',
+      color: 'error' as const,
+      items: ['Clean Architecture', 'Hexagonal', 'DDD', 'CQRS', 'Microservices', 'Event-Driven', 'Apache Kafka'],
+    },
+    {
+      label: t('home.techCloud'),
+      icon: 'solar:cloud-bold-duotone',
+      color: 'info' as const,
+      items: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Jenkins'],
+    },
+    {
+      label: t('home.techDatabase'),
+      icon: 'solar:database-bold-duotone',
+      color: 'warning' as const,
+      items: ['PostgreSQL', 'SQL Server', 'Oracle', 'MongoDB', 'Redis', 'pgvector'],
+    },
+  ];
 
   const companies = [
     { name: 'Government Sector', icon: 'solar:city-bold-duotone', color: 'primary' },
@@ -325,82 +357,27 @@ export function HomeView() {
             {t('home.technologiesTitle')}
           </Typography>
           <Grid container spacing={4}>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Card sx={{ height: '100%', p: 3 }}>
-                <Stack spacing={2}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <Iconify
-                      icon={'solar:monitor-bold-duotone' as any}
-                      width={32}
-                      sx={{ color: 'primary.main' }}
-                    />
-                    <Typography variant="h5">{t('home.techFrontend')}</Typography>
-                  </Box>
-                  <Stack direction="row" flexWrap="wrap" gap={1}>
-                    {technologies.frontend.map((tech) => (
-                      <Chip key={tech} label={tech} color="primary" variant="outlined" />
-                    ))}
+            {technologyGroups.map((group) => (
+              <Grid key={group.label} size={{ xs: 12, md: 6 }}>
+                <Card sx={{ height: '100%', p: 3 }}>
+                  <Stack spacing={2}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <Iconify
+                        icon={group.icon as any}
+                        width={32}
+                        sx={{ color: `${group.color}.main` }}
+                      />
+                      <Typography variant="h5">{group.label}</Typography>
+                    </Box>
+                    <Stack direction="row" flexWrap="wrap" gap={1}>
+                      {group.items.map((tech) => (
+                        <Chip key={tech} label={tech} color={group.color} variant="outlined" />
+                      ))}
+                    </Stack>
                   </Stack>
-                </Stack>
-              </Card>
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Card sx={{ height: '100%', p: 3 }}>
-                <Stack spacing={2}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <Iconify
-                      icon={'solar:server-bold-duotone' as any}
-                      width={32}
-                      sx={{ color: 'success.main' }}
-                    />
-                    <Typography variant="h5">{t('home.techBackend')}</Typography>
-                  </Box>
-                  <Stack direction="row" flexWrap="wrap" gap={1}>
-                    {technologies.backend.map((tech) => (
-                      <Chip key={tech} label={tech} color="success" variant="outlined" />
-                    ))}
-                  </Stack>
-                </Stack>
-              </Card>
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Card sx={{ height: '100%', p: 3 }}>
-                <Stack spacing={2}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <Iconify
-                      icon={'solar:cloud-bold-duotone' as any}
-                      width={32}
-                      sx={{ color: 'info.main' }}
-                    />
-                    <Typography variant="h5">{t('home.techCloud')}</Typography>
-                  </Box>
-                  <Stack direction="row" flexWrap="wrap" gap={1}>
-                    {technologies.cloud.map((tech) => (
-                      <Chip key={tech} label={tech} color="info" variant="outlined" />
-                    ))}
-                  </Stack>
-                </Stack>
-              </Card>
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Card sx={{ height: '100%', p: 3 }}>
-                <Stack spacing={2}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <Iconify
-                      icon={'solar:database-bold-duotone' as any}
-                      width={32}
-                      sx={{ color: 'warning.main' }}
-                    />
-                    <Typography variant="h5">{t('home.techDatabase')}</Typography>
-                  </Box>
-                  <Stack direction="row" flexWrap="wrap" gap={1}>
-                    {technologies.database.map((tech) => (
-                      <Chip key={tech} label={tech} color="warning" variant="outlined" />
-                    ))}
-                  </Stack>
-                </Stack>
-              </Card>
-            </Grid>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </Box>

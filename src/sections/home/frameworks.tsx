@@ -21,18 +21,31 @@ const frameworks = {
     { name: 'TypeScript', icon: 'devicon:typescript', color: '#3178C6' },
   ],
   backend: [
+    { name: 'C#', icon: 'devicon:csharp', color: '#239120' },
     { name: '.NET Core', icon: 'devicon:dotnetcore', color: '#512BD4' },
-    { name: 'Django', icon: 'devicon:django', color: '#092E20' },
+    { name: 'Python', icon: 'devicon:python', color: '#3776AB' },
     { name: 'FastAPI', icon: 'devicon:fastapi', color: '#009688' },
+    { name: 'Django', icon: 'devicon:django', color: '#092E20' },
     { name: 'Flask', icon: 'devicon:flask', color: '#000000' },
-    { name: 'Node.js', icon: 'devicon:nodejs', color: '#339933' },
     { name: 'Spring Boot', icon: 'devicon:spring', color: '#6DB33F' },
+    { name: 'Apache Kafka', icon: 'devicon:apachekafka', color: '#231F20' },
+  ],
+  ai: [
+    { name: 'OpenAI API', icon: 'simple-icons:openai', color: '#412991' },
+    { name: 'LangChain', icon: 'simple-icons:langchain', color: '#1C3C3C' },
+    { name: 'PyTorch', icon: 'devicon:pytorch', color: '#EE4C2C' },
+    { name: 'Scikit-learn', icon: 'devicon:scikitlearn', color: '#F7931E' },
+    { name: 'Pandas', icon: 'devicon:pandas', color: '#150458' },
+    { name: 'NumPy', icon: 'devicon:numpy', color: '#013243' },
+    { name: 'GitHub Copilot', icon: 'simple-icons:githubcopilot', color: '#000000' },
   ],
   cloud: [
     { name: 'AWS', icon: 'devicon:amazonwebservices-wordmark', color: '#FF9900' },
     { name: 'Azure', icon: 'devicon:azure', color: '#0078D4' },
     { name: 'Docker', icon: 'devicon:docker', color: '#2496ED' },
     { name: 'Kubernetes', icon: 'devicon:kubernetes', color: '#326CE5' },
+    { name: 'Terraform', icon: 'devicon:terraform', color: '#7B42BC' },
+    { name: 'Jenkins', icon: 'devicon:jenkins', color: '#D24939' },
     { name: 'Firebase', icon: 'devicon:firebase', color: '#FFCA28' },
     { name: 'GitHub Actions', icon: 'devicon:githubactions', color: '#2088FF' },
   ],
@@ -118,6 +131,7 @@ export function Frameworks() {
     <Stack spacing={6}>
       {renderSection(t('frameworks.frontend'), frameworks.frontend, theme.palette.primary.main)}
       {renderSection(t('frameworks.backend'), frameworks.backend, theme.palette.success.main)}
+      {renderSection(t('frameworks.ai'), frameworks.ai, theme.palette.secondary.main)}
       {renderSection(t('frameworks.cloudDevOps'), frameworks.cloud, theme.palette.info.main)}
       {renderSection(t('frameworks.databases'), frameworks.database, theme.palette.warning.main)}
       {renderSection(t('frameworks.tools'), frameworks.tools, theme.palette.error.main)}

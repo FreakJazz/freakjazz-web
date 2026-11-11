@@ -63,6 +63,8 @@
         "technologiesTitle": "Tecnologías Destacadas",
         "techFrontend": "Frontend",
         "techBackend": "Backend",
+        "techAI": "Inteligencia Artificial",
+        "techArchitecture": "Arquitectura de Software",
         "techCloud": "Cloud & DevOps",
         "techDatabase": "Bases de Datos",
         "trustTitle": "Confianza de Organizaciones Líderes",
@@ -316,6 +318,7 @@
         "subtitle": "Un conjunto completo de herramientas para construir aplicaciones modernas y escalables",
         "frontend": "Frontend",
         "backend": "Backend",
+        "ai": "Inteligencia Artificial y LLM",
         "cloudDevOps": "Cloud y DevOps",
         "databases": "Bases de Datos",
         "tools": "Herramientas y Metodologías"
