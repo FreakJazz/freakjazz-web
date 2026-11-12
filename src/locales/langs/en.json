@@ -14,8 +14,8 @@
             "description": "Tell me about your software project. Full stack development, software architecture, microservices and generative AI. Available for consulting and development."
         },
         "about": {
-            "title": "About Jazmin Rodriguez | Senior Software Engineer Profile",
-            "description": "Master's in Software Engineering with 6+ years of experience. Software architecture, generative AI, financial platforms and technical leadership. View my full professional profile."
+            "title": "About Jazmin Rodriguez | Story, Work Philosophy and Profile",
+            "description": "Meet Jazmin Rodriguez, a software engineer in Quito, Ecuador: her professional story, how she works, her education, languages and interests beyond code."
         }
     },
     "common": {
@@ -75,7 +75,24 @@
     },
     "about": {
         "title": "About Me",
-        "subtitle": "Senior Software Engineer with 6+ years of experience in software architecture, generative AI and financial platforms"
+        "subtitle": "My story, how I work, and what drives me beyond code",
+        "storyTitle": "My professional story",
+        "story1": "I'm a software engineer based in Quito, Ecuador. My first projects were in electronics, IoT and data analysis, from embedded systems with Arduino and ESP32 to research with medical data, and I took from that the habit of understanding the underlying problem before writing code.",
+        "story2": "Over the years I moved on to larger-scale systems: financial and payment platforms, and national-scale public systems. There I learned that the software that matters is the kind that lasts, with other people working on it.",
+        "story3": "Today I combine that experience with artificial intelligence: I integrate LLMs, RAG and agents into real products, always with engineering judgment and not just for novelty.",
+        "philosophyTitle": "My work philosophy",
+        "philosophySubtitle": "The principles that guide how I design, build and collaborate",
+        "philosophy1Title": "Understand before building",
+        "philosophy1Text": "I turn business needs into clear, efficient and sustainable digital products.",
+        "philosophy2Title": "Quality as a habit",
+        "philosophy2Text": "Clean code, testing and good security and performance practices from day one.",
+        "philosophy3Title": "Teams that improve",
+        "philosophy3Text": "I believe in honest communication, well-applied Scrum and continuous team improvement.",
+        "philosophy4Title": "AI with judgment",
+        "philosophy4Text": "I use AI to accelerate and automate, without losing human judgment or technical accountability.",
+        "personalityTitle": "Beyond code",
+        "ctaTitle": "Shall we work together?",
+        "ctaText": "If you're looking for a senior software engineer for your team or project, get in touch."
     },
     "education": {
         "title": "Education",

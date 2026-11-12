@@ -14,8 +14,8 @@
             "description": "Cuéntame sobre tu proyecto de software. Desarrollo full stack, arquitectura de software, microservicios e IA generativa. Disponible para consultoría y desarrollo."
         },
         "about": {
-            "title": "Sobre Jazmin Rodriguez | Perfil Ingeniera de Software Senior",
-            "description": "Máster en Ingeniería de Software con 6+ años de experiencia. Arquitectura de software, IA generativa, plataformas financieras y liderazgo técnico. Ver mi perfil profesional completo."
+            "title": "Sobre Jazmin Rodriguez | Historia, Filosofía de Trabajo y Perfil",
+            "description": "Conoce a Jazmin Rodriguez, ingeniera de software en Quito, Ecuador: su historia profesional, cómo trabaja, su formación, idiomas e intereses fuera del código."
         }
     },
     "common": {
@@ -75,7 +75,24 @@
     },
     "about": {
         "title": "Sobre mí",
-        "subtitle": "Ingeniera de Software Senior con 6+ años de experiencia en arquitectura de software, IA generativa y plataformas financieras"
+        "subtitle": "Mi historia, cómo trabajo y lo que me mueve fuera del código",
+        "storyTitle": "Mi historia profesional",
+        "story1": "Soy ingeniera de software y vivo en Quito, Ecuador. Mis primeros proyectos fueron de electrónica, IoT y análisis de datos, desde sistemas embebidos con Arduino y ESP32 hasta investigación con datos médicos, y de ahí me llevé la costumbre de entender el problema de fondo antes de escribir código.",
+        "story2": "Con los años pasé a construir sistemas de mayor escala: plataformas financieras y de pagos, y sistemas públicos de alcance nacional. Ahí aprendí que el software que importa es el que se sostiene en el tiempo, con otras personas trabajando sobre él.",
+        "story3": "Hoy combino esa experiencia con inteligencia artificial: integro LLM, RAG y agentes en productos reales, siempre con criterio de ingeniería y no solo por la novedad.",
+        "philosophyTitle": "Mi filosofía de trabajo",
+        "philosophySubtitle": "Los principios que guían cómo diseño, construyo y colaboro",
+        "philosophy1Title": "Entender antes de construir",
+        "philosophy1Text": "Convierto necesidades de negocio en productos digitales claros, eficientes y sostenibles.",
+        "philosophy2Title": "Calidad como hábito",
+        "philosophy2Text": "Código limpio, pruebas y buenas prácticas de seguridad y rendimiento desde el primer día.",
+        "philosophy3Title": "Equipos que mejoran",
+        "philosophy3Text": "Creo en la comunicación honesta, en Scrum bien aplicado y en la mejora continua del equipo.",
+        "philosophy4Title": "IA con criterio",
+        "philosophy4Text": "Uso la IA para acelerar y automatizar, sin perder el juicio humano ni la responsabilidad técnica.",
+        "personalityTitle": "Fuera del código",
+        "ctaTitle": "¿Trabajamos juntos?",
+        "ctaText": "Si buscas una ingeniera de software senior para tu equipo o proyecto, escríbeme."
     },
     "education": {
         "title": "Educación",
