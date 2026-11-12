@@ -21,10 +21,7 @@ import { Iconify } from 'src/components/iconify';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
-import { Education } from '../education';
-import { Languages } from '../languages';
 import { Frameworks } from '../frameworks';
-import { PersonalInterests } from '../personal-interests';
 import { ProgrammingLanguages } from '../programming-languages';
 
 // ----------------------------------------------------------------------
@@ -221,84 +218,6 @@ export function HomeView() {
               {t('home.summaryText')}
             </Typography>
           </Stack>
-        </Container>
-      </Box>
-
-      {/* Education Section */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          bgcolor: 'background.neutral',
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={4} alignItems="center" sx={{ mb: 6 }}>
-            <Typography
-              variant="h2"
-              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center' }}
-            >
-              {t('education.title')}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 600 }}
-            >
-              {t('education.subtitle')}
-            </Typography>
-          </Stack>
-          <Education />
-        </Container>
-      </Box>
-
-      {/* Languages Section */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          bgcolor: 'background.default',
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={4} alignItems="center" sx={{ mb: 6 }}>
-            <Typography
-              variant="h2"
-              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center' }}
-            >
-              {t('languages.title')}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 600 }}
-            >
-              {t('languages.subtitle')}
-            </Typography>
-          </Stack>
-          <Languages />
-        </Container>
-      </Box>
-
-      {/* Personal Interests Section */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          bgcolor: 'background.default',
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={4} alignItems="center" sx={{ mb: 6 }}>
-            <Typography
-              variant="h2"
-              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center' }}
-            >
-              {t('personalInterests.title')}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 600 }}
-            >
-              {t('personalInterests.subtitle')}
-            </Typography>
-          </Stack>
-          <PersonalInterests />
         </Container>
       </Box>
 

@@ -12,7 +12,7 @@ import CardContent from '@mui/material/CardContent';
 import { CONFIG } from 'src/global-config';
 import { useTranslate } from 'src/locales';
 
-import { SeoHead } from 'src/components/seo';
+import { SeoHead, BreadcrumbSchema } from 'src/components/seo';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
@@ -143,6 +143,13 @@ export function ProjectsView() {
         url="https://freakjazz.com/projects"
         type="website"
         lang={currentLang.value as 'en' | 'es'}
+      />
+
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://freakjazz.com/' },
+          { name: t('common.projects'), url: 'https://freakjazz.com/projects' },
+        ]}
       />
 
       <ScrollProgress

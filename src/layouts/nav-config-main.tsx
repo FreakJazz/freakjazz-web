@@ -19,9 +19,9 @@ export function getNavData(t: (key: string) => string): NavMainProps['data'] {
       icon: <Iconify width={22} icon={'solar:folder-with-files-bold-duotone' as any} />,
     },
     {
-      title: t('quote.title'),
-      path: paths.quote,
-      icon: <Iconify width={22} icon={'solar:document-text-bold-duotone' as any} />,
+      title: t('common.about'),
+      path: paths.about,
+      icon: <Iconify width={22} icon={'solar:user-id-bold-duotone' as any} />,
     },
     {
       title: t('common.contact'),

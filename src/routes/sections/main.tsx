@@ -12,6 +12,7 @@ import { SplashScreen } from 'src/components/loading-screen';
 const ContactPage = lazy(() => import('src/pages/contact-us'));
 const QuotePage = lazy(() => import('src/pages/quote'));
 const ProjectsPage = lazy(() => import('src/pages/projects'));
+const AboutPage = lazy(() => import('src/pages/about'));
 
 // Error pages
 const Page500 = lazy(() => import('src/pages/error/500'));
@@ -38,6 +39,7 @@ export const mainRoutes: RouteObject[] = [
           { path: 'contact-us', element: <ContactPage /> },
           { path: 'quote', element: <QuotePage /> },
           { path: 'projects', element: <ProjectsPage /> },
+          { path: 'about', element: <AboutPage /> },
         ],
       },
       {

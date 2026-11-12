@@ -6,5 +6,6 @@ export {
   ServiceSchema,
   WebsiteSchema,
   BreadcrumbSchema,
+  ProfilePageSchema,
   OrganizationSchema,
 } from './schema-markup';

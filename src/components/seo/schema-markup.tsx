@@ -113,7 +113,7 @@ export function ServiceSchema() {
     },
     availableChannel: {
       '@type': 'ServiceChannel',
-      serviceUrl: 'https://freakjazz.com/cotizacion',
+      serviceUrl: 'https://freakjazz.com/contact-us',
       serviceType: 'Online',
     },
     hasOfferCatalog: {
@@ -304,6 +304,38 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
 }
 
 // ============================================================================
+// Profile Page Schema (About page)
+// ============================================================================
+
+export function ProfilePageSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    url: 'https://freakjazz.com/about',
+    name: 'Jazmin Rodriguez - Senior Software Engineer',
+    inLanguage: ['es', 'en'],
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Jazmin Rodriguez',
+      alternateName: 'FreakJazz',
+      url: 'https://freakjazz.com',
+      jobTitle: 'Senior Software Engineer',
+      address: { '@type': 'PostalAddress', addressLocality: 'Quito', addressCountry: 'EC' },
+      sameAs: [
+        'https://www.linkedin.com/in/jazmin-rodriguez-bermeo/',
+        'https://github.com/FreakJazz',
+      ],
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+}
+
+// ============================================================================
 // Website Schema
 // ============================================================================
 
@@ -314,14 +346,7 @@ export function WebsiteSchema() {
     name: 'FreakJazz',
     url: 'https://freakjazz.com',
     description: 'Senior Software Engineer - Full Stack Developer',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://freakjazz.com/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
+    inLanguage: ['es', 'en'],
   };
 
   return (

@@ -22,7 +22,7 @@
         "home": "Inicio",
         "contact": "Contacto",
         "projects": "Proyectos",
-        "about": "Acerca de",
+        "about": "Sobre mí",
         "services": "Servicios",
         "login": "Iniciar Sesión",
         "logout": "Cerrar Sesión",
@@ -72,6 +72,10 @@
         "ctaFinal": "¿Listo para Construir Algo Increíble?",
         "ctaFinalSubtitle": "Hablemos de cómo convertir tus ideas en soluciones robustas, escalables y potenciadas con IA",
         "ctaFinalButton": "Hablemos"
+    },
+    "about": {
+        "title": "Sobre mí",
+        "subtitle": "Ingeniera de Software Senior con 6+ años de experiencia en arquitectura de software, IA generativa y plataformas financieras"
     },
     "education": {
         "title": "Educación",

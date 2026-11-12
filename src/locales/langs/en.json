@@ -73,6 +73,10 @@
         "ctaFinalSubtitle": "Let's discuss how I can turn your ideas into robust, scalable, AI-powered solutions",
         "ctaFinalButton": "Let's Talk"
     },
+    "about": {
+        "title": "About Me",
+        "subtitle": "Senior Software Engineer with 6+ years of experience in software architecture, generative AI and financial platforms"
+    },
     "education": {
         "title": "Education",
         "subtitle": "Academic background and professional certifications"

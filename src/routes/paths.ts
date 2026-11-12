@@ -12,6 +12,7 @@ export const paths = {
   contact: '/contact-us',
   quote: '/quote',
   projects: '/projects',
+  about: '/about',
 
   // Error pages
   page403: '/error/403',
