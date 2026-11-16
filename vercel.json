@@ -1,13 +1,14 @@
 {
   "redirects": [
-    { "source": "/cotizacion", "destination": "/quote", "permanent": true },
+    { "source": "/cotizacion", "destination": "/contact-us", "permanent": true },
     { "source": "/about-us", "destination": "/about", "permanent": true },
-    { "source": "/faqs", "destination": "/", "permanent": true },
-    { "source": "/pricing", "destination": "/quote", "permanent": true },
     { "source": "/en", "destination": "/", "permanent": true },
     { "source": "/es", "destination": "/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/projects", "destination": "/projects/index.html" },
+    { "source": "/contact-us", "destination": "/contact-us/index.html" },
     {
       "source": "/((?!sitemap\\.xml|robots\\.txt|favicon\\.ico|assets/).*)",
       "destination": "/"
@@ -43,4 +44,3 @@
     }
   ]
 }
-
