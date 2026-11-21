@@ -2,7 +2,6 @@ import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -12,8 +11,6 @@ import CardContent from '@mui/material/CardContent';
 
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
-
-import { getCvDownload } from 'src/utils/cv';
 
 import { CONFIG } from 'src/global-config';
 import { useTranslate } from 'src/locales';
@@ -58,12 +55,6 @@ function Section({ title, subtitle, bgcolor, children }: SectionProps) {
   );
 }
 
-const PERKS = [
-  { key: 'contact.perk1', icon: 'solar:code-square-bold-duotone' },
-  { key: 'contact.perk2', icon: 'solar:atom-bold-duotone' },
-  { key: 'contact.perk3', icon: 'solar:rocket-2-bold-duotone' },
-];
-
 const PHILOSOPHY = [
   { key: 'philosophy1', icon: 'solar:target-bold-duotone' },
   { key: 'philosophy2', icon: 'solar:shield-check-bold-duotone' },
@@ -76,7 +67,6 @@ const PHILOSOPHY = [
 export function AboutView() {
   const pageProgress = useScrollProgress();
   const { t, currentLang } = useTranslate();
-  const cv = getCvDownload(currentLang.value);
 
   return (
     <>
@@ -202,73 +192,95 @@ export function AboutView() {
       </Section>
 
       {/* Articles (Medium) */}
-      <Section
-        title={t('about.articlesTitle')}
-        subtitle={t('about.articlesText')}
-        bgcolor="background.default"
-      >
-        <Stack spacing={2} alignItems="center" textAlign="center">
-          <Iconify icon={'mdi:medium' as any} width={56} />
-          <Button
-            href="https://medium.com/@jazzrb2307"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="contained"
-            size="large"
-            endIcon={<Iconify icon={'solar:arrow-right-up-linear' as any} />}
-            sx={{ px: 4 }}
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+        <Container maxWidth="lg">
+          <Stack
+            direction={{ xs: 'column-reverse', md: 'row' }}
+            alignItems="center"
+            justifyContent="space-between"
+            spacing={{ xs: 4, md: 8 }}
           >
-            {t('about.articlesButton')}
-          </Button>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            {t('about.articlesSoon')}
-          </Typography>
-        </Stack>
-      </Section>
+            <Stack spacing={3} sx={{ maxWidth: 640, textAlign: { xs: 'center', md: 'left' } }}>
+              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
+                {t('about.articlesTitle')}
+              </Typography>
+              <Typography variant="h6" sx={{ fontWeight: 400, color: 'text.secondary', lineHeight: 1.7 }}>
+                {t('about.articlesText')}
+              </Typography>
+              <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={2}
+                alignItems="center"
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+              >
+                <Button
+                  href="https://medium.com/@jazzrb2307"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="contained"
+                  size="large"
+                  endIcon={<Iconify icon={'solar:arrow-right-up-linear' as any} />}
+                  sx={{ px: 4 }}
+                >
+                  {t('about.articlesButton')}
+                </Button>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  {t('about.articlesSoon')}
+                </Typography>
+              </Stack>
+            </Stack>
 
-      {/* Final call to action */}
-      <Section
-        title={t('about.ctaTitle')}
-        subtitle={t('about.ctaText')}
-        bgcolor="background.neutral"
+            <Iconify
+              icon={'mdi:medium' as any}
+              sx={{
+                flexShrink: 0,
+                color: 'text.primary',
+                opacity: 0.9,
+                width: { xs: 140, md: 280 },
+                height: { xs: 140, md: 280 },
+              }}
+            />
+          </Stack>
+        </Container>
+      </Box>
+
+      {/* Final CTA Section (same as home) */}
+      <Box
+        sx={(theme) => ({
+          py: { xs: 8, md: 12 },
+          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.darker} 100%)`,
+          color: 'white',
+        })}
       >
-        <Stack spacing={4} alignItems="center">
-          <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1.5}>
-            {PERKS.map((perk) => (
-              <Chip
-                key={perk.key}
-                color="primary"
-                variant="soft"
-                icon={<Iconify icon={perk.icon as any} width={20} />}
-                label={t(perk.key)}
-              />
-            ))}
+        <Container>
+          <Stack spacing={4} alignItems="center" textAlign="center">
+            <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.5rem' } }}>
+              {t('home.ctaFinal')}
+            </Typography>
+            <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: 600 }}>
+              {t('home.ctaFinalSubtitle')}
+            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+              <Button
+                component={RouterLink}
+                href={paths.contact}
+                variant="contained"
+                size="large"
+                sx={{
+                  bgcolor: 'white',
+                  color: 'primary.main',
+                  px: 4,
+                  py: 2,
+                  fontSize: '1.1rem',
+                  '&:hover': { bgcolor: 'grey.100' },
+                }}
+              >
+                {t('home.ctaFinalButton')}
+              </Button>
+            </Stack>
           </Stack>
-
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-            <Button
-              component={RouterLink}
-              href={paths.contact}
-              variant="contained"
-              size="large"
-              startIcon={<Iconify icon={'solar:letter-bold-duotone' as any} />}
-              sx={{ px: 4 }}
-            >
-              {t('home.cta')}
-            </Button>
-            <Button
-              href={cv.url}
-              download={cv.filename}
-              variant="outlined"
-              size="large"
-              startIcon={<Iconify icon={'solar:download-bold-duotone' as any} />}
-              sx={{ px: 4 }}
-            >
-              {t('common.downloadCV')}
-            </Button>
-          </Stack>
-        </Stack>
-      </Section>
+        </Container>
+      </Box>
     </>
   );
 }
