@@ -6,6 +6,8 @@
     { "source": "/es", "destination": "/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/cv/es", "destination": "https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Ffiles%2FESPA%C3%91OL.pdf?alt=media&token=e68c5eda-3f5f-4129-85f6-cb8c7071825d" },
+    { "source": "/cv/en", "destination": "https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Ffiles%2FINGLES.pdf?alt=media&token=f9f7f3ba-0d21-43b6-98e5-88c339ea5d5a" },
     { "source": "/about", "destination": "/about/index.html" },
     { "source": "/projects", "destination": "/projects/index.html" },
     { "source": "/contact-us", "destination": "/contact-us/index.html" },

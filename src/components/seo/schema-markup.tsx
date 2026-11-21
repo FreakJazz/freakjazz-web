@@ -13,7 +13,8 @@ export function PersonSchema() {
     description:
       'Senior Software Engineer with 6+ years of experience in full stack development, software architecture, microservices, financial platforms and generative AI (LLMs, RAG, AI agents). Specialized in .NET Core, Python, React and AWS.',
     url: 'https://freakjazz.com',
-    image: 'https://freakjazz.com/profile-jazmin-rodriguez.jpg',
+    image: 
+      'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2F53f46de1-7e8e-420a-b3c4-11b2e7cbd5fc.jpe?alt=media&token=5f13039b-61fc-4d57-a924-8c228e36b65e',
     email: 'contact@freakjazz.com',
     address: {
       '@type': 'PostalAddress',
@@ -220,7 +221,7 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: 'FreakJazz',
     url: 'https://freakjazz.com',
-    logo: 'https://freakjazz.com/logo/freakjazz-logo.svg',
+    logo: 'https://freakjazz.com/logo/logo-full.png',
     founder: {
       '@type': 'Person',
       name: 'Jazmin Rodriguez',

@@ -14,6 +14,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { styled, useTheme } from '@mui/material/styles';
 
+import { getCvDownload } from 'src/utils/cv';
+
 import { useTranslate } from 'src/locales';
 import { LanguagePopover } from 'src/layouts/components/language-popover';
 import { ThemeToggleButton } from 'src/layouts/components/theme-toggle-button';
@@ -76,8 +78,7 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
   const { t, currentLang } = useTranslate();
   const [navState, setNavState] = useState<NavState>(2); // Start with full sidebar
 
-  const cvUrl =
-    currentLang.value === 'es' ? import.meta.env.VITE_CV_URL_ES : import.meta.env.VITE_CV_URL_EN;
+  const cv = getCvDownload(currentLang.value);
 
   const cycleNavState = () => {
     setNavState((prev) => ((prev + 1) % 3) as NavState);
@@ -197,10 +198,8 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                       variant="outlined"
                       size="small"
                       startIcon={<Iconify icon={'solar:download-bold-duotone' as any} />}
-                      href={cvUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download
+                      href={cv.url}
+                      download={cv.filename}
                       sx={{ mt: 1, width: '100%' }}
                     >
                       {t('common.downloadCV')}

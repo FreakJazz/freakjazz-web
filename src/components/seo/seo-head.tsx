@@ -28,7 +28,8 @@ const DEFAULT_DESCRIPTION =
   'Desarrolladora Full Stack Senior con 5+ años de experiencia. Especializada en .NET Core, Python, React y AWS. Disponible para proyectos freelance. Ecuador.';
 const DEFAULT_KEYWORDS =
   'desarrolladora full stack .NET Ecuador, senior software engineer freelance Ecuador, contratar desarrolladora software, full stack developer Ecuador, .NET Core developer freelance, React developer Ecuador, Python developer Ecuador, ingeniera cloud AWS Azure';
-const DEFAULT_IMAGE = 'https://freakjazz.com/og-image-developer.jpg';
+const DEFAULT_IMAGE = 
+  'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2F53f46de1-7e8e-420a-b3c4-11b2e7cbd5fc.jpe?alt=media&token=5f13039b-61fc-4d57-a924-8c228e36b65e';
 const BASE_URL = 'https://freakjazz.com';
 const DEFAULT_AUTHOR = 'Jazmin Rodriguez';
 

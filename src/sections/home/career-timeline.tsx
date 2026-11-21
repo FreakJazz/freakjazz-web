@@ -4,7 +4,9 @@ import { useRef, useState } from 'react';
 import { m, useScroll, useSpring } from 'framer-motion';
 
 import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
 import Chip from '@mui/material/Chip';
+import Tabs from '@mui/material/Tabs';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
@@ -62,7 +64,7 @@ function TimelineEntry({ item, index, lang }: ItemProps) {
         {item.title[lang]}
       </Typography>
       <Typography variant="subtitle2" sx={{ color: 'primary.main', mb: item.points ? 1.5 : 0 }}>
-        {item.org}
+        {typeof item.org === 'string' ? item.org : item.org[lang]}
       </Typography>
 
       {item.points && (
@@ -89,9 +91,11 @@ function TimelineEntry({ item, index, lang }: ItemProps) {
     <Box
       sx={{
         display: 'grid',
-        gridTemplateColumns: { xs: '44px 1fr', md: '1fr 64px 1fr' },
+        gridTemplateColumns: { xs: '44px 1fr', md: '1fr 48px 1fr' },
         alignItems: 'start',
-        mb: { xs: 4, md: 6 },
+        // Desktop: cards of opposite sides overlap vertically so the zigzag stays compact
+        mb: { xs: 3, md: 2 },
+        mt: { md: index === 0 ? 0 : -5 },
       }}
     >
       {/* Dot */}
@@ -163,22 +167,32 @@ export function CareerTimeline() {
 
   return (
     <Box>
-      <Stack direction="row" justifyContent="center" flexWrap="wrap" gap={1.5} sx={{ mb: 7 }}>
+      <Tabs
+        value={tab}
+        onChange={(_, value: TimelineKind) => setTab(value)}
+        variant="fullWidth"
+        sx={{
+          mb: 7,
+          borderRadius: 2,
+          bgcolor: 'background.paper',
+          border: `1px solid ${alpha(theme.palette.grey[500], 0.2)}`,
+          boxShadow: theme.shadows[4],
+          '& .MuiTabs-indicator': { height: 4, borderRadius: 2 },
+        }}
+      >
         {TABS.map((item) => (
-          <Chip
+          <Tab
             key={item.key}
-            clickable
-            onClick={() => setTab(item.key)}
-            color={tab === item.key ? 'primary' : 'default'}
-            variant={tab === item.key ? 'filled' : 'outlined'}
-            icon={<Iconify icon={item.icon as any} width={20} />}
+            value={item.key}
+            icon={<Iconify icon={item.icon as any} width={22} />}
+            iconPosition="start"
             label={t(item.labelKey)}
-            sx={{ px: 1, py: 2.5, fontSize: '0.95rem', fontWeight: 600 }}
+            sx={{ minHeight: 64, fontSize: { xs: '0.8rem', sm: '1rem' }, fontWeight: 700 }}
           />
         ))}
-      </Stack>
+      </Tabs>
 
-      <Box key={tab} ref={trackRef} sx={{ position: 'relative' }}>
+      <Box key={tab} ref={trackRef} sx={{ position: 'relative', maxWidth: 960, mx: 'auto' }}>
         {/* Vertical line: grey track + animated fill that grows while scrolling */}
         <Box
           sx={{
@@ -205,7 +219,7 @@ export function CareerTimeline() {
         </Box>
 
         {items.map((item, index) => (
-          <TimelineEntry key={`${item.org}-${item.period.es}`} item={item} index={index} lang={lang} />
+          <TimelineEntry key={`${typeof item.org === 'string' ? item.org : item.org[lang]}-${item.period.es}`} item={item} index={index} lang={lang} />
         ))}
       </Box>
     </Box>

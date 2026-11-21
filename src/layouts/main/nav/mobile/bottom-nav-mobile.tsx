@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 
 import { useRouter, usePathname } from 'src/routes/hooks';
 
+import { getCvDownload } from 'src/utils/cv';
+
 import { useTranslate } from 'src/locales';
 
 import { Iconify } from 'src/components/iconify';
@@ -24,10 +26,7 @@ export function BottomNavMobile({ data, sx }: BottomNavMobileProps) {
   const pathname = usePathname();
   const { currentLang } = useTranslate();
 
-  const cvUrl =
-    currentLang.value === 'es'
-      ? '/assets/cv/jazmin-rodriguez-cv-es.pdf'
-      : '/assets/cv/jazmin-rodriguez-cv-en.pdf';
+  const cv = getCvDownload(currentLang.value);
 
   const isActive = (path: string) => pathname === path;
 
@@ -96,8 +95,8 @@ export function BottomNavMobile({ data, sx }: BottomNavMobileProps) {
         {/* CV Download Button - Highlighted in center */}
         <Button
           variant="contained"
-          href={cvUrl}
-          download
+          href={cv.url}
+          download={cv.filename}
           sx={{
             minWidth: 56,
             height: 56,

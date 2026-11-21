@@ -5,7 +5,6 @@ import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
@@ -127,16 +126,16 @@ export function HomeView() {
         sx={[
           (thm) => ({
             backgroundImage: {
-              xs: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)}), url("${CONFIG.images.heroMobile}")`,
-              md: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.5)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.3)}), url("${CONFIG.images.hero}")`,
+              xs: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.65)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.45)}), url("${CONFIG.images.heroMobile}")`,
+              md: `linear-gradient(135deg, ${varAlpha(thm.vars.palette.primary.darkerChannel, 0.65)}, ${varAlpha(thm.vars.palette.primary.mainChannel, 0.45)}), url("${CONFIG.images.hero}")`,
             },
             backgroundSize: {
               xs: 'cover',
               md: 'cover',
             },
             backgroundPosition: {
-              xs: 'center center',
-              md: 'center center',
+              xs: 'center top',
+              md: 'center 30%',
             },
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: {
@@ -154,18 +153,6 @@ export function HomeView() {
       >
         <Container>
           <Stack spacing={4} alignItems="center" textAlign="center">
-            <Avatar
-              src={CONFIG.images.profile}
-              alt="Jazmin Rodriguez"
-              slotProps={{ img: { fetchPriority: 'high' } as any }}
-              sx={{
-                width: { xs: 128, md: 176 },
-                height: { xs: 128, md: 176 },
-                border: '4px solid white',
-                boxShadow: '0 12px 40px rgba(0,0,0,0.45)',
-                '& img': { objectPosition: '22% 35%' },
-              }}
-            />
             <Typography variant="h1" sx={{ fontSize: { xs: '3rem', md: '5rem' } }}>
               {t('home.welcome')}
             </Typography>
@@ -213,23 +200,8 @@ export function HomeView() {
         </Container>
       </Box>
 
-      {/* Career timeline (experience / education / courses) */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
-        <Container maxWidth="lg">
-          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-              {t('home.timelineTitle')}
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 720 }}>
-              {t('home.timelineSubtitle')}
-            </Typography>
-          </Stack>
-          <CareerTimeline />
-        </Container>
-      </Box>
-
       {/* Key Strengths Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
         <Container>
           <Typography
             variant="h2"
@@ -270,6 +242,21 @@ export function HomeView() {
               </Grid>
             ))}
           </Grid>
+        </Container>
+      </Box>
+
+      {/* Career timeline (experience / education / courses) */}
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
+        <Container maxWidth="lg">
+          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
+              {t('home.timelineTitle')}
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 720 }}>
+              {t('home.timelineSubtitle')}
+            </Typography>
+          </Stack>
+          <CareerTimeline />
         </Container>
       </Box>
 

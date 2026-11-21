@@ -43,6 +43,14 @@ function setMeta(html, attr, key, value) {
   return html.replace(re, `$1${esc(value)}$2`);
 }
 
+// Home: keep index.html as is, but give crawlers visible text before JS runs.
+const homeHtml = template.replace(
+  '<div id="root"></div>',
+  '<div id="root"><main><h1>Jazmin Rodriguez</h1><p>Senior Software Engineer: .NET, Python, React, IA generativa y agentes LLM, microservicios y arquitectura de software. Quito, Ecuador.</p><nav><a href="/about">Sobre mí</a> <a href="/projects">Proyectos</a> <a href="/contact-us">Contacto</a></nav></main></div>'
+);
+fs.writeFileSync(path.join(dist, 'index.html'), homeHtml);
+console.log('prerendered /');
+
 for (const r of ROUTES) {
   const url = `${BASE}/${r.path}`;
   let html = template;
