@@ -1,7 +1,7 @@
 import type { TimelineKind, TimelineItem } from './timeline-data';
 
-import { useRef, useState } from 'react';
 import { m, useScroll, useSpring } from 'framer-motion';
+import { useRef, useState, useLayoutEffect } from 'react';
 
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -9,8 +9,8 @@ import Chip from '@mui/material/Chip';
 import Tabs from '@mui/material/Tabs';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { alpha, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { alpha, useTheme, type Theme, type SxProps } from '@mui/material/styles';
 
 import { useTranslate } from 'src/locales';
 
@@ -32,15 +32,38 @@ type ItemProps = {
   item: TimelineItem;
   side: Side;
   lang: 'es' | 'en';
+  innerRef?: (el: HTMLDivElement | null) => void;
+  positionSx?: SxProps<Theme>;
 };
 
 const itemKey = (item: TimelineItem, lang: 'es' | 'en') =>
   `${typeof item.org === 'string' ? item.org : item.org[lang]}-${item.period.es}`;
 
+// Desktop layout: cards alternate sides and are placed absolutely from their measured heights.
+// Consecutive dots keep the same vertical distance (DOT_STEP) unless a card is so tall that the next
+// card on the same side would overlap it, in which case the gap grows just enough to avoid that.
+const DOT_STEP = 150;
+const CARD_GAP = 28;
+const TIMELINE_MAX_WIDTH = 1000;
+
+function computeTops(heights: number[]) {
+  const tops: number[] = [];
+  heights.forEach((h, i) => {
+    if (i === 0) {
+      tops.push(0);
+    } else {
+      const afterDot = tops[i - 1] + DOT_STEP;
+      const afterSameSide = i >= 2 ? tops[i - 2] + heights[i - 2] + CARD_GAP : 0;
+      tops.push(Math.max(afterDot, afterSameSide));
+    }
+  });
+  return tops;
+}
+
 const DOT = 32;
 const COLUMN_GAP = 48; // space between the two columns, the vertical line runs through its middle
 
-function TimelineEntry({ item, side, lang }: ItemProps) {
+function TimelineEntry({ item, side, lang, innerRef, positionSx }: ItemProps) {
   const theme = useTheme();
 
   // Distance from the card edge to the center of the vertical line
@@ -48,10 +71,11 @@ function TimelineEntry({ item, side, lang }: ItemProps) {
 
   return (
     <Box
-      sx={{
-        position: 'relative',
-        pl: side === 'single' ? '44px' : 0,
-      }}
+      ref={innerRef}
+      sx={[
+        { position: 'relative', pl: side === 'single' ? '44px' : 0 },
+        ...(Array.isArray(positionSx) ? positionSx : [positionSx]),
+      ]}
     >
       {/* Dot sitting on the vertical line */}
       <Box
@@ -153,6 +177,30 @@ export function CareerTimeline() {
   const items = TIMELINES[tab];
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [heights, setHeights] = useState<number[]>([]);
+
+  useLayoutEffect(() => {
+    if (!isDesktop) return undefined;
+
+    const measure = () => {
+      const next = items.map((_, i) => itemRefs.current[i]?.offsetHeight ?? 0);
+      setHeights((prev) =>
+        prev.length === next.length && prev.every((v, i) => v === next[i]) ? prev : next
+      );
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    itemRefs.current.slice(0, items.length).forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, [items, isDesktop, lang]);
+
+  const measured = heights.length === items.length ? heights : items.map(() => 0);
+  const tops = computeTops(measured);
+  const containerHeight = tops.reduce((max, top, i) => Math.max(max, top + measured[i]), 0);
+
   return (
     <Box>
       <Tabs
@@ -180,7 +228,7 @@ export function CareerTimeline() {
         ))}
       </Tabs>
 
-      <Box key={tab} ref={trackRef} sx={{ position: 'relative' }}>
+      <Box key={tab} ref={trackRef} sx={{ position: 'relative', maxWidth: TIMELINE_MAX_WIDTH, mx: 'auto' }}>
         {/* Vertical line: grey track + animated fill that grows while scrolling */}
         <Box
           sx={{
@@ -207,30 +255,27 @@ export function CareerTimeline() {
         </Box>
 
         {isDesktop ? (
-          // Two independent columns: a card starts as soon as there is room on its side,
-          // the right column is shifted down a little so dots alternate along the line.
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              columnGap: `${COLUMN_GAP}px`,
-              alignItems: 'start',
-            }}
-          >
-            <Stack spacing={3}>
-              {items
-                .filter((_, i) => i % 2 === 0)
-                .map((item) => (
-                  <TimelineEntry key={itemKey(item, lang)} item={item} side="left" lang={lang} />
-                ))}
-            </Stack>
-            <Stack spacing={3} sx={{ pt: 7 }}>
-              {items
-                .filter((_, i) => i % 2 === 1)
-                .map((item) => (
-                  <TimelineEntry key={itemKey(item, lang)} item={item} side="right" lang={lang} />
-                ))}
-            </Stack>
+          <Box sx={{ position: 'relative', height: containerHeight }}>
+            {items.map((item, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <TimelineEntry
+                  key={itemKey(item, lang)}
+                  item={item}
+                  side={isLeft ? 'left' : 'right'}
+                  lang={lang}
+                  innerRef={(el) => {
+                    itemRefs.current[index] = el;
+                  }}
+                  positionSx={{
+                    position: 'absolute',
+                    top: tops[index] ?? 0,
+                    width: `calc(50% - ${COLUMN_GAP / 2}px)`,
+                    ...(isLeft ? { left: 0 } : { right: 0 }),
+                  }}
+                />
+              );
+            })}
           </Box>
         ) : (
           <Stack spacing={3}>
