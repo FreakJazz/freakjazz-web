@@ -1,4 +1,3 @@
-import { m } from 'framer-motion';
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
@@ -203,160 +202,73 @@ export function AboutView() {
       </Section>
 
       {/* Articles (Medium) */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
-        <Container maxWidth="lg">
-          <Box
-            component={m.div}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6 }}
-            sx={{
-              position: 'relative',
-              overflow: 'hidden',
-              borderRadius: 4,
-              p: { xs: 4, md: 8 },
-              color: 'common.white',
-              background: 'linear-gradient(135deg, #0b0b0b 0%, #1f1f1f 55%, #3a3a3a 100%)',
-              boxShadow: (theme) => theme.shadows[24],
-            }}
+      <Section
+        title={t('about.articlesTitle')}
+        subtitle={t('about.articlesText')}
+        bgcolor="background.default"
+      >
+        <Stack spacing={2} alignItems="center" textAlign="center">
+          <Iconify icon={'mdi:medium' as any} width={56} />
+          <Button
+            href="https://medium.com/@jazzrb2307"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="contained"
+            size="large"
+            endIcon={<Iconify icon={'solar:arrow-right-up-linear' as any} />}
+            sx={{ px: 4 }}
           >
-            <Iconify
-              icon={'mdi:medium' as any}
-              sx={{
-                position: 'absolute',
-                right: { xs: -40, md: 40 },
-                bottom: { xs: -40, md: -30 },
-                width: { xs: 220, md: 340 },
-                height: { xs: 220, md: 340 },
-                opacity: 0.08,
-              }}
-            />
-
-            <Stack spacing={3} sx={{ position: 'relative', maxWidth: 640 }}>
-              <Chip
-                icon={<Iconify icon={'mdi:medium' as any} width={20} />}
-                label="Medium"
-                sx={{
-                  alignSelf: 'flex-start',
-                  color: 'common.white',
-                  bgcolor: 'rgba(255,255,255,0.14)',
-                  '& .MuiChip-icon': { color: 'common.white' },
-                }}
-              />
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-                {t('about.articlesTitle')}
-              </Typography>
-              <Typography variant="h6" sx={{ fontWeight: 400, opacity: 0.85, lineHeight: 1.7 }}>
-                {t('about.articlesText')}
-              </Typography>
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems={{ sm: 'center' }}>
-                <Button
-                  href="https://medium.com/@jazzrb2307"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="contained"
-                  size="large"
-                  endIcon={<Iconify icon={'solar:arrow-right-up-linear' as any} />}
-                  sx={{
-                    px: 4,
-                    bgcolor: 'common.white',
-                    color: 'grey.900',
-                    '&:hover': { bgcolor: 'grey.200' },
-                  }}
-                >
-                  {t('about.articlesButton')}
-                </Button>
-                <Typography variant="body2" sx={{ opacity: 0.7 }}>
-                  {t('about.articlesSoon')}
-                </Typography>
-              </Stack>
-            </Stack>
-          </Box>
-        </Container>
-      </Box>
+            {t('about.articlesButton')}
+          </Button>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            {t('about.articlesSoon')}
+          </Typography>
+        </Stack>
+      </Section>
 
       {/* Final call to action */}
-      <Box sx={{ pb: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
-        <Container maxWidth="lg">
-          <Box
-            component={m.div}
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6 }}
-            sx={(theme) => ({
-              borderRadius: 4,
-              p: { xs: 4, md: 8 },
-              textAlign: 'center',
-              color: 'common.white',
-              background: `linear-gradient(135deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main} 60%, ${theme.palette.secondary.main})`,
-              boxShadow: theme.shadows[24],
-            })}
-          >
-            <Stack spacing={3} alignItems="center">
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3.25rem' } }}>
-                {t('about.ctaTitle')}
-              </Typography>
-              <Typography variant="h6" sx={{ fontWeight: 400, opacity: 0.9, maxWidth: 640 }}>
-                {t('about.ctaText')}
-              </Typography>
+      <Section
+        title={t('about.ctaTitle')}
+        subtitle={t('about.ctaText')}
+        bgcolor="background.neutral"
+      >
+        <Stack spacing={4} alignItems="center">
+          <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1.5}>
+            {PERKS.map((perk) => (
+              <Chip
+                key={perk.key}
+                color="primary"
+                variant="soft"
+                icon={<Iconify icon={perk.icon as any} width={20} />}
+                label={t(perk.key)}
+              />
+            ))}
+          </Stack>
 
-              <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1.5}>
-                {PERKS.map((perk) => (
-                  <Chip
-                    key={perk.key}
-                    icon={<Iconify icon={perk.icon as any} width={20} />}
-                    label={t(perk.key)}
-                    sx={{
-                      color: 'common.white',
-                      bgcolor: 'rgba(255,255,255,0.18)',
-                      '& .MuiChip-icon': { color: 'common.white' },
-                    }}
-                  />
-                ))}
-              </Stack>
-
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
-                <Button
-                  component={RouterLink}
-                  href={paths.contact}
-                  variant="contained"
-                  size="large"
-                  startIcon={<Iconify icon={'solar:letter-bold-duotone' as any} />}
-                  sx={{
-                    px: 4,
-                    py: 1.75,
-                    fontSize: '1.05rem',
-                    bgcolor: 'common.white',
-                    color: 'primary.main',
-                    '&:hover': { bgcolor: 'grey.100' },
-                  }}
-                >
-                  {t('home.cta')}
-                </Button>
-                <Button
-                  href={cv.url}
-                  download={cv.filename}
-                  variant="outlined"
-                  size="large"
-                  startIcon={<Iconify icon={'solar:download-bold-duotone' as any} />}
-                  sx={{
-                    px: 4,
-                    py: 1.75,
-                    fontSize: '1.05rem',
-                    color: 'common.white',
-                    borderColor: 'rgba(255,255,255,0.7)',
-                    '&:hover': { borderColor: 'common.white', bgcolor: 'rgba(255,255,255,0.12)' },
-                  }}
-                >
-                  {t('common.downloadCV')}
-                </Button>
-              </Stack>
-            </Stack>
-          </Box>
-        </Container>
-      </Box>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+            <Button
+              component={RouterLink}
+              href={paths.contact}
+              variant="contained"
+              size="large"
+              startIcon={<Iconify icon={'solar:letter-bold-duotone' as any} />}
+              sx={{ px: 4 }}
+            >
+              {t('home.cta')}
+            </Button>
+            <Button
+              href={cv.url}
+              download={cv.filename}
+              variant="outlined"
+              size="large"
+              startIcon={<Iconify icon={'solar:download-bold-duotone' as any} />}
+              sx={{ px: 4 }}
+            >
+              {t('common.downloadCV')}
+            </Button>
+          </Stack>
+        </Stack>
+      </Section>
     </>
   );
 }
