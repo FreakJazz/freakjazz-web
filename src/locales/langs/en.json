@@ -100,7 +100,8 @@
         "ctaText": "If you're looking for a senior software engineer for your team or project, get in touch.",
         "articlesTitle": "Articles",
         "articlesText": "I share what I learn about software development on Medium.",
-        "articlesButton": "Read on Medium"
+        "articlesButton": "Read on Medium",
+        "articlesSoon": "New articles coming soon"
     },
     "education": {
         "title": "Education",
@@ -128,7 +129,7 @@
         "geodecodifyTitle": "Geodecodify",
         "geodecodifyDescription": "Web platform of validation forms for road occupancy and land use, built to digitize and speed up the collection of territorial information.",
         "murildentalTitle": "Muril Dental",
-        "murildentalDescription": "Website for a dental clinic with online appointment scheduling for its patients."
+        "murildentalDescription": "Web platform for dental clinics with online appointment scheduling. Supports multiple establishments, 5 user roles, management of specialties, doctors and images, automated email notifications, and two themes (light and dark) with a polished design."
     },
     "seo_projects": {
         "title": "Projects and case studies | Jazmin Rodriguez",

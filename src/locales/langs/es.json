@@ -100,7 +100,8 @@
         "ctaText": "Si buscas una ingeniera de software senior para tu equipo o proyecto, escríbeme.",
         "articlesTitle": "Artículos",
         "articlesText": "Comparto lo que aprendo sobre desarrollo de software en Medium.",
-        "articlesButton": "Leer en Medium"
+        "articlesButton": "Leer en Medium",
+        "articlesSoon": "Nuevos artículos próximamente"
     },
     "education": {
         "title": "Educación",
@@ -128,7 +129,7 @@
         "geodecodifyTitle": "Geodecodify",
         "geodecodifyDescription": "Plataforma web de formularios de validación de ocupación de vías y suelo, pensada para digitalizar y agilizar el levantamiento de información territorial.",
         "murildentalTitle": "Muril Dental",
-        "murildentalDescription": "Sitio web para una clínica odontológica con agendamiento de citas en línea para sus pacientes."
+        "murildentalDescription": "Plataforma web para clínicas odontológicas con agendamiento de citas en línea. Soporta varios establecimientos, 5 roles de usuario, gestión de especialidades, doctores e imágenes, notificaciones y correos automáticos, y dos temas (claro y oscuro) con un diseño cuidado."
     },
     "seo_projects": {
         "title": "Proyectos y casos de estudio | Jazmin Rodriguez",

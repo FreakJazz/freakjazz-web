@@ -180,7 +180,7 @@ export function CareerTimeline() {
         ))}
       </Tabs>
 
-      <Box key={tab} ref={trackRef} sx={{ position: 'relative', maxWidth: 960, mx: 'auto' }}>
+      <Box key={tab} ref={trackRef} sx={{ position: 'relative' }}>
         {/* Vertical line: grey track + animated fill that grows while scrolling */}
         <Box
           sx={{
