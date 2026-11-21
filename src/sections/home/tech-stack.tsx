@@ -52,6 +52,7 @@ function FloatingTech({ items, size, height }: FloatingTechProps) {
     const bodies: (Body | null)[] = items.map(() => null);
     let frame = 0;
     let last = performance.now();
+    let visible = true;
 
     const tick = (now: number) => {
       const dt = Math.min((now - last) / 16.67, 3); // normalized to 60fps
@@ -101,11 +102,25 @@ function FloatingTech({ items, size, height }: FloatingTechProps) {
         });
       }
 
-      if (!reduceMotion) frame = requestAnimationFrame(tick);
+      if (!reduceMotion && visible) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
 
-    return () => cancelAnimationFrame(frame);
+    // Pause the animation while the card is off-screen (saves CPU/GPU, keeps the page smooth)
+    const observer = new IntersectionObserver(([entry]) => {
+      const nowVisible = entry.isIntersecting;
+      if (nowVisible && !visible && !reduceMotion) {
+        last = performance.now();
+        frame = requestAnimationFrame(tick);
+      }
+      visible = nowVisible;
+    });
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+    };
   }, [items, size, height, cell, reduceMotion]);
 
   return (

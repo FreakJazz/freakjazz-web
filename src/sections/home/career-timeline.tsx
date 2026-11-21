@@ -107,7 +107,7 @@ function TimelineEntry({ item, side, lang, innerRef, positionSx }: ItemProps) {
 
       <Box
         component={m.div}
-        initial={{ opacity: 0, x: side === 'left' ? -60 : 60, y: 20 }}
+        initial={{ opacity: 0, x: side === 'single' ? 0 : side === 'left' ? -60 : 60, y: 20 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}

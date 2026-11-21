@@ -205,7 +205,7 @@ export function HomeView() {
       </Box>
 
       {/* Career timeline (experience / education / courses) */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral', overflowX: 'clip' }}>
         <Container maxWidth="lg">
           <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>

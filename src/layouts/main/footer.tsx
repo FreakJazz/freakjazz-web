@@ -33,7 +33,7 @@ export function Footer({
 }: FooterProps & { layoutQuery?: Breakpoint }) {
   const { t } = useTranslate();
 
-  const LINKS = [
+  const LINKS: { headline: string; children: { name: string; href: string; external?: boolean }[] }[] = [
     {
       headline: t('footer.freakjazz'),
       children: [
@@ -41,8 +41,6 @@ export function Footer({
         { name: t('common.about'), href: paths.about },
         { name: t('common.projects'), href: paths.projects },
         { name: t('footer.contactUs'), href: paths.contact },
-        { name: t('footer.github'), href: 'https://github.com/FreakJazz', external: true },
-        { name: 'Medium', href: 'https://medium.com/@jazzrb2307', external: true },
       ],
     },
     {
