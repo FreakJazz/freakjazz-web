@@ -321,9 +321,9 @@ export function ProfilePageSchema() {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
     url: 'https://freakjazz.com/about',
-    name: 'About Jazmin Rodriguez - Story, Work Philosophy and Profile',
+    name: 'About Jazmin Rodriguez - Story, Career and Tech Stack',
     description:
-      'Professional story, work philosophy, education, languages and interests of Jazmin Rodriguez, software engineer in Quito, Ecuador.',
+      'Professional story, career, tech stack, education, languages and interests of Jazmin Rodriguez, software engineer in Quito, Ecuador.',
     inLanguage: ['es', 'en'],
     mainEntity: {
       '@type': 'Person',

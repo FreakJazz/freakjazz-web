@@ -6,38 +6,57 @@ import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import LinearProgress from '@mui/material/LinearProgress';
 
+import { useTranslate } from 'src/locales';
+
 import { Iconify } from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-const languages = [
+type Bilingual = { es: string; en: string };
+
+/**
+ * Levels follow the CEFR scale (Common European Framework of Reference):
+ * A1 beginner · A2 elementary · B1 intermediate · B2 upper-intermediate · C1 advanced · C2 proficient · Native.
+ */
+const languages: {
+  name: Bilingual;
+  code: string;
+  description: Bilingual;
+  percentage: number;
+  icon: string;
+  color: string;
+}[] = [
   {
-    name: 'Español',
-    level: 'Native',
+    name: { es: 'Español', en: 'Spanish' },
+    code: 'Native',
+    description: { es: 'Lengua nativa', en: 'Native language' },
     percentage: 100,
     icon: 'circle-flags:es',
     color: '#F1BF00',
   },
   {
-    name: 'English',
-    level: 'Advanced',
+    name: { es: 'Inglés', en: 'English' },
+    code: 'B2',
+    description: { es: 'Intermedio alto', en: 'Upper-intermediate' },
     percentage: 70,
     icon: 'circle-flags:us',
     color: '#078DEE',
   },
   {
-    name: 'Русский',
-    level: 'Intermediate',
-    percentage: 40,
+    name: { es: 'Ruso', en: 'Russian' },
+    code: 'A2',
+    description: { es: 'Elemental', en: 'Elementary' },
+    percentage: 35,
     icon: 'circle-flags:ru',
     color: '#D52B1E',
   },
   {
-    name: 'Deutsch',
-    level: 'Basic',
-    percentage: 10,
+    name: { es: 'Alemán', en: 'German' },
+    code: 'A1',
+    description: { es: 'Principiante', en: 'Beginner' },
+    percentage: 15,
     icon: 'circle-flags:de',
-    color: '#FFCE00',
+    color: '#E6A800',
   },
 ];
 
@@ -45,11 +64,13 @@ const languages = [
 
 export function Languages() {
   const theme = useTheme();
+  const { currentLang } = useTranslate();
+  const lang = currentLang.value === 'en' ? 'en' : 'es';
 
   return (
     <Grid container spacing={3}>
-      {languages.map((language, index) => (
-        <Grid key={index} size={{ xs: 12, sm: 6, md: 3 }}>
+      {languages.map((language) => (
+        <Grid key={language.code + language.name.en} size={{ xs: 12, sm: 6, md: 3 }}>
           <Card
             sx={{
               p: 3,
@@ -79,22 +100,27 @@ export function Languages() {
 
               {/* Language Name */}
               <Typography variant="h6" sx={{ textAlign: 'center' }}>
-                {language.name}
+                {language.name[lang]}
               </Typography>
 
-              {/* Level Badge */}
+              {/* Level badge (CEFR) */}
               <Typography
-                variant="caption"
+                variant="subtitle1"
                 sx={{
-                  px: 1.5,
+                  px: 2,
                   py: 0.5,
                   borderRadius: 1,
                   color: language.color,
-                  bgcolor: alpha(language.color, 0.12),
-                  fontWeight: 600,
+                  bgcolor: alpha(language.color, 0.14),
+                  fontWeight: 800,
+                  letterSpacing: 0.5,
                 }}
               >
-                {language.level}
+                {language.code === 'Native' ? (lang === 'es' ? 'Nativo' : 'Native') : language.code}
+              </Typography>
+
+              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                {language.description[lang]}
               </Typography>
 
               {/* Progress Bar */}
@@ -112,12 +138,6 @@ export function Languages() {
                     },
                   }}
                 />
-                <Typography
-                  variant="caption"
-                  sx={{ mt: 0.5, display: 'block', textAlign: 'center', color: 'text.secondary' }}
-                >
-                  {language.percentage}%
-                </Typography>
               </Box>
             </Stack>
           </Card>

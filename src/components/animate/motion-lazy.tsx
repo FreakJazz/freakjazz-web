@@ -1,4 +1,4 @@
-import { domMax, LazyMotion } from 'framer-motion';
+import { LazyMotion, domAnimation } from 'framer-motion';
 
 // ----------------------------------------------------------------------
 
@@ -8,7 +8,7 @@ export type MotionLazyProps = {
 
 export function MotionLazy({ children }: MotionLazyProps) {
   return (
-    <LazyMotion strict features={domMax}>
+    <LazyMotion strict features={domAnimation}>
       {children}
     </LazyMotion>
   );

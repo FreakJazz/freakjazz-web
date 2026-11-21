@@ -14,8 +14,8 @@
             "description": "Cuéntame sobre tu proyecto de software. Desarrollo full stack, arquitectura de software, microservicios e IA generativa. Disponible para consultoría y desarrollo."
         },
         "about": {
-            "title": "Sobre Jazmin Rodriguez | Historia, Filosofía de Trabajo y Perfil",
-            "description": "Conoce a Jazmin Rodriguez, ingeniera de software en Quito, Ecuador: su historia profesional, cómo trabaja, su formación, idiomas e intereses fuera del código."
+            "title": "Sobre Jazmin Rodriguez | Historia, Trayectoria y Stack Tecnológico",
+            "description": "Conoce a Jazmin Rodriguez, ingeniera de software en Quito, Ecuador: su historia profesional, trayectoria, stack tecnológico, formación, idiomas e intereses fuera del código."
         }
     },
     "common": {
@@ -86,7 +86,7 @@
     },
     "about": {
         "title": "Sobre mí",
-        "subtitle": "Mi historia, cómo trabajo y lo que me mueve fuera del código",
+        "subtitle": "Mi historia, mi trayectoria, mi stack y lo que me mueve fuera del código",
         "storyTitle": "Mi historia profesional",
         "story1": "Soy ingeniera de software y vivo en Quito, Ecuador. Mis primeros proyectos fueron de electrónica, IoT y análisis de datos, desde sistemas embebidos con Arduino y ESP32 hasta investigación con datos médicos, y de ahí me llevé la costumbre de entender el problema de fondo antes de escribir código.",
         "story2": "Con los años pasé a construir sistemas de mayor escala: plataformas financieras y de pagos, y sistemas públicos de alcance nacional. Ahí aprendí que el software que importa es el que se sostiene en el tiempo, con otras personas trabajando sobre él.",
@@ -107,7 +107,8 @@
         "articlesTitle": "Artículos",
         "articlesText": "Comparto lo que aprendo sobre desarrollo de software en Medium.",
         "articlesButton": "Leer en Medium",
-        "articlesSoon": "Nuevos artículos próximamente"
+        "articlesSoon": "Nuevos artículos próximamente",
+        "stackTitle": "Mi stack"
     },
     "education": {
         "title": "Educación",

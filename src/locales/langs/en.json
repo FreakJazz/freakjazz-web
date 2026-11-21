@@ -14,8 +14,8 @@
             "description": "Tell me about your software project. Full stack development, software architecture, microservices and generative AI. Available for consulting and development."
         },
         "about": {
-            "title": "About Jazmin Rodriguez | Story, Work Philosophy and Profile",
-            "description": "Meet Jazmin Rodriguez, a software engineer in Quito, Ecuador: her professional story, how she works, her education, languages and interests beyond code."
+            "title": "About Jazmin Rodriguez | Story, Career and Tech Stack",
+            "description": "Meet Jazmin Rodriguez, a software engineer in Quito, Ecuador: her professional story, career, tech stack, education, languages and interests beyond code."
         }
     },
     "common": {
@@ -86,7 +86,7 @@
     },
     "about": {
         "title": "About Me",
-        "subtitle": "My story, how I work, and what drives me beyond code",
+        "subtitle": "My story, my career, my stack and what drives me beyond code",
         "storyTitle": "My professional story",
         "story1": "I'm a software engineer based in Quito, Ecuador. My first projects were in electronics, IoT and data analysis, from embedded systems with Arduino and ESP32 to research with medical data, and I took from that the habit of understanding the underlying problem before writing code.",
         "story2": "Over the years I moved on to larger-scale systems: financial and payment platforms, and national-scale public systems. There I learned that the software that matters is the kind that lasts, with other people working on it.",
@@ -107,7 +107,8 @@
         "articlesTitle": "Articles",
         "articlesText": "I share what I learn about software development on Medium.",
         "articlesButton": "Read on Medium",
-        "articlesSoon": "New articles coming soon"
+        "articlesSoon": "New articles coming soon",
+        "stackTitle": "My stack"
     },
     "education": {
         "title": "Education",

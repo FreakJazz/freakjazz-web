@@ -16,11 +16,11 @@ const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 const ROUTES = [
   {
     path: 'about',
-    title: 'Sobre Jazmin Rodriguez | Historia, Filosofía de Trabajo y Perfil',
+    title: 'Sobre Jazmin Rodriguez | Historia, Trayectoria y Stack Tecnológico',
     description:
-      'Conoce a Jazmin Rodriguez, ingeniera de software en Quito, Ecuador: su historia profesional, cómo trabaja, su formación, idiomas e intereses fuera del código.',
+      'Conoce a Jazmin Rodriguez, ingeniera de software en Quito, Ecuador: su historia profesional, trayectoria, stack tecnológico, formación, idiomas e intereses fuera del código.',
     h1: 'Sobre mí',
-    text: 'Jazmin Rodriguez, ingeniera de software en Quito, Ecuador. Historia profesional, filosofía de trabajo, formación, idiomas e intereses fuera del código.',
+    text: 'Jazmin Rodriguez, ingeniera de software en Quito, Ecuador. Historia profesional, trayectoria, stack tecnológico, formación, idiomas e intereses fuera del código.',
   },
   {
     path: 'projects',
@@ -49,7 +49,23 @@ function setMeta(html, attr, key, value) {
 }
 
 // Home: keep index.html as is, but give crawlers visible text before JS runs.
-const homeHtml = template.replace(
+// Preload the hero image (desktop / mobile) so it starts downloading before the JS finishes.
+const config = fs.readFileSync(path.resolve('src/global-config.ts'), 'utf8');
+const imageUrl = (key) =>
+  config.match(new RegExp(key + String.raw`:\s*(?:import\.meta\.env\.\w+ \?\?\s*)?'([^']+)'`))?.[1];
+const heroDesktop = imageUrl('hero');
+const heroMobile = imageUrl('heroMobile');
+const attr = (url) => url.replace(/&/g, '&amp;');
+const preloads = [
+  heroMobile &&
+    '<link rel="preload" as="image" href="' + attr(heroMobile) + '" media="(max-width: 899px)" fetchpriority="high" />',
+  heroDesktop &&
+    '<link rel="preload" as="image" href="' + attr(heroDesktop) + '" media="(min-width: 900px)" fetchpriority="high" />',
+]
+  .filter(Boolean)
+  .join('\n    ');
+
+const homeHtml = template.replace('</head>', `    ${preloads}\n  </head>`).replace(
   '<div id="root"></div>',
   `<div id="root"><main style="${HIDDEN}"><h1>Jazmin Rodriguez</h1><p>Senior Software Engineer: .NET, Python, React, IA generativa y agentes LLM, microservicios y arquitectura de software. Quito, Ecuador.</p><nav><a href="/about">Sobre mí</a> <a href="/projects">Proyectos</a> <a href="/contact-us">Contacto</a></nav></main></div>`
 );

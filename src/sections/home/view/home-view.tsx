@@ -20,10 +20,15 @@ import { Iconify } from 'src/components/iconify';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
-import { TechStack } from '../tech-stack';
-import { CareerTimeline } from '../career-timeline';
 
 // ----------------------------------------------------------------------
+
+const PHILOSOPHY = [
+  { key: 'philosophy1', icon: 'solar:target-bold-duotone' },
+  { key: 'philosophy2', icon: 'solar:shield-check-bold-duotone' },
+  { key: 'philosophy3', icon: 'solar:users-group-rounded-bold-duotone' },
+  { key: 'philosophy4', icon: 'solar:atom-bold-duotone' },
+];
 
 export function HomeView() {
   const theme = useTheme();
@@ -204,33 +209,39 @@ export function HomeView() {
         </Container>
       </Box>
 
-      {/* Career timeline (experience / education / courses) */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral', overflowX: 'clip' }}>
+      {/* Work philosophy */}
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
         <Container maxWidth="lg">
           <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-              {t('home.timelineTitle')}
+              {t('about.philosophyTitle')}
             </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 720 }}>
-              {t('home.timelineSubtitle')}
+            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 640 }}>
+              {t('about.philosophySubtitle')}
             </Typography>
           </Stack>
-          <CareerTimeline />
-        </Container>
-      </Box>
 
-      {/* Technologies (tabs + floating icons) */}
-      <Box id="technologies" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
-        <Container maxWidth="lg">
-          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-              {t('frameworks.title')}
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 680 }}>
-              {t('frameworks.subtitle')}
-            </Typography>
-          </Stack>
-          <TechStack />
+          <Grid container spacing={3}>
+            {PHILOSOPHY.map((item) => (
+              <Grid key={item.key} size={{ xs: 12, sm: 6, md: 3 }}>
+                <Card sx={{ height: '100%', textAlign: 'center' }}>
+                  <CardContent sx={{ p: 4 }}>
+                    <Iconify
+                      icon={item.icon as any}
+                      width={56}
+                      sx={{ color: 'primary.main', mb: 2 }}
+                    />
+                    <Typography variant="h6" sx={{ mb: 1.5 }}>
+                      {t(`about.${item.key}Title`)}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                      {t(`about.${item.key}Text`)}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </Box>
 
@@ -264,7 +275,7 @@ export function HomeView() {
       <Box
         sx={{
           py: { xs: 8, md: 12 },
-          bgcolor: 'background.neutral',
+          bgcolor: 'background.default',
         }}
       >
         <Container>

@@ -1,13 +1,10 @@
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import CardContent from '@mui/material/CardContent';
 
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
@@ -21,6 +18,8 @@ import { SeoHead, BreadcrumbSchema, ProfilePageSchema } from 'src/components/seo
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
 import { Languages } from '../../home/languages';
+import { TechStack } from '../../home/tech-stack';
+import { CareerTimeline } from '../../home/career-timeline';
 import { PersonalInterests } from '../../home/personal-interests';
 
 // ----------------------------------------------------------------------
@@ -54,13 +53,6 @@ function Section({ title, subtitle, bgcolor, children }: SectionProps) {
     </Box>
   );
 }
-
-const PHILOSOPHY = [
-  { key: 'philosophy1', icon: 'solar:target-bold-duotone' },
-  { key: 'philosophy2', icon: 'solar:shield-check-bold-duotone' },
-  { key: 'philosophy3', icon: 'solar:users-group-rounded-bold-duotone' },
-  { key: 'philosophy4', icon: 'solar:atom-bold-duotone' },
-];
 
 // ----------------------------------------------------------------------
 
@@ -146,49 +138,40 @@ export function AboutView() {
         </Container>
       </Box>
 
-      {/* Work philosophy */}
+
+
       <Section
-        title={t('about.philosophyTitle')}
-        subtitle={t('about.philosophySubtitle')}
+        title={t('about.personalityTitle')}
+        subtitle={t('personalInterests.subtitle')}
         bgcolor="background.default"
       >
-        <Grid container spacing={3}>
-          {PHILOSOPHY.map((item) => (
-            <Grid key={item.key} size={{ xs: 12, sm: 6, md: 3 }}>
-              <Card sx={{ height: '100%', textAlign: 'center' }}>
-                <CardContent sx={{ p: 4 }}>
-                  <Iconify
-                    icon={item.icon as any}
-                    width={56}
-                    sx={{ color: 'primary.main', mb: 2 }}
-                  />
-                  <Typography variant="h6" sx={{ mb: 1.5 }}>
-                    {t(`about.${item.key}Title`)}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {t(`about.${item.key}Text`)}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        <PersonalInterests />
       </Section>
 
       <Section
         title={t('languages.title')}
         subtitle={t('languages.subtitle')}
-        bgcolor="background.default"
+        bgcolor="background.neutral"
       >
         <Languages />
       </Section>
 
+      {/* Stack */}
       <Section
-        title={t('about.personalityTitle')}
-        subtitle={t('personalInterests.subtitle')}
+        title={t('about.stackTitle')}
+        subtitle={t('frameworks.subtitle')}
+        bgcolor="background.default"
+      >
+        <TechStack />
+      </Section>
+
+      {/* Career timeline (experience / education / courses) */}
+      <Section
+        title={t('home.timelineTitle')}
+        subtitle={t('home.timelineSubtitle')}
         bgcolor="background.neutral"
       >
-        <PersonalInterests />
+        <CareerTimeline />
       </Section>
 
       {/* Articles (Medium) */}
