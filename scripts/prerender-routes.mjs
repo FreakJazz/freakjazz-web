@@ -5,6 +5,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const BASE = 'https://freakjazz.com';
+
+// Crawlers read this text, visitors never see it (no flash of unstyled HTML before React mounts).
+// Not display:none, so search engines still treat it as real content.
+const HIDDEN =
+  'position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
 const dist = path.resolve('dist');
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 
@@ -46,7 +51,7 @@ function setMeta(html, attr, key, value) {
 // Home: keep index.html as is, but give crawlers visible text before JS runs.
 const homeHtml = template.replace(
   '<div id="root"></div>',
-  '<div id="root"><main><h1>Jazmin Rodriguez</h1><p>Senior Software Engineer: .NET, Python, React, IA generativa y agentes LLM, microservicios y arquitectura de software. Quito, Ecuador.</p><nav><a href="/about">Sobre mí</a> <a href="/projects">Proyectos</a> <a href="/contact-us">Contacto</a></nav></main></div>'
+  `<div id="root"><main style="${HIDDEN}"><h1>Jazmin Rodriguez</h1><p>Senior Software Engineer: .NET, Python, React, IA generativa y agentes LLM, microservicios y arquitectura de software. Quito, Ecuador.</p><nav><a href="/about">Sobre mí</a> <a href="/projects">Proyectos</a> <a href="/contact-us">Contacto</a></nav></main></div>`
 );
 fs.writeFileSync(path.join(dist, 'index.html'), homeHtml);
 console.log('prerendered /');
@@ -72,7 +77,7 @@ for (const r of ROUTES) {
 
   html = html.replace(
     '<div id="root"></div>',
-    `<div id="root"><main><h1>${esc(r.h1)}</h1><p>${esc(r.text)}</p><nav><a href="/">Inicio</a> <a href="/about">Sobre mí</a> <a href="/projects">Proyectos</a> <a href="/contact-us">Contacto</a></nav></main></div>`
+    `<div id="root"><main style="${HIDDEN}"><h1>${esc(r.h1)}</h1><p>${esc(r.text)}</p><nav><a href="/">Inicio</a> <a href="/about">Sobre mí</a> <a href="/projects">Proyectos</a> <a href="/contact-us">Contacto</a></nav></main></div>`
   );
 
   const dir = path.join(dist, r.path);
