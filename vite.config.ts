@@ -56,22 +56,5 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    chunkSizeWarningLimit: 700,
-    rollupOptions: {
-      output: {
-        // Split vendor code so the browser downloads it in parallel and caches it between deploys
-        manualChunks(id: string) {
-          if (!id.includes('node_modules')) return undefined;
-          if (/[\/](react|react-dom|react-router|react-router-dom|scheduler)[\/]/.test(id)) return 'react';
-          if (/[\/]@mui[\/]|[\/]@emotion[\/]/.test(id)) return 'mui';
-          if (/[\/]framer-motion[\/]|[\/]motion-dom[\/]|[\/]motion-utils[\/]/.test(id)) return 'motion';
-          if (/[\/](i18next|react-i18next|i18next-[^\/]+)[\/]/.test(id)) return 'i18n';
-          if (/[\/](react-hook-form|zod|@hookform)[\/]/.test(id)) return 'forms';
-          return undefined;
-        },
-      },
-    },
-  },
   preview: { port: PORT, host: true },
 });
