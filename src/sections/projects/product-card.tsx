@@ -64,13 +64,14 @@ export function ProductCard({
           height: 240,
           position: 'relative',
           background: image
-            ? `url(${image}) center / cover no-repeat`
+            ? `url(${image}) top center / cover no-repeat`
             : `linear-gradient(135deg, ${gradient[0]}, ${gradient[1]})`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
       >
+        {!image && (
         <Box
           sx={{
             position: 'absolute',
@@ -94,6 +95,7 @@ export function ProductCard({
             {domain}
           </Typography>
         </Box>
+        )}
 
         {!image && <Iconify icon={icon as any} width={96} sx={{ color: 'common.white', opacity: 0.95 }} />}
       </Box>

@@ -9,6 +9,7 @@ export type ConfigValue = {
   assetsDir: string;
   images: {
     hero: string;
+    about: string;
     heroMobile: string;
     contact: string;
     quote: string;
@@ -31,6 +32,8 @@ export const CONFIG: ConfigValue = {
   images: {
     hero:
       'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2F53f46de1-7e8e-420a-b3c4-11b2e7cbd5fc.jpe?alt=media&token=5f13039b-61fc-4d57-a924-8c228e36b65e',
+    about:
+      'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2FWhatsApp%20Image%202026-11-11%20at%2011.42.49%20PM.jpeg?alt=media&token=cf41dbd1-c1e7-4663-8c8c-a4d491ebda4c',
     heroMobile:
       'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2Ff514bd43-a18a-4da7-a288-ccd08c064529.jpe?alt=media&token=3d971ca0-b81f-44e4-b5db-407cccdf6b91',
     contact:

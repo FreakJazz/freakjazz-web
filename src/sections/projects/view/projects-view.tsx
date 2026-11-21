@@ -123,6 +123,8 @@ const products = [
     key: 'murildental',
     url: 'https://murildental.com',
     domain: 'murildental.com',
+    image:
+      'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2FMURIL.png?alt=media&token=36221fdc-dc4f-4986-9d02-3ac65f6a7af9',
     icon: 'solar:calendar-mark-bold-duotone',
     gradient: ['#6d28d9', '#ec4899'] as [string, string],
     tags: ['Web App', 'Online Booking', 'Responsive'],
@@ -236,6 +238,7 @@ export function ProjectsView() {
                   icon={product.icon}
                   tags={product.tags}
                   gradient={product.gradient}
+                  image={'image' in product ? product.image : undefined}
                   cta={t('projects.visitSite')}
                 />
               </Grid>

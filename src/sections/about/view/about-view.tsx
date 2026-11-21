@@ -128,21 +128,41 @@ export function AboutView() {
 
       {/* Professional story */}
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
-        <Container maxWidth="md">
-          <Stack spacing={3}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-              {t('about.storyTitle')}
-            </Typography>
-            {['story1', 'story2', 'story3'].map((key) => (
-              <Typography
-                key={key}
-                variant="body1"
-                sx={{ fontSize: { xs: '1rem', md: '1.15rem' }, color: 'text.secondary', lineHeight: 1.9 }}
-              >
-                {t(`about.${key}`)}
-              </Typography>
-            ))}
-          </Stack>
+        <Container maxWidth="lg">
+          <Grid container spacing={{ xs: 5, md: 8 }} alignItems="center">
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Box
+                component="img"
+                src={CONFIG.images.about}
+                alt="Jazmin Rodriguez"
+                loading="lazy"
+                sx={{
+                  width: 1,
+                  aspectRatio: '1 / 1',
+                  objectFit: 'cover',
+                  borderRadius: 3,
+                  boxShadow: (theme) => theme.shadows[20],
+                }}
+              />
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Stack spacing={3}>
+                <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
+                  {t('about.storyTitle')}
+                </Typography>
+                {['story1', 'story2', 'story3'].map((key) => (
+                  <Typography
+                    key={key}
+                    variant="body1"
+                    sx={{ fontSize: { xs: '1rem', md: '1.15rem' }, color: 'text.secondary', lineHeight: 1.9 }}
+                  >
+                    {t(`about.${key}`)}
+                  </Typography>
+                ))}
+              </Stack>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
 

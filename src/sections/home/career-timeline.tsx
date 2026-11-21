@@ -10,6 +10,7 @@ import Tabs from '@mui/material/Tabs';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { useTranslate } from 'src/locales';
 
@@ -25,123 +26,109 @@ const TABS: { key: TimelineKind; icon: string; labelKey: string }[] = [
   { key: 'courses', icon: 'solar:medal-ribbons-star-bold-duotone', labelKey: 'home.timelineCourses' },
 ];
 
+type Side = 'left' | 'right' | 'single';
+
 type ItemProps = {
   item: TimelineItem;
-  index: number;
+  side: Side;
   lang: 'es' | 'en';
 };
 
-function TimelineEntry({ item, index, lang }: ItemProps) {
+const itemKey = (item: TimelineItem, lang: 'es' | 'en') =>
+  `${typeof item.org === 'string' ? item.org : item.org[lang]}-${item.period.es}`;
+
+const DOT = 32;
+const COLUMN_GAP = 48; // space between the two columns, the vertical line runs through its middle
+
+function TimelineEntry({ item, side, lang }: ItemProps) {
   const theme = useTheme();
-  const isRight = index % 2 === 1;
 
-  const card = (
-    <Box
-      component={m.div}
-      initial={{ opacity: 0, x: isRight ? 60 : -60, y: 20 }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      sx={{
-        p: 3,
-        borderRadius: 2,
-        bgcolor: 'background.paper',
-        border: `1px solid ${alpha(theme.palette.grey[500], 0.2)}`,
-        boxShadow: theme.shadows[4],
-        textAlign: 'left',
-        transition: 'box-shadow 0.3s, transform 0.3s',
-        '&:hover': { boxShadow: theme.shadows[16], transform: 'translateY(-4px)' },
-      }}
-    >
-      <Chip
-        size="small"
-        color="primary"
-        variant="soft"
-        label={item.period[lang]}
-        sx={{ mb: 1.5, fontWeight: 600 }}
-      />
-      <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
-        {item.title[lang]}
-      </Typography>
-      <Typography variant="subtitle2" sx={{ color: 'primary.main', mb: item.points ? 1.5 : 0 }}>
-        {typeof item.org === 'string' ? item.org : item.org[lang]}
-      </Typography>
-
-      {item.points && (
-        <Box component="ul" sx={{ m: 0, pl: 2.5, color: 'text.secondary' }}>
-          {item.points[lang].map((point) => (
-            <Typography key={point} component="li" variant="body2" sx={{ mb: 0.75, lineHeight: 1.7 }}>
-              {point}
-            </Typography>
-          ))}
-        </Box>
-      )}
-
-      {item.tags && (
-        <Stack direction="row" flexWrap="wrap" gap={0.75} sx={{ mt: 1.5 }}>
-          {item.tags.map((tag) => (
-            <Chip key={tag} label={tag} size="small" variant="outlined" />
-          ))}
-        </Stack>
-      )}
-    </Box>
-  );
+  // Distance from the card edge to the center of the vertical line
+  const dotOffset = (COLUMN_GAP + DOT) / 2;
 
   return (
     <Box
       sx={{
-        display: 'grid',
-        gridTemplateColumns: { xs: '44px 1fr', md: '1fr 48px 1fr' },
-        alignItems: 'start',
-        // Desktop: cards of opposite sides overlap vertically so the zigzag stays compact
-        mb: { xs: 3, md: 2 },
-        mt: { md: index === 0 ? 0 : -5 },
+        position: 'relative',
+        pl: side === 'single' ? '44px' : 0,
       }}
     >
-      {/* Dot */}
+      {/* Dot sitting on the vertical line */}
       <Box
+        component={m.div}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ type: 'spring', stiffness: 260, damping: 18 }}
         sx={{
-          gridColumn: { xs: 1, md: 2 },
-          gridRow: 1,
+          position: 'absolute',
+          top: 8,
+          zIndex: 1,
+          width: DOT,
+          height: DOT,
+          borderRadius: '50%',
           display: 'flex',
-          justifyContent: { xs: 'flex-start', md: 'center' },
-          pt: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'common.white',
+          bgcolor: 'primary.main',
+          boxShadow: `0 0 0 6px ${alpha(theme.palette.primary.main, 0.2)}`,
+          ...(side === 'single' && { left: 0 }),
+          ...(side === 'left' && { right: -dotOffset }),
+          ...(side === 'right' && { left: -dotOffset }),
         }}
       >
-        <Box
-          component={m.div}
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-          sx={{
-            width: 32,
-            height: 32,
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'common.white',
-            bgcolor: 'primary.main',
-            boxShadow: `0 0 0 6px ${alpha(theme.palette.primary.main, 0.2)}`,
-            position: 'relative',
-            zIndex: 1,
-          }}
-        >
-          <Iconify icon={item.icon as any} width={18} />
-        </Box>
+        <Iconify icon={item.icon as any} width={18} />
       </Box>
 
-      {/* Card: single column on mobile, alternating sides on desktop */}
       <Box
+        component={m.div}
+        initial={{ opacity: 0, x: side === 'left' ? -60 : 60, y: 20 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         sx={{
-          gridColumn: { xs: 2, md: isRight ? 3 : 1 },
-          gridRow: 1,
-          pl: { xs: 0, md: isRight ? 3 : 0 },
-          pr: { xs: 0, md: isRight ? 0 : 3 },
+          p: 3,
+          borderRadius: 2,
+          bgcolor: 'background.paper',
+          border: `1px solid ${alpha(theme.palette.grey[500], 0.2)}`,
+          boxShadow: theme.shadows[4],
+          textAlign: 'left',
+          transition: 'box-shadow 0.3s, transform 0.3s',
+          '&:hover': { boxShadow: theme.shadows[16], transform: 'translateY(-4px)' },
         }}
       >
-        {card}
+        <Chip
+          size="small"
+          color="primary"
+          variant="soft"
+          label={item.period[lang]}
+          sx={{ mb: 1.5, fontWeight: 600 }}
+        />
+        <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
+          {item.title[lang]}
+        </Typography>
+        <Typography variant="subtitle2" sx={{ color: 'primary.main', mb: item.points ? 1.5 : 0 }}>
+          {typeof item.org === 'string' ? item.org : item.org[lang]}
+        </Typography>
+
+        {item.points && (
+          <Box component="ul" sx={{ m: 0, pl: 2.5, color: 'text.secondary' }}>
+            {item.points[lang].map((point) => (
+              <Typography key={point} component="li" variant="body2" sx={{ mb: 0.75, lineHeight: 1.7 }}>
+                {point}
+              </Typography>
+            ))}
+          </Box>
+        )}
+
+        {item.tags && (
+          <Stack direction="row" flexWrap="wrap" gap={0.75} sx={{ mt: 1.5 }}>
+            {item.tags.map((tag) => (
+              <Chip key={tag} label={tag} size="small" variant="outlined" />
+            ))}
+          </Stack>
+        )}
       </Box>
     </Box>
   );
@@ -164,6 +151,7 @@ export function CareerTimeline() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 110, damping: 28, restDelta: 0.001 });
 
   const items = TIMELINES[tab];
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <Box>
@@ -218,9 +206,39 @@ export function CareerTimeline() {
           />
         </Box>
 
-        {items.map((item, index) => (
-          <TimelineEntry key={`${typeof item.org === 'string' ? item.org : item.org[lang]}-${item.period.es}`} item={item} index={index} lang={lang} />
-        ))}
+        {isDesktop ? (
+          // Two independent columns: a card starts as soon as there is room on its side,
+          // the right column is shifted down a little so dots alternate along the line.
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              columnGap: `${COLUMN_GAP}px`,
+              alignItems: 'start',
+            }}
+          >
+            <Stack spacing={3}>
+              {items
+                .filter((_, i) => i % 2 === 0)
+                .map((item) => (
+                  <TimelineEntry key={itemKey(item, lang)} item={item} side="left" lang={lang} />
+                ))}
+            </Stack>
+            <Stack spacing={3} sx={{ pt: 7 }}>
+              {items
+                .filter((_, i) => i % 2 === 1)
+                .map((item) => (
+                  <TimelineEntry key={itemKey(item, lang)} item={item} side="right" lang={lang} />
+                ))}
+            </Stack>
+          </Box>
+        ) : (
+          <Stack spacing={3}>
+            {items.map((item) => (
+              <TimelineEntry key={itemKey(item, lang)} item={item} side="single" lang={lang} />
+            ))}
+          </Stack>
+        )}
       </Box>
     </Box>
   );
