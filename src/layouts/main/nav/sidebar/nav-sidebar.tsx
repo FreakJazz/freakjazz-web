@@ -278,6 +278,17 @@ export function NavSidebar({ data, sx, ...other }: NavSidebarProps) {
                     <Iconify icon={'mdi:linkedin' as any} width={24} />
                   </IconButton>
                 </Tooltip>
+                <Tooltip title="Medium">
+                  <IconButton
+                    component="a"
+                    href="https://medium.com/@jazzrb2307"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{ width: 40, height: 40, color: 'text.primary' }}
+                  >
+                    <Iconify icon={'mdi:medium' as any} width={24} />
+                  </IconButton>
+                </Tooltip>
               </Stack>
             </Box>
           </Stack>

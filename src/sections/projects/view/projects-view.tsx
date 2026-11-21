@@ -17,6 +17,7 @@ import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
 import { ProjectCard } from '../project-card';
+import { ProductCard } from '../product-card';
 
 // ----------------------------------------------------------------------
 
@@ -109,6 +110,25 @@ const projects = [
   },
 ];
 
+const products = [
+  {
+    key: 'geodecodify',
+    url: 'https://geodecodify.com',
+    domain: 'geodecodify.com',
+    icon: 'solar:map-point-wave-bold-duotone',
+    gradient: ['#0f766e', '#0ea5e9'] as [string, string],
+    tags: ['Web App', 'Forms', 'GIS'],
+  },
+  {
+    key: 'murildental',
+    url: 'https://murildental.com',
+    domain: 'murildental.com',
+    icon: 'solar:calendar-mark-bold-duotone',
+    gradient: ['#6d28d9', '#ec4899'] as [string, string],
+    tags: ['Web App', 'Online Booking', 'Responsive'],
+  },
+];
+
 const caseStudies = [
   {
     key: 'case1',
@@ -190,6 +210,37 @@ export function ProjectsView() {
               {t('projects.subtitle')}
             </Typography>
           </Stack>
+        </Container>
+      </Box>
+
+      {/* Commercial products (live sites) */}
+      <Box sx={{ pt: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+        <Container>
+          <Stack spacing={1} sx={{ mb: 5 }}>
+            <Typography variant="h3" component="h2">
+              {t('projects.productsTitle')}
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 800 }}>
+              {t('projects.productsSubtitle')}
+            </Typography>
+          </Stack>
+
+          <Grid container spacing={4}>
+            {products.map((product) => (
+              <Grid key={product.key} size={{ xs: 12, md: 6 }}>
+                <ProductCard
+                  title={t(`projects.${product.key}Title`)}
+                  description={t(`projects.${product.key}Description`)}
+                  url={product.url}
+                  domain={product.domain}
+                  icon={product.icon}
+                  tags={product.tags}
+                  gradient={product.gradient}
+                  cta={t('projects.visitSite')}
+                />
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </Box>
 

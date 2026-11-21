@@ -9,6 +9,7 @@ export type ConfigValue = {
   assetsDir: string;
   images: {
     hero: string;
+    profile: string;
     heroMobile: string;
     contact: string;
     quote: string;
@@ -32,18 +33,17 @@ export const CONFIG: ConfigValue = {
     hero:
       import.meta.env.VITE_HERO_IMAGE ??
       'https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2F15a114f1-3464-4b77-9a7a-723267d884a9.jpg?alt=media&token=e7101650-d885-432a-b105-9d0f80e1c5b7',
+    profile:
+      'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2F53f46de1-7e8e-420a-b3c4-11b2e7cbd5fc.jpe?alt=media&token=5f13039b-61fc-4d57-a924-8c228e36b65e',
     heroMobile:
-      import.meta.env.VITE_HERO_MOBILE_IMAGE ??
-      'https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2FWhatsApp%20Image%202026-06-14%20at%2018.45.19%20(1).jpeg?alt=media&token=9ba022f9-32bb-400e-82a6-76ebf7ade327',
+      'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2Ff514bd43-a18a-4da7-a288-ccd08c064529.jpe?alt=media&token=3d971ca0-b81f-44e4-b5db-407cccdf6b91',
     contact:
-      import.meta.env.VITE_CONTACT_IMAGE ??
-      'https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2Fd5e11b79-2754-44f7-88cb-f54bbbe57661.jpg?alt=media&token=d52eb456-13c1-4646-be36-dd5755be981e',
+      'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2F97af01e9-729a-417d-93de-5df48b87cb66.jpe?alt=media&token=b33cbd61-6900-4ec4-8e37-9df8573b7e0b',
     quote:
       import.meta.env.VITE_QUOTE_IMAGE ??
       'https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2F0ba33aae-a0f8-4758-9960-c375f332d590.jpg?alt=media&token=a3f54566-7eb5-4b4d-adb7-603a841283c1',
     projects:
-      import.meta.env.VITE_PROJECTS_IMAGE ??
-      'https://firebasestorage.googleapis.com/v0/b/repositorio-images.firebasestorage.app/o/freakjazz%2FWhatsApp%20Image%202026-05-04%20at%2015.43.02.jpeg?alt=media&token=a28f82e3-3c0d-4007-b87f-3d16ba7a77d8',
+      'https://firebasestorage.googleapis.com/v0/b/paginas-web-d9a17.firebasestorage.app/o/freakjazz%2Fimages%2F98e25366-5d1c-4edc-ab58-ce9e76fb6dba.jpe?alt=media&token=d6258426-9445-4dcc-bf8b-203d1704700b',
   },
   /**
    * Auth

@@ -20,7 +20,6 @@ import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { SeoHead, BreadcrumbSchema, ProfilePageSchema } from 'src/components/seo';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
-import { Education } from '../../home/education';
 import { Languages } from '../../home/languages';
 import { PersonalInterests } from '../../home/personal-interests';
 
@@ -177,14 +176,6 @@ export function AboutView() {
       </Section>
 
       <Section
-        title={t('education.title')}
-        subtitle={t('education.subtitle')}
-        bgcolor="background.neutral"
-      >
-        <Education />
-      </Section>
-
-      <Section
         title={t('languages.title')}
         subtitle={t('languages.subtitle')}
         bgcolor="background.default"
@@ -202,6 +193,23 @@ export function AboutView() {
 
       <Box sx={{ py: { xs: 8, md: 10 }, bgcolor: 'background.default' }}>
         <Container maxWidth="md">
+          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 10 }}>
+            <Iconify icon={'mdi:medium' as any} width={48} />
+            <Typography variant="h3">{t('about.articlesTitle')}</Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+              {t('about.articlesText')}
+            </Typography>
+            <Button
+              href="https://medium.com/@jazzrb2307"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outlined"
+              size="large"
+              startIcon={<Iconify icon={'mdi:medium' as any} />}
+            >
+              {t('about.articlesButton')}
+            </Button>
+          </Stack>
           <Stack spacing={3} alignItems="center" textAlign="center">
             <Typography variant="h3">{t('about.ctaTitle')}</Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary' }}>

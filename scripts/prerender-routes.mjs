@@ -23,14 +23,14 @@ const ROUTES = [
     description:
       'Casos de estudio de software financiero, sistemas públicos, IA generativa y geolocalización, más proyectos de código abierto en GitHub. Senior Software Engineer, Ecuador.',
     h1: 'Proyectos',
-    text: 'Casos de estudio de plataformas financieras, sistemas públicos, IA generativa y geolocalización, y proyectos de código abierto en GitHub.',
+    text: 'Productos comerciales como Geodecodify y Murildental, casos de estudio de plataformas financieras, sistemas públicos, IA generativa y geolocalización, y proyectos de código abierto en GitHub.',
   },
   {
     path: 'contact-us',
     title: 'Contactar a Jazmin Rodriguez | Senior Software Engineer',
     description:
       'Cuéntame sobre tu proyecto de software. Desarrollo full stack, arquitectura de software, microservicios e IA generativa. Disponible para consultoría y desarrollo.',
-    h1: 'Contacto',
+    h1: '¿Listo para Construir Algo Increíble?',
     text: 'Cuéntame sobre tu proyecto de software: desarrollo full stack, arquitectura, microservicios e IA generativa.',
   },
 ];

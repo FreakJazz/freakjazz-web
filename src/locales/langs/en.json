@@ -71,7 +71,12 @@
         "trustSubtitle": "Contributing to mission-critical systems across multiple sectors",
         "ctaFinal": "Ready to Build Something Amazing?",
         "ctaFinalSubtitle": "Let's discuss how I can turn your ideas into robust, scalable, AI-powered solutions",
-        "ctaFinalButton": "Let's Talk"
+        "ctaFinalButton": "Let's Talk",
+        "timelineTitle": "My journey",
+        "timelineSubtitle": "Experience, education and courses, from most recent to oldest",
+        "timelineExperience": "Experience",
+        "timelineEducation": "Education",
+        "timelineCourses": "Courses"
     },
     "about": {
         "title": "About Me",
@@ -92,7 +97,10 @@
         "philosophy4Text": "I use AI to accelerate and automate, without losing human judgment or technical accountability.",
         "personalityTitle": "Beyond code",
         "ctaTitle": "Shall we work together?",
-        "ctaText": "If you're looking for a senior software engineer for your team or project, get in touch."
+        "ctaText": "If you're looking for a senior software engineer for your team or project, get in touch.",
+        "articlesTitle": "Articles",
+        "articlesText": "I share what I learn about software development on Medium.",
+        "articlesButton": "Read on Medium"
     },
     "education": {
         "title": "Education",
@@ -113,7 +121,14 @@
         "case3Title": "Generative AI and intelligent agents",
         "case3Description": "Design and integration of LLM, RAG and AI agent solutions to automate processes and support the software development lifecycle, along with large-scale data processing and transformation in Python.",
         "case4Title": "Geolocation and AI algorithms",
-        "case4Description": "Geolocation and mapping solutions with artificial intelligence algorithms for geographic data analysis."
+        "case4Description": "Geolocation and mapping solutions with artificial intelligence algorithms for geographic data analysis.",
+        "productsTitle": "Commercial products",
+        "productsSubtitle": "Live web products. Visit them and see them in action.",
+        "visitSite": "Visit site",
+        "geodecodifyTitle": "Geodecodify",
+        "geodecodifyDescription": "Web platform of validation forms for road occupancy and land use, built to digitize and speed up the collection of territorial information.",
+        "murildentalTitle": "Murildental",
+        "murildentalDescription": "Website for a dental clinic with online appointment scheduling for its patients."
     },
     "seo_projects": {
         "title": "Projects and case studies | Jazmin Rodriguez",
@@ -128,7 +143,12 @@
         "message": "Message",
         "send": "Send Message",
         "success": "Message sent successfully!",
-        "error": "Error sending message. Please try again."
+        "error": "Error sending message. Please try again.",
+        "perk1": "Senior-level code and architecture",
+        "perk2": "Generative AI and automation",
+        "perk3": "Agile delivery and clear communication",
+        "findMe": "You can also find me on",
+        "emailMe": "Email me"
     },
     "quote": {
         "title": "Get a Quote",

@@ -71,7 +71,12 @@
         "trustSubtitle": "Contribuyendo a sistemas críticos en múltiples sectores",
         "ctaFinal": "¿Listo para Construir Algo Increíble?",
         "ctaFinalSubtitle": "Hablemos de cómo convertir tus ideas en soluciones robustas, escalables y potenciadas con IA",
-        "ctaFinalButton": "Hablemos"
+        "ctaFinalButton": "Hablemos",
+        "timelineTitle": "Mi trayectoria",
+        "timelineSubtitle": "Experiencia, estudios y cursos, del más reciente al más antiguo",
+        "timelineExperience": "Experiencia",
+        "timelineEducation": "Estudios",
+        "timelineCourses": "Cursos"
     },
     "about": {
         "title": "Sobre mí",
@@ -92,7 +97,10 @@
         "philosophy4Text": "Uso la IA para acelerar y automatizar, sin perder el juicio humano ni la responsabilidad técnica.",
         "personalityTitle": "Fuera del código",
         "ctaTitle": "¿Trabajamos juntos?",
-        "ctaText": "Si buscas una ingeniera de software senior para tu equipo o proyecto, escríbeme."
+        "ctaText": "Si buscas una ingeniera de software senior para tu equipo o proyecto, escríbeme.",
+        "articlesTitle": "Artículos",
+        "articlesText": "Comparto lo que aprendo sobre desarrollo de software en Medium.",
+        "articlesButton": "Leer en Medium"
     },
     "education": {
         "title": "Educación",
@@ -113,7 +121,14 @@
         "case3Title": "IA generativa y agentes inteligentes",
         "case3Description": "Diseño e integración de soluciones con LLM, RAG y agentes inteligentes para automatizar procesos y apoyar el ciclo de desarrollo de software, junto con procesamiento y transformación de grandes volúmenes de datos con Python.",
         "case4Title": "Geolocalización y algoritmos de IA",
-        "case4Description": "Soluciones de geolocalización y mapas con algoritmos de inteligencia artificial para el análisis de información geográfica."
+        "case4Description": "Soluciones de geolocalización y mapas con algoritmos de inteligencia artificial para el análisis de información geográfica.",
+        "productsTitle": "Productos comerciales",
+        "productsSubtitle": "Productos web publicados y en funcionamiento. Entra y míralos en vivo.",
+        "visitSite": "Visitar sitio",
+        "geodecodifyTitle": "Geodecodify",
+        "geodecodifyDescription": "Plataforma web de formularios de validación de ocupación de vías y suelo, pensada para digitalizar y agilizar el levantamiento de información territorial.",
+        "murildentalTitle": "Murildental",
+        "murildentalDescription": "Sitio web para una clínica odontológica con agendamiento de citas en línea para sus pacientes."
     },
     "seo_projects": {
         "title": "Proyectos y casos de estudio | Jazmin Rodriguez",
@@ -128,7 +143,12 @@
         "message": "Mensaje",
         "send": "Enviar Mensaje",
         "success": "¡Mensaje enviado exitosamente!",
-        "error": "Error al enviar el mensaje. Por favor, intenta de nuevo."
+        "error": "Error al enviar el mensaje. Por favor, intenta de nuevo.",
+        "perk1": "Código y arquitectura de nivel senior",
+        "perk2": "IA generativa y automatización",
+        "perk3": "Entrega ágil y comunicación clara",
+        "findMe": "También me encuentras en",
+        "emailMe": "Escríbeme por correo"
     },
     "quote": {
         "title": "Solicitar Cotización",

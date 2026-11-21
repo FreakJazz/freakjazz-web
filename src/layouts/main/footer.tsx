@@ -38,9 +38,11 @@ export function Footer({
       headline: t('footer.freakjazz'),
       children: [
         { name: t('footer.home'), href: paths.home },
+        { name: t('common.about'), href: paths.about },
         { name: t('common.projects'), href: paths.projects },
         { name: t('footer.contactUs'), href: paths.contact },
         { name: t('footer.github'), href: 'https://github.com/FreakJazz', external: true },
+        { name: 'Medium', href: 'https://medium.com/@jazzrb2307', external: true },
       ],
     },
     {
@@ -109,6 +111,15 @@ export function Footer({
                 rel="noopener noreferrer"
               >
                 <Iconify icon={'mdi:linkedin' as any} />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="https://medium.com/@jazzrb2307"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Medium"
+              >
+                <Iconify icon={'mdi:medium' as any} />
               </IconButton>
             </Box>
           </Grid>

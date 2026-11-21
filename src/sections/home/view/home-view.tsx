@@ -5,6 +5,7 @@ import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
@@ -22,6 +23,7 @@ import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
 import { Frameworks } from '../frameworks';
+import { CareerTimeline } from '../career-timeline';
 import { ProgrammingLanguages } from '../programming-languages';
 
 // ----------------------------------------------------------------------
@@ -152,6 +154,18 @@ export function HomeView() {
       >
         <Container>
           <Stack spacing={4} alignItems="center" textAlign="center">
+            <Avatar
+              src={CONFIG.images.profile}
+              alt="Jazmin Rodriguez"
+              slotProps={{ img: { fetchPriority: 'high' } as any }}
+              sx={{
+                width: { xs: 128, md: 176 },
+                height: { xs: 128, md: 176 },
+                border: '4px solid white',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.45)',
+                '& img': { objectPosition: '22% 35%' },
+              }}
+            />
             <Typography variant="h1" sx={{ fontSize: { xs: '3rem', md: '5rem' } }}>
               {t('home.welcome')}
             </Typography>
@@ -199,25 +213,18 @@ export function HomeView() {
         </Container>
       </Box>
 
-      {/* Professional Summary Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.neutral' }}>
-        <Container>
-          <Stack spacing={4} alignItems="center" textAlign="center">
+      {/* Career timeline (experience / education / courses) */}
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+        <Container maxWidth="lg">
+          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-              {t('home.summaryTitle')}
+              {t('home.timelineTitle')}
             </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                maxWidth: 900,
-                fontSize: { xs: '1rem', md: '1.25rem' },
-                color: 'text.secondary',
-                lineHeight: 1.8,
-              }}
-            >
-              {t('home.summaryText')}
+            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 720 }}>
+              {t('home.timelineSubtitle')}
             </Typography>
           </Stack>
+          <CareerTimeline />
         </Container>
       </Box>
 

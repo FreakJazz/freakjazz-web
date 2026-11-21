@@ -19,12 +19,12 @@ export type LangValue = {
 
 export type LangCode = 'en' | 'es';
 
-export const fallbackLng = 'en';
+export const fallbackLng = 'es';
 export const languages: LangCode[] = ['en', 'es'];
 export const defaultNS = 'common';
 
 export const langStorage = {
-  key: 'i18nextLng',
+  key: 'freakjazz-lang',
   defaultValue: fallbackLng,
 };
 

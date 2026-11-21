@@ -31,13 +31,13 @@ const frameworks = {
     { name: 'Apache Kafka', icon: 'devicon:apachekafka', color: '#231F20' },
   ],
   ai: [
-    { name: 'OpenAI API', icon: 'simple-icons:openai', color: '#412991' },
-    { name: 'LangChain', icon: 'simple-icons:langchain', color: '#1C3C3C' },
+    { name: 'OpenAI API', icon: 'mdi:robot-outline', color: '#412991' },
+    { name: 'LangChain', icon: 'mdi:link-variant', color: '#1C3C3C' },
     { name: 'PyTorch', icon: 'devicon:pytorch', color: '#EE4C2C' },
     { name: 'Scikit-learn', icon: 'devicon:scikitlearn', color: '#F7931E' },
     { name: 'Pandas', icon: 'devicon:pandas', color: '#150458' },
     { name: 'NumPy', icon: 'devicon:numpy', color: '#013243' },
-    { name: 'GitHub Copilot', icon: 'simple-icons:githubcopilot', color: '#000000' },
+    { name: 'GitHub Copilot', icon: 'mdi:github', color: '#000000' },
   ],
   cloud: [
     { name: 'AWS', icon: 'devicon:amazonwebservices-wordmark', color: '#FF9900' },
