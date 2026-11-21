@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
+import { getWhatsAppUrl, WHATSAPP_DISPLAY } from 'src/utils/whatsapp';
+
 import { useTranslate } from 'src/locales';
 
 import { Iconify } from 'src/components/iconify';
@@ -31,7 +33,7 @@ export function Footer({
   layoutQuery = 'md',
   ...other
 }: FooterProps & { layoutQuery?: Breakpoint }) {
-  const { t } = useTranslate();
+  const { t, currentLang } = useTranslate();
 
   const LINKS: { headline: string; children: { name: string; href: string; external?: boolean }[] }[] = [
     {
@@ -45,7 +47,14 @@ export function Footer({
     },
     {
       headline: t('footer.contact'),
-      children: [{ name: t('footer.email'), href: `mailto:${t('footer.email')}` }],
+      children: [
+        { name: t('footer.email'), href: `mailto:${t('footer.email')}` },
+        {
+          name: `WhatsApp ${WHATSAPP_DISPLAY}`,
+          href: getWhatsAppUrl(currentLang.value),
+          external: true,
+        },
+      ],
     },
   ];
 
@@ -109,6 +118,16 @@ export function Footer({
                 rel="noopener noreferrer"
               >
                 <Iconify icon={'mdi:linkedin' as any} />
+              </IconButton>
+              <IconButton
+                component="a"
+                href={getWhatsAppUrl(currentLang.value)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                sx={{ color: '#25D366' }}
+              >
+                <Iconify icon={'mdi:whatsapp' as any} />
               </IconButton>
               <IconButton
                 component="a"

@@ -204,7 +204,11 @@ export function TechStack() {
 
   const selected = TECH_CATEGORIES[selectedIndex];
   const size = isSmallScreen ? 64 : 84;
-  const height = isSmallScreen ? 420 : 460;
+  // Taller area when a group has many items, so the floating icons have room to move
+  const count = selected.items.length;
+  const height = isSmallScreen
+    ? Math.min(420 + Math.max(count - 12, 0) * 26, 900)
+    : Math.min(460 + Math.max(count - 12, 0) * 16, 760);
 
   return (
     <>
@@ -225,7 +229,7 @@ export function TechStack() {
 
       <Card sx={{ mt: 5, p: { xs: 1, md: 2 }, borderRadius: 4, overflow: 'hidden' }}>
         <FloatingTech
-          key={`${selected.key}-${size}`}
+          key={`${selected.key}-${size}-${height}`}
           items={selected.items}
           size={size}
           height={height}

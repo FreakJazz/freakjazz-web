@@ -37,7 +37,9 @@
         "success": "Success",
         "downloadCV": "Download CV",
         "profileRole": "Full Stack Developer",
-        "hourlyRate": "$15-25/hour"
+        "hourlyRate": "$15-25/hour",
+        "languageChanged": "Language changed successfully",
+        "logoutError": "Unable to log out"
     },
     "home": {
         "welcome": "Jazmin Rodriguez",
@@ -77,7 +79,10 @@
         "timelineExperience": "Experience",
         "timelineEducation": "Education",
         "timelineCourses": "Courses",
-        "techLanguages": "Languages"
+        "techLanguages": "Languages",
+        "techDevelopment": "Development & Methodologies",
+        "techArchitectureSecurity": "Architecture, Quality & Security",
+        "techCloudData": "Cloud, Data & DevOps"
     },
     "about": {
         "title": "About Me",
@@ -150,7 +155,16 @@
         "perk2": "Generative AI and automation",
         "perk3": "Agile delivery and clear communication",
         "findMe": "You can also find me on",
-        "emailMe": "Email me"
+        "emailMe": "Email me",
+        "successDetail": "Message sent! I will get back to you soon.",
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address",
+        "subjectRequired": "Subject is required",
+        "messageMin": "Message must be at least 10 characters",
+        "phone": "Phone (optional)",
+        "country": "Country",
+        "phoneInvalid": "Invalid number (6 to 12 digits)"
     },
     "quote": {
         "title": "Get a Quote",

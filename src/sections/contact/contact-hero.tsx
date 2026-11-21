@@ -10,6 +10,8 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { getWhatsAppUrl, WHATSAPP_DISPLAY } from 'src/utils/whatsapp';
+
 import { CONFIG } from 'src/global-config';
 import { useTranslate } from 'src/locales';
 
@@ -33,7 +35,7 @@ const PERKS = [
 ];
 
 export function ContactHero({ sx, ...other }: BoxProps) {
-  const { t } = useTranslate();
+  const { t, currentLang } = useTranslate();
 
   return (
     <Box
@@ -120,6 +122,25 @@ export function ContactHero({ sx, ...other }: BoxProps) {
                 }}
               >
                 {EMAIL}
+              </Button>
+
+              <Button
+                href={getWhatsAppUrl(currentLang.value)}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="contained"
+                size="large"
+                startIcon={<Iconify icon={'mdi:whatsapp' as any} width={24} />}
+                sx={{
+                  px: 4,
+                  py: 1.75,
+                  fontSize: '1.05rem',
+                  color: 'common.white',
+                  bgcolor: '#25D366',
+                  '&:hover': { bgcolor: '#1EBE5A' },
+                }}
+              >
+                WhatsApp {WHATSAPP_DISPLAY}
               </Button>
 
               <Stack direction="row" spacing={1}>

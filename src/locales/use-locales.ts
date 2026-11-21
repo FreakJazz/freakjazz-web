@@ -30,7 +30,7 @@ export function useTranslate(ns?: string) {
           dayjs.locale('en');
         }
 
-        toast.success('Language changed successfully!');
+        toast.success(i18n.t('common.languageChanged'));
       } catch (error) {
         console.error('Error changing language:', error);
       }

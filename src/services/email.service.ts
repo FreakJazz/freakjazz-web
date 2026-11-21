@@ -9,6 +9,10 @@ interface ContactFormData {
   email: string;
   subject: string;
   message: string;
+  /** Optional, already formatted with the country code, e.g. "+593 987654321" */
+  phone?: string;
+  /** Language the visitor is using; drives the language of the confirmation email */
+  lang?: 'es' | 'en';
 }
 
 interface QuoteFormDetailedData {

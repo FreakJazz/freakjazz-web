@@ -37,7 +37,9 @@
         "success": "Éxito",
         "downloadCV": "Descargar CV",
         "profileRole": "Desarrolladora Full Stack",
-        "hourlyRate": "$15-25/hora"
+        "hourlyRate": "$15-25/hora",
+        "languageChanged": "Idioma cambiado correctamente",
+        "logoutError": "No se pudo cerrar sesión"
     },
     "home": {
         "welcome": "Jazmin Rodriguez",
@@ -77,7 +79,10 @@
         "timelineExperience": "Experiencia",
         "timelineEducation": "Estudios",
         "timelineCourses": "Cursos",
-        "techLanguages": "Lenguajes"
+        "techLanguages": "Lenguajes",
+        "techDevelopment": "Desarrollo y Metodologías",
+        "techArchitectureSecurity": "Arquitectura, Calidad y Seguridad",
+        "techCloudData": "Cloud, Datos y DevOps"
     },
     "about": {
         "title": "Sobre mí",
@@ -150,7 +155,16 @@
         "perk2": "IA generativa y automatización",
         "perk3": "Entrega ágil y comunicación clara",
         "findMe": "También me encuentras en",
-        "emailMe": "Escríbeme por correo"
+        "emailMe": "Escríbeme por correo",
+        "successDetail": "¡Mensaje enviado! Te responderé pronto.",
+        "nameRequired": "El nombre es obligatorio",
+        "emailRequired": "El correo es obligatorio",
+        "emailInvalid": "Correo electrónico no válido",
+        "subjectRequired": "El asunto es obligatorio",
+        "messageMin": "El mensaje debe tener al menos 10 caracteres",
+        "phone": "Teléfono (opcional)",
+        "country": "País",
+        "phoneInvalid": "Número no válido (6 a 12 dígitos)"
     },
     "quote": {
         "title": "Solicitar Cotización",
