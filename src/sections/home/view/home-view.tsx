@@ -2,7 +2,6 @@ import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -21,9 +20,8 @@ import { Iconify } from 'src/components/iconify';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
-import { Frameworks } from '../frameworks';
+import { TechStack } from '../tech-stack';
 import { CareerTimeline } from '../career-timeline';
-import { ProgrammingLanguages } from '../programming-languages';
 
 // ----------------------------------------------------------------------
 
@@ -62,45 +60,6 @@ export function HomeView() {
       icon: 'solar:shield-check-bold-duotone',
       title: t('home.strength6Title'),
       description: t('home.strength6Text'),
-    },
-  ];
-
-  const technologyGroups = [
-    {
-      label: t('home.techFrontend'),
-      icon: 'solar:monitor-bold-duotone',
-      color: 'primary' as const,
-      items: ['React', 'Next.js', 'Angular', 'React Native', 'TypeScript', 'Material-UI'],
-    },
-    {
-      label: t('home.techBackend'),
-      icon: 'solar:server-bold-duotone',
-      color: 'success' as const,
-      items: ['C#', '.NET Core', 'Python', 'FastAPI', 'Django', 'Java', 'Spring Boot', 'Go'],
-    },
-    {
-      label: t('home.techAI'),
-      icon: 'solar:cpu-bold-duotone',
-      color: 'secondary' as const,
-      items: ['LLM', 'RAG', 'AI Agents', 'OpenAI API', 'LangChain', 'LangGraph', 'LlamaIndex', 'PyTorch', 'Scikit-learn'],
-    },
-    {
-      label: t('home.techArchitecture'),
-      icon: 'solar:widget-5-bold-duotone',
-      color: 'error' as const,
-      items: ['Clean Architecture', 'Hexagonal', 'DDD', 'CQRS', 'Microservices', 'Event-Driven', 'Apache Kafka'],
-    },
-    {
-      label: t('home.techCloud'),
-      icon: 'solar:cloud-bold-duotone',
-      color: 'info' as const,
-      items: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Jenkins'],
-    },
-    {
-      label: t('home.techDatabase'),
-      icon: 'solar:database-bold-duotone',
-      color: 'warning' as const,
-      items: ['PostgreSQL', 'SQL Server', 'Oracle', 'MongoDB', 'Redis', 'pgvector'],
     },
   ];
 
@@ -260,38 +219,18 @@ export function HomeView() {
         </Container>
       </Box>
 
-      {/* Featured Technologies Section */}
+      {/* Technologies (tabs + floating icons) */}
       <Box id="technologies" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
-        <Container>
-          <Typography
-            variant="h2"
-            sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center', mb: 6 }}
-          >
-            {t('home.technologiesTitle')}
-          </Typography>
-          <Grid container spacing={4}>
-            {technologyGroups.map((group) => (
-              <Grid key={group.label} size={{ xs: 12, md: 6 }}>
-                <Card sx={{ height: '100%', p: 3 }}>
-                  <Stack spacing={2}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <Iconify
-                        icon={group.icon as any}
-                        width={32}
-                        sx={{ color: `${group.color}.main` }}
-                      />
-                      <Typography variant="h5">{group.label}</Typography>
-                    </Box>
-                    <Stack direction="row" flexWrap="wrap" gap={1}>
-                      {group.items.map((tech) => (
-                        <Chip key={tech} label={tech} color={group.color} variant="outlined" />
-                      ))}
-                    </Stack>
-                  </Stack>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+        <Container maxWidth="lg">
+          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
+              {t('frameworks.title')}
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 680 }}>
+              {t('frameworks.subtitle')}
+            </Typography>
+          </Stack>
+          <TechStack />
         </Container>
       </Box>
 
@@ -321,63 +260,11 @@ export function HomeView() {
         </Container>
       </Box> */}
 
-      {/* Programming Languages Section */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          bgcolor: 'background.neutral',
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={4} alignItems="center" sx={{ mb: 6 }}>
-            <Typography
-              variant="h2"
-              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center' }}
-            >
-              {t('programmingLanguages.title')}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 600 }}
-            >
-              {t('programmingLanguages.subtitle')}
-            </Typography>
-          </Stack>
-          <ProgrammingLanguages />
-        </Container>
-      </Box>
-
-      {/* Frameworks & Tools Section */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          bgcolor: 'background.default',
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={4} alignItems="center" sx={{ mb: 6 }}>
-            <Typography
-              variant="h2"
-              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center' }}
-            >
-              {t('frameworks.title')}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 600 }}
-            >
-              {t('frameworks.subtitle')}
-            </Typography>
-          </Stack>
-          <Frameworks />
-        </Container>
-      </Box>
-
       {/* Trust Section */}
       <Box
         sx={{
           py: { xs: 8, md: 12 },
-          bgcolor: 'background.default',
+          bgcolor: 'background.neutral',
         }}
       >
         <Container>

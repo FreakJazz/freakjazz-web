@@ -76,7 +76,8 @@
         "timelineSubtitle": "Experience, education and courses, from most recent to oldest",
         "timelineExperience": "Experience",
         "timelineEducation": "Education",
-        "timelineCourses": "Courses"
+        "timelineCourses": "Courses",
+        "techLanguages": "Languages"
     },
     "about": {
         "title": "About Me",
