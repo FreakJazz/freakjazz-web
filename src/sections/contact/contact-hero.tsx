@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-import { getWhatsAppUrl, WHATSAPP_DISPLAY } from 'src/utils/whatsapp';
+import { getWhatsAppUrl } from 'src/utils/whatsapp';
 
 import { CONFIG } from 'src/global-config';
 import { useTranslate } from 'src/locales';
@@ -121,7 +121,7 @@ export function ContactHero({ sx, ...other }: BoxProps) {
                   '&:hover': { bgcolor: 'grey.100' },
                 }}
               >
-                {EMAIL}
+                Email
               </Button>
 
               <Button
@@ -140,7 +140,7 @@ export function ContactHero({ sx, ...other }: BoxProps) {
                   '&:hover': { bgcolor: '#1EBE5A' },
                 }}
               >
-                WhatsApp {WHATSAPP_DISPLAY}
+                WhatsApp
               </Button>
 
               <Stack direction="row" spacing={1}>
