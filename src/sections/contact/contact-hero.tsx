@@ -64,14 +64,6 @@ export function ContactHero({ sx, ...other }: BoxProps) {
       <Container component={MotionContainer}>
         <Stack spacing={4} alignItems="center" textAlign="center" sx={{ color: 'common.white' }}>
           <m.div variants={varFade('inUp', { distance: 24 })}>
-            <Chip
-              icon={<Iconify icon={'solar:letter-bold-duotone' as any} width={20} />}
-              label={t('contact.title')}
-              sx={{ color: 'common.white', bgcolor: 'rgba(255,255,255,0.16)', fontWeight: 600 }}
-            />
-          </m.div>
-
-          <m.div variants={varFade('inUp', { distance: 24 })}>
             <Typography
               component="h1"
               variant="h1"
