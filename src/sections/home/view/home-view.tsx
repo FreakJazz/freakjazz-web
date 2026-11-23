@@ -224,7 +224,17 @@ export function HomeView() {
           <Grid container spacing={3}>
             {PHILOSOPHY.map((item) => (
               <Grid key={item.key} size={{ xs: 12, sm: 6, md: 3 }}>
-                <Card sx={{ height: '100%', textAlign: 'center' }}>
+                <Card
+                  sx={{
+                    height: '100%',
+                    textAlign: 'center',
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: theme.shadows[10],
+                    },
+                  }}
+                >
                   <CardContent sx={{ p: 4 }}>
                     <Iconify
                       icon={item.icon as any}
@@ -300,9 +310,10 @@ export function HomeView() {
                       justifyContent: 'center',
                       p: 3,
                       textAlign: 'center',
-                      transition: 'transform 0.3s',
+                      transition: 'transform 0.3s, box-shadow 0.3s',
                       '&:hover': {
-                        transform: 'scale(1.05)',
+                        transform: 'translateY(-8px)',
+                        boxShadow: theme.shadows[10],
                       },
                     }}
                   >

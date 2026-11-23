@@ -262,7 +262,16 @@ export function ProjectsView() {
           <Grid container spacing={4}>
             {caseStudies.map((study) => (
               <Grid key={study.key} size={{ xs: 12, md: 6 }}>
-                <Card sx={{ height: '100%' }}>
+                <Card
+                  sx={{
+                    height: '100%',
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: (theme) => theme.shadows[10],
+                    },
+                  }}
+                >
                   <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', height: '100%' }}>
                     <Typography variant="overline" sx={{ color: 'primary.main', mb: 1 }}>
                       {t('projects.casesNote')}

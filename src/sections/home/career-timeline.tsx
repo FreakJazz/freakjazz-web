@@ -44,7 +44,6 @@ const itemKey = (item: TimelineItem, lang: 'es' | 'en') =>
 // card on the same side would overlap it, in which case the gap grows just enough to avoid that.
 const DOT_STEP = 150;
 const CARD_GAP = 28;
-const TIMELINE_MAX_WIDTH = 1000;
 
 function computeTops(heights: number[]) {
   const tops: number[] = [];
@@ -228,7 +227,7 @@ export function CareerTimeline() {
         ))}
       </Tabs>
 
-      <Box key={tab} ref={trackRef} sx={{ position: 'relative', maxWidth: TIMELINE_MAX_WIDTH, mx: 'auto' }}>
+      <Box key={tab} ref={trackRef} sx={{ position: 'relative' }}>
         {/* Vertical line: grey track + animated fill that grows while scrolling */}
         <Box
           sx={{

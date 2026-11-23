@@ -43,7 +43,7 @@
     },
     "home": {
         "welcome": "Jazmin Rodriguez",
-        "subtitle": "Senior Software Engineer | .NET Core, Python, React | Generative AI & LLM Agents | Microservices | Cloud | Clean Architecture",
+        "subtitle": "Full Stack Developer | Senior Software Engineer | Generative AI & LLM Agents | Microservices | Clean Architecture",
         "cta": "Hire Me",
         "ctaProjects": "View Projects",
         "description": "Senior Software Engineer with 6+ years of experience designing and building scalable full-stack systems for financial and payment platforms and nationwide public-sector systems. Specialized in software architecture, technical leadership and generative AI: LLMs, intelligent agents, microservices and event-driven architectures.",
@@ -88,9 +88,9 @@
         "title": "About Me",
         "subtitle": "My story, my career, my stack and what drives me beyond code",
         "storyTitle": "My professional story",
-        "story1": "I'm a software engineer based in Quito, Ecuador. My first projects were in electronics, IoT and data analysis, from embedded systems with Arduino and ESP32 to research with medical data, and I took from that the habit of understanding the underlying problem before writing code.",
-        "story2": "Over the years I moved on to larger-scale systems: financial and payment platforms, and national-scale public systems. There I learned that the software that matters is the kind that lasts, with other people working on it.",
-        "story3": "Today I combine that experience with artificial intelligence: I integrate LLMs, RAG and agents into real products, always with engineering judgment and not just for novelty.",
+        "story1": "I'm a software engineer based in Quito, Ecuador, with over 6 years of experience. My first steps were in electronics, robotics and IoT, but I soon focused on full stack development: web and mobile apps with React, Angular, Next.js and React Native, and backends with Python, .NET and Java.",
+        "story2": "For more than three years I worked at the National Electoral Council, where I led the development of national-scale systems: electoral accounting and oversight platforms, data interconnection between State institutions, and real-time results apps used by 10 million people on election day, built on microservices with Docker and Kubernetes.",
+        "story3": "I then moved into the financial and payments sector, designing backends with .NET Core, microservices and event-driven architecture for banking loyalty, subscription and logistics platforms serving 500k users, with SQS and webhook integrations, Keycloak and Cognito security, and response times cut by 80%.",
         "philosophyTitle": "My work philosophy",
         "philosophySubtitle": "The principles that guide how I design, build and collaborate",
         "philosophy1Title": "Understand before building",
@@ -108,7 +108,8 @@
         "articlesText": "I share what I learn about software development on Medium.",
         "articlesButton": "Read on Medium",
         "articlesSoon": "New articles coming soon",
-        "stackTitle": "My stack"
+        "stackTitle": "My stack",
+        "story4": "Today I'm a Project Lead and Senior Software Engineer on banking solutions: I define architectures on Kafka and design a configurable cash management engine in Go. I integrate generative AI, LLMs, RAG and agents into real products, develop geolocation algorithms, process large data volumes with Python, and share what I know as an instructor. I hold a Master's in Software Engineering."
     },
     "education": {
         "title": "Education",

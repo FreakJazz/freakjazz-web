@@ -43,7 +43,7 @@
     },
     "home": {
         "welcome": "Jazmin Rodriguez",
-        "subtitle": "Senior Software Engineer | .NET Core, Python, React | IA Generativa y Agentes LLM | Microservicios | Cloud | Clean Architecture",
+        "subtitle": "Desarrolladora Full Stack | Senior Software Engineer | IA Generativa y Agentes LLM | Microservicios | Clean Architecture",
         "cta": "Contrátame",
         "ctaProjects": "Ver Proyectos",
         "description": "Ingeniera de Software Senior con más de 6 años de experiencia diseñando y desarrollando sistemas full-stack escalables para plataformas financieras, de pagos y sistemas públicos de alcance nacional. Especializada en arquitectura de software, liderazgo técnico e IA generativa: LLM, agentes inteligentes, microservicios y arquitecturas orientadas a eventos.",
@@ -88,9 +88,9 @@
         "title": "Sobre mí",
         "subtitle": "Mi historia, mi trayectoria, mi stack y lo que me mueve fuera del código",
         "storyTitle": "Mi historia profesional",
-        "story1": "Soy ingeniera de software y vivo en Quito, Ecuador. Mis primeros proyectos fueron de electrónica, IoT y análisis de datos, desde sistemas embebidos con Arduino y ESP32 hasta investigación con datos médicos, y de ahí me llevé la costumbre de entender el problema de fondo antes de escribir código.",
-        "story2": "Con los años pasé a construir sistemas de mayor escala: plataformas financieras y de pagos, y sistemas públicos de alcance nacional. Ahí aprendí que el software que importa es el que se sostiene en el tiempo, con otras personas trabajando sobre él.",
-        "story3": "Hoy combino esa experiencia con inteligencia artificial: integro LLM, RAG y agentes en productos reales, siempre con criterio de ingeniería y no solo por la novedad.",
+        "story1": "Soy ingeniera de software en Quito, Ecuador, con más de 6 años de experiencia. Mis primeros pasos fueron en la electrónica, la robótica y el IoT, pero pronto me enfoqué en el desarrollo full stack: aplicaciones web y móviles con React, Angular, Next.js y React Native, y backends con Python, .NET y Java.",
+        "story2": "Durante más de tres años trabajé en el Consejo Nacional Electoral, donde lideré el desarrollo de sistemas de alcance nacional: plataformas de contabilidad y fiscalización electoral, interconexión de datos entre instituciones del Estado y aplicaciones de resultados en tiempo real que usaron 10 millones de personas el día de las elecciones, sobre microservicios con Docker y Kubernetes.",
+        "story3": "Después pasé al sector financiero y de pagos, diseñando backends con .NET Core, microservicios y arquitectura orientada a eventos para plataformas de fidelización bancaria, suscripciones y logística que atienden a 500 mil usuarios, con integraciones por SQS y webhooks, seguridad con Keycloak y Cognito, y tiempos de respuesta reducidos en un 80 %.",
         "philosophyTitle": "Mi filosofía de trabajo",
         "philosophySubtitle": "Los principios que guían cómo diseño, construyo y colaboro",
         "philosophy1Title": "Entender antes de construir",
@@ -108,7 +108,8 @@
         "articlesText": "Comparto lo que aprendo sobre desarrollo de software en Medium.",
         "articlesButton": "Leer en Medium",
         "articlesSoon": "Nuevos artículos próximamente",
-        "stackTitle": "Mi stack"
+        "stackTitle": "Mi stack",
+        "story4": "Hoy soy Líder de Proyecto e Ingeniera de Software Senior en soluciones bancarias: defino arquitecturas sobre Kafka y diseño un motor configurable de gestión de efectivo en Go. Integro IA generativa, LLM, RAG y agentes en productos reales, desarrollo algoritmos de geolocalización, proceso grandes volúmenes de datos con Python, y comparto lo que sé como instructora. Soy Máster en Ingeniería de Software."
     },
     "education": {
         "title": "Educación",

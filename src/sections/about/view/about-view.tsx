@@ -125,7 +125,7 @@ export function AboutView() {
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
               {t('about.storyTitle')}
             </Typography>
-            {['story1', 'story2', 'story3'].map((key) => (
+            {['story1', 'story2', 'story3', 'story4'].map((key) => (
               <Typography
                 key={key}
                 variant="body1"
